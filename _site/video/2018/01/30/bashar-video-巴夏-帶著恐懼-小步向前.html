@@ -1,0 +1,1029 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏：帶著恐懼，小步向前 - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="問：巴夏，你好！巴夏：你好！你是誰？問：我是⋯⋯誰也不是？巴夏：能否再說一遍？你是誰？問：誰也不是？聖靈？巴夏：你是誰呢？問：聖靈？巴夏：你沒有認真聽我們幾個人剛才的對話，是吧？問：抱歉，我很緊張巴夏：你是誰呢？問：我不知道巴夏：謝謝問：那你是誰呢？巴夏：我不知道。曾經也有人問我：「巴夏，有什麼東西是你不知道的嗎...">
+<link rel="canonical" href="https://bashar.tw/video/2018/01/30/bashar-video-%E5%B7%B4%E5%A4%8F-%E5%B8%B6%E8%91%97%E6%81%90%E6%87%BC-%E5%B0%8F%E6%AD%A5%E5%90%91%E5%89%8D.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏：帶著恐懼，小步向前</h1></header></div><meta itemprop="headline" content="巴夏：帶著恐懼，小步向前"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E5%BD%B1%E7%89%87">影片</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月30日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Fvideo%2F2018%2F01%2F30%2Fbashar-video-%25E5%25B7%25B4%25E5%25A4%258F-%25E5%25B8%25B6%25E8%2591%2597%25E6%2581%2590%25E6%2587%25BC-%25E5%25B0%258F%25E6%25AD%25A5%25E5%2590%2591%25E5%2589%258D.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-30T00:00:00+08:00">
+    <meta itemprop="keywords" content="影片"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+      
+        <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1eaW4YH41-t7aRSCzXva3IdCXvqwGjEDKvA/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+        <div class="video__download__link">
+          <a href="https://drive.google.com/uc?authuser=0&id=1eaW4YH41-t7aRSCzXva3IdCXvqwGjEDKvA&export=download" target="_blank">下載影片</a>
+          
+          <br />
+        </div>
+      
+    
+
+    
+    
+    <p>問：巴夏，你好！</p>
+
+<p><mark>巴夏</mark>：你好！你是誰？</p>
+
+<p>問：我是⋯⋯誰也不是？</p>
+
+<p><mark>巴夏</mark>：能否再說一遍？你是誰？</p>
+
+<p>問：誰也不是？聖靈？</p>
+
+<p><mark>巴夏</mark>：你是誰呢？</p>
+
+<p>問：聖靈？</p>
+
+<p><mark>巴夏</mark>：你沒有認真聽我們幾個人剛才的對話，是吧？</p>
+
+<p>問：抱歉，我很緊張</p>
+
+<p><mark>巴夏</mark>：你是誰呢？</p>
+
+<p>問：我不知道</p>
+
+<p><mark>巴夏</mark>：謝謝</p>
+
+<p>問：那你是誰呢？</p>
+
+<p><mark>巴夏</mark>：我不知道。曾經也有人問我：「巴夏，有什麼東西是你不知道的嗎？」我的回答是：「我不知道」，你們也不知道，但我知道：我需要知道的時候，我就會知道</p>
+
+<p>問：太棒了！</p>
+
+<p><mark>巴夏</mark>：你們也一樣</p>
+
+<p>問：太好了！</p>
+
+<p><mark>巴夏</mark>：那現在，你想知道什麼呢？</p>
+
+<p>問：你曾說過，事情在變好之前，會變得更糟糕</p>
+
+<p><mark>巴夏</mark>：可以是這樣，但不一定這樣，我只是說，如果事情真的變得糟糕了，那你要明白，這其實是個好兆頭！</p>
+
+<p>問：好的！這種事就發生在我身上</p>
+
+<p><mark>巴夏</mark>：恭喜恭喜！我真為你感到興奮，你距離臨界點已經很近很近了！</p>
+
+<p>問：希望如此！這也是我要問的問題</p>
+
+<p><mark>巴夏</mark>：你無需希望如此，事情就是這樣！</p>
+
+<p>問：OK！</p>
+
+<p><mark>巴夏</mark>：在生活中的哪一方面，你體驗這種恐懼呢？</p>
+
+<p>問：方方面面，都恐懼</p>
+
+<p><mark>巴夏</mark>：方方面面，都恐懼！我能否問你個問題？</p>
+
+<p>問：好！</p>
+
+<p><mark>巴夏</mark>：有什麼事情是你想做，而沒去做的？或者你害怕去做的？</p>
+
+<p>問：我不知道</p>
+
+<p><mark>巴夏</mark>：你知道的！</p>
+
+<p>問：不知道⋯⋯</p>
+
+<p><mark>巴夏</mark>：你肯定知道！</p>
+
+<p>問：我保證，我不知道！</p>
+
+<p><mark>巴夏</mark>：是的，你知道的，我保證，你知道！這不一定是什麼大事，你現在跟我們對話，這可不可以認為，來參與這次對話，讓你感到興奮</p>
+
+<p>問：是的</p>
+
+<p><mark>巴夏</mark>：這不難做出抉擇把？這不難付出行動吧？</p>
+
+<p>問：這很難的，我現在怕死了！</p>
+
+<p><mark>巴夏</mark>：為什麼？</p>
+
+<p>問：我不知道</p>
+
+<p><mark>巴夏</mark>：但你做到了啊！你付諸行動啦！</p>
+
+<p>問：我很高興</p>
+
+<p><mark>巴夏</mark>：這正是你需要持續不斷地做的事，每一刻，都有那麼一個選擇，它可能只比其他選擇，讓你感覺多一點點興奮，這個選擇，就是你要去行動的</p>
+
+<p>問：即使它讓我感覺恐懼嗎？</p>
+
+<p><mark>巴夏</mark>：尤其是讓你感覺恐懼的選擇，因為有時候，你的信念系統，會把你的興奮偽裝成恐懼，這樣你就不敢前進，但這正是信念系統的詭計。負面信念系統會盡其所能，讓你看不見「興奮」，因為它知道，如果你在「興奮」上行動了，那你就不再聽負面信念系統的話了，它設計出來，就是為了千方百計，不讓你明白這點。但你若是明白，知道這只是它的詭計，無論如何，你都將付諸行動，並且知道你將會突破，就像你突破恐懼，來參與這次對話一樣。</p>
+
+<p>問：我想，這就是我的問題，我的主要問題是，如何才能一腳跨到好事那邊呢？因為你之前跟某人說，他們離好事很近了</p>
+
+<p><mark>巴夏</mark>：你只需要，一步一腳印，因為你知道，不論你感到多恐懼，這意味著，你距離突破的臨界點，越來越近了，只需要，一步一腳印地繼續前行</p>
+
+<p>問：有時候我覺得，自己做了錯誤的決定</p>
+
+<p><mark>巴夏</mark>：如果真是這樣，那從根本上說，你會知道：從某個角度上看，這個決定，不是你所喜好的，而你也將做出你所喜歡的決定，並且付諸行動。所以，即使壞事，也是一個對比，向你展示你所不喜好的，這樣你就可以更清楚地知道，你真正喜好的。</p>
+
+<p>所以，一切皆可為你帶來益處，這就是我們之前說的，只要你不把錯誤當錯誤，錯誤就不是錯誤。如果你能從自己不喜歡的選擇中，學習到一些什麼，那你就沒犯錯。</p>
+
+<p>由於成長環境的影響，地球人，通常更容易通過先體驗更多的黑暗，然後看見光，因為這樣，可以幫助他們看出二者的不同，於是你們利用黑暗的積極一面，來幫助你們看見光。</p>
+
+<p>所以，你越是體驗到恐懼，越是讓你明白，你緊抓不放的，是與你的真我不協調的信念系統，正是這些信念系統，讓你人生一團糟，僅此而已，這是宇宙的運行機制，就是這麼簡單。</p>
+
+<p>舉個例子，比如開車，你一腳踩油門，一腳踩剎車，為了安全起見，手剎也拉起來，車不是這麼開的，是吧？於是引擎尖叫不停，整個車子白煙滾滾，而你還在奇怪，車子怎麼不動了？車子又吵又鬧又怪，還讓人怕怕的，是吧？而你只需鬆開手剎與腳剎，你就開動了，僅此而已。</p>
+
+<p>所有的暴風、閃電、雷鳴與恐懼，都是因為你死死地剎車，僅此而已。把你的腳從腳剎移開，車子就往前開動了，同時你也會發現，真沒什麼好怕的。</p>
+
+<p>問：這幾年，這樣的事，就發生在我身上</p>
+
+<p><mark>巴夏</mark>：我知道</p>
+
+<p>問：我不知道接下來要做什麼？只需要放開腳剎嗎？</p>
+
+<p><mark>巴夏</mark>：每一刻，在你可做的事情中，選出一個更興奮一點的事，一小步一小步地前行，盡你最大可能力，持續不斷地做，不執著於事情該朝哪個方向發展，或該怎麼怎麼發展，以及結果如何。</p>
+
+<p>你越是這麼做，越是訓練自己，讓自己明白：你可以開始做更興奮的、更大的事情。也訓練你明白：這樣的生活方式，才是你所喜好的！於是你的恐懼，也漸漸消融，因為你是如此的喜悅，根本不想再關注負面信念系統朝你大喊大叫，要你停下了的聲音。</p>
+
+<p>你也會知道，如何順暢地開車，何時減速，何時加速，都取決於你的喜好，而不是聽信負面信念系統在你耳邊說些胡說八道的話語，你會知道，你自己的真相，知道自己不需要像過去一樣，聽信負面信念的「騙人的童話」。</p>
+
+<p>問：這個我喜歡，我感覺，我還不相信我的決定</p>
+
+<p><mark>巴夏</mark>：很顯然，你不相信</p>
+
+<p>問：是的</p>
+
+<p><mark>巴夏</mark>：但不相信你的決定，也是一個決定，這就是你所相信的決定，你相信你的決定，只是你選擇相信負面的決定。你看出其中的差別了沒？（你選擇相信「不要相信自己的決定」）</p>
+
+<p>不存在「不相信」，沒這回事！但你可以相信：某些負面的你，是真正的你，所以，你還是相信，所以，為什麼不選擇相信你所喜好的？而非你不喜好的呢？</p>
+
+<p>問：去年，我做了個決定，深信不疑的決定，但結果，卻是一團糟，我的人生，也因此變得水深火熱</p>
+
+<p><mark>巴夏</mark>：那又能怎麼樣呢？祝賀你！你可以從中學到些東西</p>
+
+<p>問：所有的黑暗，所有的恐懼都湧現出來</p>
+
+<p><mark>巴夏</mark>：祝賀你！現在你已足夠強大，足夠勇敢，把它們全部擺在檯面上，一次解決，而非東一塊，西一塊，花一輩子去處理，這說明你是一個強大的人，可以把它們全都解決，可以迅速轉化它們，你如果願意這麼看待的話，你也將如此體驗到！但如果你還想陷在自己做了錯誤決定的黑暗和恐懼裡，那你要花更多的時間，才能轉變你的人生。</p>
+
+<p>問：一直以來，我就是這麼做的</p>
+
+<p><mark>巴夏</mark>：那你累夠了沒？</p>
+
+<p>問：是的</p>
+
+<p><mark>巴夏</mark>：受夠了沒？</p>
+
+<p>問：是的</p>
+
+<p><mark>巴夏</mark>：停下來吧</p>
+
+<p>問：好！</p>
+
+<p><mark>巴夏</mark>：除非你還沒受夠，還沒累夠！</p>
+
+<p>問：我真的受夠了！真的累夠了！</p>
+
+<p><mark>巴夏</mark>：那停止吧！因為你有選擇的自由，有做決定的權利！而且你沒有理由不相信：如果宇宙能夠支持你「相信負面信念」，那祂也能夠輕而易舉地支持你「相信正面信念」，因為宇宙沒有祂自己的意識，祂只是台機器，不會與你對著幹！</p>
+
+<p>問：好的，我明白了！再問清楚點</p>
+
+<p><mark>巴夏</mark>：好的</p>
+
+<p>問：那我現在開始該怎麼做？信任我自己？</p>
+
+<p><mark>巴夏</mark>：這次對話結束後，你有些可以做的事情，對吧？看看這些選擇，問自己：哪一個選擇更讓你興奮一點點？可以看書，可以給朋友打電話，可以吃頓好吃的，可以看場電影⋯不論什麼，儘可能簡單，只需要不斷地選擇那個你最有能力做的，更興奮一點點的事，付諸行動，並且對於某個特定的結果沒有絲毫執著，然後看看會發生什麼事</p>
+
+<p>每一次，在你看到另一個你有能力做的事情時，看看你的所有選擇，慢慢看，不急，不躁，選擇最讓你興奮的那個，並且盡你所能、做你能做的，不執著於事情的發展與結果，你只需要每時每刻都這麼做，每時每刻都這麼做，每時每刻都這麼做，很快，你就會發現，你的人生是一個個激動人心選擇和璀璨奪目的體驗</p>
+
+<p>問：這個我喜歡，那去年的錯誤，將不再對我有影響嗎？</p>
+
+<p><mark>巴夏</mark>：為什麼會呢？你已經學到你的功課了！你已經正面地利用它，做出不同的選擇，一個跟你現在振頻不相關的事情，怎麼可能影響到你呢？明白嗎？</p>
+
+<p>問：是的</p>
+
+<p><mark>巴夏</mark>：你只能體驗到，你所在的振頻上所發生的事，而跟你振頻不相匹配的，你就體驗不到，明白嗎？</p>
+
+<p>問：醍醐灌頂！</p>
+
+<p><mark>巴夏</mark>：好！我從另一個角度，再闡述一遍！記住，證明你是否改變了，不取決於外在境況是否看起來不同了，因為同樣的事情，可能再次發生</p>
+
+<p>問：對！我就卡在這裡</p>
+
+<p><mark>巴夏</mark>：看似一樣的事情，如果再次發生，而你面對的方式改變了，那才證明，你真正地改變了！因為，如果你的應對方式不同，那事情必將不同，你也將從中獲得不同的「果」，明白嗎？</p>
+
+<p>問：明白</p>
+
+<p><mark>巴夏</mark>：這才是你已經改變的證據，而你也將到體驗不同的人生，這對你有幫助嗎？</p>
+
+<p>問：是的，幫助太大了！</p>
+
+<p><mark>巴夏</mark>：好的！不客氣！</p>
+
+<p>問：太感謝您了！</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-30T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/video/2018/01/30/bashar-video-%E5%B7%B4%E5%A4%8F-%E5%A6%82%E4%BD%95%E5%9B%9E%E5%88%B0%E6%9C%80%E4%BD%B3%E7%8B%80%E6%85%8B.html">巴夏：如何回到最佳狀態？</a></div><div class="next"><span>下篇</span><a href="/video/2018/01/30/bashar-video-%E5%B7%B4%E5%A4%8F-%E6%84%8F%E8%AD%98-%E6%98%AF%E4%BB%80%E9%BA%BC.html">巴夏：意識，是什麼？</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://bashar.tw/video/2018/01/30/bashar-video-%E5%B7%B4%E5%A4%8F-%E5%B8%B6%E8%91%97%E6%81%90%E6%87%BC-%E5%B0%8F%E6%AD%A5%E5%90%91%E5%89%8D.html';
+                        this.page.identifier = '20180130_video_巴夏：帶著恐懼，小步向前';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+

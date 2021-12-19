@@ -1,0 +1,863 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏194：活出精彩人生 - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="請允許我們問候一下日安，大家好。好的。精彩。我們再次感謝合作這次互動。我們懷著深切感激謝謝允許本次傳訊。謝謝你們參與你們生命的自我成長和意識擴展。謝謝你們願意越來越多、越來越多、越來越多地成為你們所是的生命，因為那就是你們這一生的目的所在。在你們的今天，我們談論活出精彩人生的話題。這是與什麼相鏈接的？這個概念的核...">
+<link rel="canonical" href="https://bashar.tw/video/2018/01/13/bashar-video-%E5%B7%B4%E5%A4%8F194-%E6%B4%BB%E5%87%BA%E7%B2%BE%E5%BD%A9%E4%BA%BA%E7%94%9F.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏194：活出精彩人生</h1></header></div><meta itemprop="headline" content="巴夏194：活出精彩人生"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E5%BD%B1%E7%89%87%EF%BD%9C%E7%B7%A8%E8%99%9F%E7%B3%BB%E5%88%97">影片｜編號系列</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月13日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Fvideo%2F2018%2F01%2F13%2Fbashar-video-%25E5%25B7%25B4%25E5%25A4%258F194-%25E6%25B4%25BB%25E5%2587%25BA%25E7%25B2%25BE%25E5%25BD%25A9%25E4%25BA%25BA%25E7%2594%259F.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-13T00:00:00+08:00">
+    <meta itemprop="keywords" content="影片｜編號系列"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+      
+        <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1zjgXifVDFoFniV2zKbjEkCKz8PZKm-Iwvg/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+        <div class="video__download__link">
+          <a href="https://drive.google.com/uc?authuser=0&id=1zjgXifVDFoFniV2zKbjEkCKz8PZKm-Iwvg&export=download" target="_blank">下載影片</a>
+          
+          <br />
+        </div>
+      
+    
+
+    
+    
+    <p>請允許我們問候一下日安，大家好。</p>
+
+<p>好的。精彩。我們再次感謝合作這次互動。我們懷著深切感激謝謝允許本次傳訊。謝謝你們參與你們生命的自我成長和意識擴展。謝謝你們願意越來越多、越來越多、越來越多地成為你們所是的生命，因為那就是你們這一生的目的所在。</p>
+
+<p>在你們的今天，我們談論活出精彩人生的話題。這是與什麼相鏈接的？這個概念的核心要點是什麼，驅動著你奔向那種生活、那種體驗？這是我們本週末傳訊課程的全部內容。此外，允許大家對 「真實性」這個用詞有一個更深的理解，即成為你真實的自己。這是什麼意思？當然是對你自己要真實，與你自己的標誌性振動校準。但還意味著像你們說的，把它表現出來，真正地依照你的熱情行動。即，在你選擇了物質體驗或物質生命階段時，在你生命按照你的課題，按照你選擇探索的課題上演時，由你來決定如何來進行探索。當然我們並不是說，處於一種平衡的寧靜的狀態，你們就不能過真實的生活，活出精彩的人生。當然你們能夠。在我們說生活中行動很重要時，並不意味著你一定要滿世界跑。你們可以穩定地、寧靜地、平衡地、終其一生呆在一個地方，如果你願意，如果那對你是真實的，確實真實的。然而，我們卻認識到，由於你們星球上幾千年的恐懼，在你們的文化、社會和在你們成長過程中，很多人已被植入了理念，損減的定義，缺乏價值的定義，斷開聯繫體驗的定義。你們很多人不一定會充分盡你所能地行動，不會允許自己成為真實的生命。現在是改變這一情形的時候了。</p>
+
+<p>如同已說過的，你們知道你們這個時代正經歷一場轉變。你們知道，這關乎釋放掉不是你的事物，與那些是你的事物協同起來，以可能的最深刻、最藝術、最創造性的方式表達出來。這關乎要走上前去做。不是躊躇，不是懷疑做你自己，你真實的自己。這關乎要大膽，勇於冒險，充滿勇氣，自信，珍惜時機，充滿想像力，興奮，互動，敢於表現。不要把你能給出的禮物扣住不送，不要剝奪其他人獲得那些禮物的機會。因為在你不時感覺到你在尋求和搜尋一些東西的同時，別人也在尋求和搜尋你擁有的可以分享之物，你能給的即是表達你真實的自我。當你們越來越多、越來越多、越來越多的人真正允許真實的自我站到最前線，用你們的雙腳堅定地站在大地上，卓爾不群，盎然屹立，你們的意識升到了天堂，你們站在你們說的天地之間的平衡點上。你允許自己處於那種狀態，那種確信，真正知道一切安好，真正知道這就是你的目的，真正知道你能行動，向前推進，給出那個禮物，表達那個禮物。永遠、永遠、永遠，那些一直在尋找你能給出的禮物的人都會有反饋。可能是以你期待的形式，但更可能期待的是不期然。</p>
+
+<p>自此以後你們在生活中，允許你們自己做好準備，不期然左轉或右轉，不期然地上行或下行，前進或後退，遵循最低抗拒之路。不管在你整個生活中，這條路可能如何彎曲，可能如何曲折和彎轉。因為那些曲折和彎轉就是你的旅途，你的冒險，你的進程，你的探索，你發現更多的自我。如果它們對你理解你的整個生命不重要，那些曲折和彎轉就不會出現在你的道路上。它們出現總是有目的的，它們出現總是有原因的。它們出現是為了幫助你鑑定你自己，證實你自己，反射和強化你所是的真實的生命。在你表現出來時，你總會得到創造的強化、反射和支持，表示這就是你說你是的人。造化從來不會與你牴牾，它不是被設計來這麼做的，它是被設計來無條件支持你的，不論什麼你說是你的真理，不論什麼你說對你來說是真實的。它總是與你標誌性振動保持一致。</p>
+
+<p>永遠都要活出精彩的人生。永遠。還有，你還一定要總是懷有平衡、感激、感恩、欣賞的想法，總是用點時間、暫停下來或花上一刻，確信你確實是在做真實自我，並不是誤把焦慮當作興奮，並不是你隱藏了你過於害怕查看的想法，因為你害怕一旦你潛下去查看、檢視、探索、瞭解那些關於你自己的負面信念，你們很多人可能會害怕發現，如果去探索會發現那些負面的信念實際上是真實的。我向你們保證，它們永遠都不是真實的。它們永遠都不會是真實的。因為你是協同造物者，你是以造物的形象而造的，你是賦予生活意義的人，你是宇宙萬有探索獨特自我的一個反射。這個精彩人生和真實人生的理念，就是建立在你的獨特視角理念的基礎上。你是你的種類唯一的一員，你永遠是你的種類唯一的一員。不論將來你可能與多少轉生的存在交叉關聯，他們永遠只是其中的一個你，你也只有這一生作為你來生活。所以要活到最大極限，要允許生活成為你被設計的樣子。與你的高級心智和諧運作，同調運作，因為你的靈性通過創造分裂為非物質的高級心智、物質心智和兩者的平衡點，把自己設立成兩面一體或三面一體的存在，你在三個水平上同時作用。允許他們處於兩者之間的平衡點上，允許物質和高級心智順暢地運作，讓兩者各自做自己被設計做的工作，在他們被設計能支持和反射的方面，互相支持，互為反射，你就會作為一個完整的生命、完整的人，作為真實的你，作為勇於冒險的你，作為非凡的你來發揮作用。</p>
+
+<p>任何時候你只允許你的物質心智控制一切，操縱一切，認為這是允許你自己體驗你的授權唯一的方式，是允許你生活按部就班的唯一方式；任何時候你只允許物質心智這樣做，你就是在作為半個人發揮作用，而不是整個生命。事實上實質上，沒有高級心智，物質心智不過就是半個智慧。所以要運用你的所有智慧，要按他們被設計的樣子來運用它們。要依靠高級心智，它是站在山巔上，比物質心智更高瞻遠矚。它能看到你去往哪裡，能看清你的道路。而物質心智在山谷下面，在前後徘徊，在這個岩石和那個岩石打轉，下到那個山谷的交叉口，這條河還是那條河，那個海還是這個海，他只能看見這麼遠，他只能看到地平線。但是高級心智在山巔上，它能看見空間中所有的道路，能夠看得超遠，並準確無誤地指引你，如果你願意允許它這樣做。</p>
+
+<p>這即是我們談到的關於對你的生活、真實的生活、精彩生活進行觀想的要點。頭腦中有那一視圖，頭腦中有那一象徵，絕對有深刻的助益。那代表你的精彩生活，看見你在令你興奮的世界各地，清晰本能地看見你在生活中做各種你說代表你最高喜悅和熱情之事。去應用它，觀察你自己走向繁榮，觀察你自己充滿創力，觀察過著狂喜生活的那個版本的你，盡享著淡定、寧靜、滿足和自信。但還要指出，你的高級心智，只有你的高級心智，才精準知道那是什麼樣的狀況，如何才會真正物質顯化。所以，通過運用這個像征將你自己鼓動起來進入那種興奮狀態中。因為如果你真的與那個視圖連上，你會感覺那就是你，你會開始對照、模仿視圖中那個版本的你的所作所為，比照那種振動、體態語言、行動和選擇。你的行為會越來越、越來越、越來越像那個版本的你，你契入得越多，就越接近了那個視圖。</p>
+
+<p>但這些都是為了促使你開始像那個你一樣行為，處於那個版本的你的存在狀態中，感覺到那個版本中的你的興奮、熱情、寧靜、平衡。一旦你感覺到這些，一旦這些狀態產生，一旦這些感覺充斥著你，一旦你輻射著那個頻率，你感到將要爆棚，你對那個理想的現實、理想的、真實的、勇於冒險的、精彩生活的視圖感到興奮至極，這時，丟掉它，擦掉它，清空它，歸零，刪除，進入空無。但是保持那種興奮的狀態，將能量交給你的高級心智，讓它來帶著那個能量，好似在景區鋪開毛毯一樣把它展開。讓它來向你展示，現在需要什麼事情到來，以什麼順序，以什麼方式，以什麼樣式，在什麼時點，有何人參與，如何來自我表達。也許它可能看起來與你觀想的相似，也許看起來毫不相似。但是你知道，你確定地知道，在你處於那種狀態中，在你保持在那種狀態中時，高級心智下一個給你帶來的，會恰恰是你精彩人生所需要的。所以，生活持續以精彩的方式來體驗。</p>
+
+<p>你們內在都擁有這個能力，只是個將它綻放出來的問題。讓那個振動洩漏進這個世界，這樣可以成為過著那種生活的範例，你就會允許其它人看到你的範例，你是如此的興奮，過著那種精彩的、勇於冒險的、充滿好奇的、充滿想像力的、充滿創造力的、富有愛意的、充滿熱情的生活。人們會成群結隊地來到你這裡。「你是怎麼做的？你怎樣過上這樣生活的？這是怎麼對你起作用的？這也是我想作的人。」你會激勵人們，通過你的範例，你會給人們機會，讓他們有更多的選項，去選擇他們自己的精彩人生，從而互相點燃燭光。</p>
+
+<p>在你們星球上，在周知為禪的修煉和理解中，他們有一個畫面與我們在此談論的內容精確相似。那就是燭光的比喻。現在想像一下，你是一隻蠟燭，你已經將它點亮。你的周圍環繞著未點亮的蠟燭。你拿起你的蠟燭，可以點亮所有其它蠟燭，你的光明一點不會減少，而所有其它蠟燭卻都被點亮。那一火焰搖曳生輝，散播成為上千、十萬、百萬、十億只蠟燭的火焰。從第一團火焰開始，由於你願意將內在的光明向外照去，你就給予他們機會拿起他們的蠟燭，與你喜悅的頻率匹配，點亮他們自己的蠟燭，燒起他們自己的火焰，允許那團單一的火苗擴展為億萬隻火苗。最起碼提供了這樣的機會。如果有些蠟燭選擇不匹配那個振動，無條件地允許他們選擇。那也是你真實性的一部分，是你精彩生活的一部分，如此地恩許，如此無條件的恩許，你清晰看到別人沒有與真正自我對準，但他們可以做出選擇。這並不意味著你可以自掃門前雪，也不意味著你掩飾不關愛他人，也不意味著你認識到這是負面能量的選擇。但你也應明白，即便有人可能總是選擇負面的想法，對提供給他們的正能量沒有深刻的理解，由於他們自身基於恐懼的定義，他們可能不知道做什麼，他們可能不知道怎樣行為才能與那個正能量對準，他們可能選擇負面的行為，甚至是在被展示正面振動的理念之後這樣做。那麼你就認清它，抱以慈悲心，致以美好的祝福。你可以與他們分享，他們有另外的選項，如果他們選擇不去採用，無條件恩許地允許他們找到自己的路。</p>
+
+<p>你們不能強迫任何人做任何事。因為如果這麼做，你所說的就是你不相信相信自己的威力。因為，最強大的威力只需最輕靈、最柔和的一觸。看看宇宙萬有吧，它是如此的強大，你都感受不到它。那就是他的強大所在。它沒有任何需要把自己強加給你。上帝的意志即你的意志，因為你就是宇宙萬有。如果宇宙萬有把它的意志強加給你，那就會與你在其中的創造相矛盾。你作為宇宙萬有的一個反射和一個體驗，被造為你所是的你。你是由宇宙萬有所造，我們都是由宇宙萬有所造，一切事物都是由宇宙萬有所造。它有什麼需要來將自己的意志施行於自己身上？你們說上帝的原因，上帝是宇宙萬有，上帝是無所不能的，你們說上帝是無處不在的，是無所不知的原因，事實上唯一可能的方式就是，它遍佈一切處。因為它是存在的一切事物，所以它不會自相矛盾。你是一個方面，你是一個因由，沒有你，宇宙萬有就不成其為宇宙萬有。</p>
+
+<p>珍視那個獨特性吧，珍視那個真實性吧，珍視那個表達你所是的獨特觀點的能力吧。珍視它，不要忽略它，不要貶低它，不要否定它。讓它自由，讓它釋放，讓它成為幫助點燃億萬蠟燭的明麗的光。你們的世界就會變為造化火焰的光明。你們就會點燃你們內在的熱情，用你們的親近，用你們的熱忱，用你們的熱情。因為你們都知道，當你看到有人振奮激越、熱情洋溢時，你們知道，你們能感受到那種發自內在的熱情，以你們自己的方式匹配那個頻率。被他們所激勵，成為那一理念你自己的版本。他們在他們的生活中表達得那樣激情，那樣狂熱，那樣富有創造性，那樣美好，那樣喜悅。讓你的想像力自由飛翔，那是你和高我之間的共享管道。用行動來表達，因為你立足於物質現實體驗。沒有那個行動，沒有那個物質行動，你就沒有完成你的能量循環。</p>
+
+<p>不要只是做個觀望者。要參與進來，積極行動，表現出來。有的人可能不聽，但有的人會聽。然後其他的人會聽他們，其他的人會聽他們，其他的人會聽他們。這樣，視角就會轉變變化。然後，在你持續每秒鐘數十億次在平行地球現實切換時，越來越、越來越、越來越、越來越多地，你會發現你處於朝著平行地球版本的方向切換的進程中，那個版本更反映和代表你所形成的內在變化，並會自動地成為你將體驗的唯一地球版本。這就是你所在的道路，這就是你所選的方向。或者如果不是這樣，我們就不會與你們進行這個對話。因為不只是造化不做對你的存在有效性沒有意義的創造，我們也只做最能令我們興奮的事情，我們也不做沒有意義的事情。與你們進行這個對話，第一次與你們世界接觸，令我們興奮的程度超出了我們的表達能力，因為你們是家人。通過形成這個聯繫和允許這個聯繫，我們是共同成長、擴展的家人，我們能夠成為和我們正在成為的，超出我們雙方所能想像。然後，我們對宇宙萬有的創造獲得一個新的理解，一個新的視角。但是要成為那個擴大的家庭，要成為那個延展的家庭，要成為那個真實的家庭，要成為那個勇於冒險的家庭，要成為那個卓越的家庭，你們必須要首先處於那個家庭的振動。所以，來吧，加入我們的家庭，允許我們以新的、充滿想像力的、驚人的、你們現在還不大理解的方式共同探索造化。做你精彩的自己，不要退縮不前，不要退縮不前，不要退縮不前。如果做什麼，那就勇往直前。</p>
+
+<p>我們感謝你們允許今天的傳訊。我們提醒，本次傳訊稍後會有愛莎莎尼超靈的第三次傳訊，會給你們帶來新的信息，對我們兩個文明之間在當前能量上的建樹做一略為充分的解釋。但現在，作為你們給予我們這個禮物的回饋，請問我們可以為你們提供什麼服務。現在請提問開始對話。</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-13T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/video/2018/01/13/bashar-video-%E5%B7%B4%E5%A4%8F193-%E5%9B%9E%E6%AD%B8%E8%B6%85%E9%9D%88.html">巴夏193：回歸超靈</a></div><div class="next"><span>下篇</span><a href="/video/2018/01/13/bashar-video-%E5%B7%B4%E5%A4%8F195-%E4%BB%A5%E5%B0%91%E5%8D%9A%E5%A4%9A%E4%B9%8B%E9%81%93-%E5%9C%A8%E7%94%9F%E6%B4%BB%E4%B8%AD%E5%B0%8B%E6%89%BE%E6%94%B9%E8%AE%8A%E7%9A%84%E6%96%B9%E6%B3%95-%E8%A1%A8%E7%8F%BE%E7%9C%9F%E5%AF%A6%E7%9A%84%E8%87%AA%E5%B7%B1.html">巴夏195：以少博多之道－在生活中尋找改變的方法，表現真實的自己</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://bashar.tw/video/2018/01/13/bashar-video-%E5%B7%B4%E5%A4%8F194-%E6%B4%BB%E5%87%BA%E7%B2%BE%E5%BD%A9%E4%BA%BA%E7%94%9F.html';
+                        this.page.identifier = '20180113_video_巴夏194：活出精彩人生';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+

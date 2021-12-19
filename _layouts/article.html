@@ -1,0 +1,90 @@
+---
+layout: page
+type: article
+---
+
+{%- include snippets/assign.html
+  target = site.data.variables.default.page.sharing
+  source0=layout.sharing source1=page.sharing -%}
+{%- assign _sharing = __return -%}
+
+<div class="layout--article">
+  {%- include article/top/custom.html -%}
+
+  <div class="article__content" itemprop="articleBody">
+    {% if page.category == 'video' %}
+      {% if page.youtube_video_id %}
+        <div class="video__container"><iframe data-src="https://www.youtube.com/embed/{{ page.youtube_video_id }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="video" allowfullscreen></iframe></div>
+        <div class="video__download__link">
+          <a href="https://www.youtubeto.com/watch?v={{ page.youtube_video_id }}" target="_blank">下載影片</a>
+          {% if page.download_mirror %}
+            {% for link in page.download_mirror %}
+              &nbsp;|&nbsp;<a href="{{ link }}" target="_blank">備用載點</a>
+            {% endfor %}
+          {% endif %}
+          <br />
+        </div>
+      {% elsif page.google_video_id %}
+        <div class="video__container"><iframe data-src="https://drive.google.com/file/d/{{ page.google_video_id }}/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+        <div class="video__download__link">
+          <a href="https://drive.google.com/uc?authuser=0&id={{ page.google_video_id }}&export=download" target="_blank">下載影片</a>
+          {% if page.download_mirror %}
+            {% for link in page.download_mirror %}
+              &nbsp;|&nbsp;<a href="{{ link }}" target="_blank">備用載點</a>
+            {% endfor %}
+          {% endif %}
+          <br />
+        </div>
+      {% elsif page.google_video_ids %}
+        {% for item in page.google_video_ids %}
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/{{ item }}/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id={{ item }}&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        {% endfor %}
+      {% elsif page.mega_video_link %}
+        <div class="video__container">
+          <iframe frameborder="0" data-src="https://mega.nz/embed/{{ page.mega_video_link }}" allowfullscreen class="video"></iframe>
+        </div>
+        <div class="video__download__link">
+          <a href="https://mega.nz/file/{{ page.mega_video_link }}" target="_blank">下載影片</a>
+          {% if page.download_mirror %}
+            {% for link in page.download_mirror %}
+              &nbsp;|&nbsp;<a href="{{ link }}" target="_blank">備用載點</a>
+            {% endfor %}
+          {% endif %}
+          <br />
+        </div>
+      {% elsif page.mega_video_links %}
+        {% for item in page.mega_video_links %}
+          <div class="video__container">
+            <iframe data-src="https://mega.nz/embed/{{ item }}" frameborder="0" allowfullscreen class="video"></iframe>
+          </div>
+          <div class="video__download__link">
+            <a href="https://mega.nz/file/{{ item }}" target="_blank">下載影片</a>
+            <br />
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+
+    {% assign _content = content | markdownify %}
+    {% assign _content = _content | replace: "巴夏：", "<mark>巴夏</mark>：" %}
+    {{ _content }}
+  </div>
+
+  {%- if _sharing -%}
+    <section class="article__sharing d-print-none">{%- include sharing.html -%}</section>
+  {%- endif -%}
+
+  <div class="d-print-none">
+    {%- include article-footer.html -%}
+    {%- include article-section-navigator.html -%}
+  </div>
+
+</div>
+
+<script>
+  {%- include scripts/article.js -%}
+</script>

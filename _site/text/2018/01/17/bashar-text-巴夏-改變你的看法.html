@@ -1,0 +1,998 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏：改變你的看法 - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="巴夏：好吧，我要說，請提問。問：你能告訴我埃及女王克婁巴特拉（Cleopatra）在位期間，她與凱撒（Caesar）聯合的目的是什麼嗎？（譯註：Cleopatra是埃及托勒密王朝末代女王，貌美，為凱撒和安東尼的情人。）巴夏：不。下一個問題。問：我想問你一個問題。巴夏：請稍等⋯ （暫停）。問：我很好奇⋯巴夏：請稍等...">
+<link rel="canonical" href="https://bashar.tw/text/2018/01/17/bashar-text-%E5%B7%B4%E5%A4%8F-%E6%94%B9%E8%AE%8A%E4%BD%A0%E7%9A%84%E7%9C%8B%E6%B3%95.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏：改變你的看法</h1></header></div><meta itemprop="headline" content="巴夏：改變你的看法"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E6%96%87%E5%AD%97">文字</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月17日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Ftext%2F2018%2F01%2F17%2Fbashar-text-%25E5%25B7%25B4%25E5%25A4%258F-%25E6%2594%25B9%25E8%25AE%258A%25E4%25BD%25A0%25E7%259A%2584%25E7%259C%258B%25E6%25B3%2595.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-17T00:00:00+08:00">
+    <meta itemprop="keywords" content="文字"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+
+    
+    
+    <p><mark>巴夏</mark>：好吧，我要說，請提問。</p>
+
+<p>問：你能告訴我埃及女王克婁巴特拉（Cleopatra）在位期間，她與凱撒（Caesar）聯合的目的是什麼嗎？（譯註：Cleopatra是埃及托勒密王朝末代女王，貌美，為凱撒和安東尼的情人。）</p>
+
+<p><mark>巴夏</mark>：不。下一個問題。</p>
+
+<p>問：我想問你一個問題。</p>
+
+<p><mark>巴夏</mark>：請稍等⋯ （暫停）。</p>
+
+<p>問：我很好奇⋯</p>
+
+<p><mark>巴夏</mark>：請稍等⋯.你要知道，那個人當時的選擇，是為了找到一個感情基礎，讓她成為一個表達渠道，來表達由那個文明所代表的整個集體意識的特定的情感部分。那個文明希望與它周圍的其他文明互動，不過它希望通過情感的層面而非心智層面進行互動。你明白了嗎？</p>
+
+<p>問：是的。</p>
+
+<p><mark>巴夏</mark>：這樣說可以嗎？</p>
+
+<p>問：非常棒。 謝謝。</p>
+
+<p><mark>巴夏</mark>：謝謝。下一個問題。</p>
+
+<p>問：是的，我有一個問題。這個問題只是為了更好地理解通靈的機制：如果我或別人用其他語言問你問題，比如法語或西班牙語，你會理解嗎？或者因為這個靈媒⋯？</p>
+
+<p><mark>巴夏</mark>：你會發現，在一定意義上，我們會理解你的問題；但是，我們不會說你的語言。要知道，當這個靈媒允許我們借助他（與你們進行交流的）時候，我們把他當作一個翻譯設備來使用。因此，在一定意義上，這個翻譯設備或這個靈媒必須能夠理解你所說的語言。所以，你要知道，我們能夠理解你所說的話，但是卻無法心靈感應地表達出來（譯註：指無法由靈媒表達出來）。</p>
+
+<p>問：嗯。 我明白。</p>
+
+<p><mark>巴夏</mark>：你要知道，這是因為，靈媒在一定程度上始終擁有自由意志，他們總是準確地知道他們是如何運作的。所以，你會發現，只有在極少的情況下——這依賴於當靈媒的意識幾乎完全不再聚焦於物質實相時他們自身的意願——靈媒才會讓他們自己不再使用語言，而直接進行心靈感應。因此，在某種程度上，他們能夠無視語言而運作。</p>
+
+<p>問：嗯。 謝謝。</p>
+
+<p><mark>巴夏</mark>：謝謝。下一個問題。</p>
+
+<p>問：我有一個問題。對於每一個人，他的意識創造了他自己的實相，如果這個實相涉及到另一個意識⋯</p>
+
+<p><mark>巴夏</mark>：那麼它就是一個共享的實相，也就是兩個人一致同意的實相。在一定程度上，這兩個人或更多的人共同分享和體驗的實相，就像你們的物質地球一樣，是一個集體同意的實相。你要知道，在你們文明中，有許多人僅僅共享你們的集體實相的一部分，你們把他們叫作瘋子。他們在體驗其他的實相，而你們根本不願意去看他們所體驗的實相。</p>
+
+<p>問：哦，好吧。是的。那麼，我們需要做些什麼才可以更好地與之整合呢？因為當你與其他意識打交道的時候，他們有他們自己的實相，他們有他們自己的體驗。並且，如果你想擁有愛的感覺⋯</p>
+
+<p><mark>巴夏</mark>：要知道，你需要做的是整合你自己，因為你們每一個人都是你自己的世界，每一個人都是一個宇宙。通過讓你自己用完全整合的自己——因此也是完美的自愛——來充滿你的宇宙，你就會用愛來充滿那個宇宙，而那種愛就會被所有願意與你打交道的人所分享。當你讓你自己作為愛的燈塔發光的時候，你就是在盡力與其他人分享愛的感覺——如果他們願意的話。</p>
+
+<p>問：如果他們不願意，那麼⋯</p>
+
+<p><mark>巴夏</mark>：真可惜！（注意，如果你想把愛強加在他人身上，）在你希望把愛強加到他們身上的那一刻，那一瞬間，你就是在把愛從你自己的宇宙中移除。</p>
+
+<p>問：哦！ 是的，你是對的。</p>
+
+<p><mark>巴夏</mark>：對於評判來說，也是如此。你要知道，要評判他人，你必須成為（你所評判的）那個層次（譯註：成為可以理解成處於）。對於你認為沒有你優越的對象，要理解你對它的評判，你必須等同於它。因此，（當你評判他人時，）你瞬間就讓你自己成為你所評判的那個層次。</p>
+
+<p>問：但是，成為那個層次並沒有錯，因為你需要理解那個評判[？]。這樣說對不對？</p>
+
+<p><mark>巴夏</mark>：從那個意義上說，是的。</p>
+
+<p>問：不過，那個評判會影響到你，因為要等同於它，你必須成為它。</p>
+
+<p><mark>巴夏</mark>：謝謝你。</p>
+
+<p>問：好吧。很好。</p>
+
+<p><mark>巴夏</mark>：下一個問題。</p>
+
+<p>問：我有一個問題。</p>
+
+<p><mark>巴夏</mark>：好的。</p>
+
+<p>問：一個人死亡——正如我們所理解的這個星球上的死亡——的時候，他的意識發生了什麼情況？他的身體呢？人死亡的時候會發生什麼情況？</p>
+
+<p><mark>巴夏</mark>：好吧。（用非常小的、緊張的聲音說話，模仿提問者的聲音）你會遇到非常奇怪、非常神秘的事情。你確定你想聽這個嗎？</p>
+
+<p>問：是的。</p>
+
+<p><mark>巴夏</mark>：你確定你不害怕嗎？</p>
+
+<p>問：不怕。</p>
+
+<p><mark>巴夏</mark>：你確定你不會被神秘的東西嚇到嗎？</p>
+
+<p>問：你在逗我玩吧？</p>
+
+<p><mark>巴夏</mark>：我是在和你開玩笑。讓我這樣說吧，死亡並不怎麼神秘，它真的非常簡單。你要知道，你們所稱的死亡在很多方面與活著並沒有什麼不同，它只是另一個視角而已。或許這樣說會讓你明白：（死亡的時候，）你只是改變了你的注意力，改變了你的視角，轉向180度的另一個方向，你在從另一個角度看待生活。死亡就是這麼簡單。它就像穿過一扇門進入另一個房間一樣。</p>
+
+<p>死亡非常簡單。我要說，死亡的確會牽涉到振動機制，但是其整體效果卻是：你仍然覺察到你自己，你仍然知道你的意識。從一定意義上來說，你正在給予你自己一個不同的視角，一個讓你瀏覽物質實相的視角。以你們的說法，這個視角就像站在山頂上，可以看到山谷中的所有居民。而山谷中的視野卻是受限的，在一定意義上，只能看到山谷內的東西，看不到山的另一邊的東西。但是，山和山谷都是生活的組成部分。在山頂上，你的體驗更豐富一些。注意這並不是評判的說法（而只是機械的描述）。因為，（在山頂上）你可以感受到風吹，感受到你自己的意識之風，你可以看出來它在哪個方向上更容易流動。它只是一個不同的視角而已，非常簡單。你覺得如何？</p>
+
+<p>問：我覺得如何？我認為你的回答非常棒。</p>
+
+<p><mark>巴夏</mark>：哦，不，不！不是你認為我的回答怎麼樣，而是你怎麼看待死亡？你認為，與我的「權威」的看法相比，你的看法微不足道嗎？</p>
+
+<p>問：我的看法是一種典型印度人的看法[？]。你真的想知道嗎？好吧，我來告訴你。</p>
+
+<p><mark>巴夏</mark>：不！</p>
+
+<p>問：好吧。</p>
+
+<p><mark>巴夏</mark>：我現在問你：你有什麼感覺呢？</p>
+
+<p>問：好吧，我來告訴你吧。</p>
+
+<p><mark>巴夏</mark>：謝謝你。我知道那會⋯</p>
+
+<p>問：在我的工作中，我常常清楚地感覺到那些可能已經離開了身體的實體，它們非常想把某些消息告訴給那些來找我的人。所以，我覺得一定有超越身體的存在，很高興能從你這裡得到確認。</p>
+
+<p><mark>巴夏</mark>：你要知道，首先，身體和精神實際上只是相同能量的不同彰顯。在一定意義上，身體只是靈魂的物質形式的投射。並不是說你的靈魂有兩隻胳膊兩條腿，因為靈魂並不需要它們；而是說你的身體是一個想法的投射，或者說是意識的投射。</p>
+
+<p>這種投射的情形之一，就是生病的身體。你們許多人會在身體中創造出疾病，是因為你認為物質形式不同於精神形式，並且比精神形式要差。因此，你的身體非常順從地變差了。當你把你自己看作是整合性的存有，把精神和身體看成是一個對象、同一個概念時——只是來自不同的視角而已——那麼，你的身體將會反映出那個精神的絕對完美，永遠不會不舒服。下一個問題。</p>
+
+<p>問：當你說「不舒服」的時候，你是說生病嗎？</p>
+
+<p><mark>巴夏</mark>：是的。這裡的不舒服就是指生病。下一個問題。</p>
+
+<p>問：我有一個客戶，她有非常嚴重的過敏症。她幾乎對所有東西過敏，所以她吃東西之前必須先嘗一嘗。我給她做豆芽菜，或者我給她帶去一些食物，她嘗過之後就有了反應。那些食物讓她噁心。我怎麼才能幫助她呢？</p>
+
+<p><mark>巴夏</mark>：好的。首先請允許我說一些事情。你要知道，很多人選擇患上某些疾病，並讓這些疾病伴隨終身，是因為這些疾病為他們帶來了他們希望學習的東西，從而可以讓他們認清他們自己。因此，他們永遠不會讓自己擺脫那些疾病。這並沒有錯。</p>
+
+<p>不過，我要說，你可能會發現，在大多數情況下，疾病通常是童年的時候所接受的某些信念的反映。那些病人所相信的觀念和持有的信念，讓他們認為他們很脆弱，會被風吹跑。這也讓他們認為他們需要憐憫（sympathy）。</p>
+
+<p>現在你要知道，儘管我們和你們分享了很多看法，但是有一個概念，我們並不認為是有益的，這個概念就是憐憫。對我們來說，（如果我們憐憫你們），那將是我們能夠為你們做的最具破壞性的事情。我們選擇只讓你們表達你們整體意識的一部分，我們選擇向你們發送你們能夠改變你的信念——如果你願意改變——的振動。給你自己（新的）選擇吧，不要利用憐憫的能量來強化那種疾病，讓自己總是關注在疾病上。</p>
+
+<p>問：嗯，你說的對。</p>
+
+<p><mark>巴夏</mark>：所以，首先你們應該變得無情。現在，你會發現你們很多人會認為這樣做太冷漠了。</p>
+
+<p>問：我相信你說的。我認為不應該給予病人憐憫。因為那樣的話，他們就會強化他們的疾病。</p>
+
+<p><mark>巴夏</mark>：是的。相反，你只需向那些人表達富有創造性的同情（compassion），讓他們覺察到他們自己的富有創造型的同情。讓他們知道，通過更全面的認識他們自己，他們能夠獲得他們需要得到的任何東西。要讓他們認識到，當他們相信他們比他們周圍的自然元素要差，他們不同於自然元素時，這種認為自己缺乏價值的看法決定了他們就是這個樣子，那麼他們的身體也會做出相應的反應——生病。</p>
+
+<p>問：對。</p>
+
+<p><mark>巴夏</mark>：你懂了嗎？</p>
+
+<p>問：是的，毫不含糊。</p>
+
+<p><mark>巴夏</mark>：下一個問題。</p>
+
+<p>問：超重是否也與它有關？（譯註：它，應該指憐憫sympathy。關於超重，請看「<mark>巴夏</mark>：暴飲暴食，是因為你等待著做最令你興奮的事」）</p>
+
+<p><mark>巴夏</mark>：從某種意義上說，是的。</p>
+
+<p>問：超重還與什麼有關呢？你可以多談一點嗎？</p>
+
+<p><mark>巴夏</mark>：你會發現，很多（超重的）人只是等待（著做某事）而不是做某事。你明白這個比喻嗎？</p>
+
+<p>問：我正在思考你的話。</p>
+
+<p><mark>巴夏</mark>：好的。不要等太久。</p>
+
+<p>問：因為我的體重又增加了。比如，在一個月內，我增加了20磅。我無法減輕體重。</p>
+
+<p><mark>巴夏</mark>：因為你在嘗試減輕體重？</p>
+
+<p>問：好吧，我的身體有毛病。我一直努力讓身體上的毛病⋯</p>
+
+<p><mark>巴夏</mark>：身體上的什麼？</p>
+
+<p>問：腎臟——我的肝臟。</p>
+
+<p><mark>巴夏</mark>：身體上的什麼？</p>
+
+<p>問：毛病。</p>
+
+<p><mark>巴夏</mark>：什麼？</p>
+
+<p>問：狀況。</p>
+
+<p><mark>巴夏</mark>：謝謝你。要知道，如果你讓自己真正地感受到（你說話時）用詞上的變化，你就會感受到振動上的變化，因為不同的詞語代表了不同的振動。如果你讓自己感受到振動上的變化，你就會讓自己成為新的振動。不要說毛病。「毛病，一個狀況。哦，狀況！一個體驗而已。體驗就是做，做，做。因此，我要做別的事情。」</p>
+
+<p>再一次，你要知道，雖然你們對如何活著有自己的理解，對於超重也可能有相應理由，但是，在大多數情況下，我要說，（對於超重，）你只需向自己表明你所需要的只是願意活著。</p>
+
+<p>你不需要等待著做事，你可以只做你願意做的事；所有的事都是正當有效的。你要知道，最令你興奮的事是你可以做的最有效的事。當你非常興奮時，你總是在行動中，你會很少等待。事實上，（此時，）你會狠狠地減輕體重（很少等待）（譯註：weightless和wait-less發音相近。Bashar的意思是說，當你很少等待時，你的體重就會減輕。）</p>
+
+<p>問：非常感謝。</p>
+
+<p><mark>巴夏</mark>：謝謝你。</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-17T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/text/2018/01/17/bashar-text-%E5%B7%B4%E5%A4%8F-%E6%8E%A2%E6%B8%AC%E7%81%AB%E7%AE%AD%E5%A2%9C%E8%90%BD%E5%9C%B0%E7%90%83%E7%9A%84%E5%8E%9F%E5%9B%A0-%E6%98%AF%E5%9C%B0%E7%90%83%E6%89%8D%E6%98%AF%E4%BA%BA%E9%A1%9E%E6%87%89%E8%A9%B2%E9%97%9C%E6%B3%A8%E7%9A%84%E5%9C%B0%E6%96%B9.html">巴夏：探測火箭墜落地球的原因，是地球才是人類應該關注的地方</a></div><div class="next"><span>下篇</span><a href="/text/2018/01/17/bashar-text-%E5%B7%B4%E5%A4%8F-%E6%94%B9%E8%AE%8A%E9%A3%B2%E9%A3%9F%E7%BF%92%E6%85%A3.html">巴夏：改變飲食習慣</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://bashar.tw/text/2018/01/17/bashar-text-%E5%B7%B4%E5%A4%8F-%E6%94%B9%E8%AE%8A%E4%BD%A0%E7%9A%84%E7%9C%8B%E6%B3%95.html';
+                        this.page.identifier = '20180117_text_巴夏：改變你的看法';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+

@@ -1,0 +1,178 @@
+## => Site Settings
+##############################
+text_skin: default
+highlight_theme: default
+url: https://bashar.tw
+baseurl: /
+title: 巴夏影音訊息匯集
+description: 👽
+
+
+## => Language and Timezone
+##############################
+lang: zh-Hant
+timezone: Asia/Taipei
+
+## => Author and Social
+##############################
+author:
+  type      : person
+  name      : 巴夏
+  avatar    : /assets/images/bashar-logo.png
+  # bio       : I am an amazing person.
+  # email     : bashar.buddha@gmail.com
+  # facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
+  # twitter   : # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
+  # telegram  : # "user_name" the last part of your profile url, e.g. https://t.me/user_name
+  # github    : # "user_name" the last part of your profile url, e.g. https://github.com/user_name
+
+
+## => GitHub Repository (if the site is hosted by GitHub)
+##############################
+repository: user_name/repo_name
+repository_tree: master
+
+
+## => Paths
+##############################
+paths:
+  root    : /
+  home    : /
+  archive : /archive.html
+  rss     : /feed.xml
+
+
+## => Post
+##############################
+## excerpt
+excerpt_separator: <!--more-->
+
+## license
+license: CC-BY-NC-4.0
+
+## TOC
+toc:
+  selectors: h1,h2,h3
+
+
+## => Markdown Enhancements
+##############################
+## Mathjax
+mathjax: false
+mathjax_autoNumber: false
+
+## Mermaid
+mermaid: false
+
+## Chart
+chart: false
+
+
+## => Paginate
+##############################
+paginate: 5
+paginate_path: /posts/page:num # don't change this unless for special need
+
+
+## => Sources
+##############################
+sources: unpkg
+
+
+## => Sharing
+##############################
+sharing:
+  provider: addthis
+
+  ## AddThis
+  addthis:
+    id: ra-5e91755a11a7e002
+
+
+## => Comments
+##############################
+comments:
+  provider: disqus
+  ## Disqus
+  disqus:
+    shortname: basharbuddha
+
+
+## => Pageview
+##############################
+# pageview:
+#   provider: leancloud
+#   leancloud:
+#     app_id: 3sBjcT3E45n9zVghcgQnc0T5-MdYXbMMI
+#     app_key: x5Sx0wvrYtDrKupVzvxPbKEE
+#     app_class: Counter
+
+
+## => Search
+##############################
+search:
+  provider: google
+
+  ## Google Custom Search Engine
+  google:
+    custom_search_engine_id: 409e98731f84c109a
+
+
+## => Analytics
+##############################
+analytics:
+  provider: google
+
+  ## Google Analytics
+  google:
+    tracking_id : G-4W1X0LTCL0
+    anonymize_ip: false # Anonymize IP tracking for Analytics
+
+
+## => Build
+##############################
+markdown    : kramdown
+highlighter : rouge
+permalink   : date
+
+exclude:
+  - CHANGELOG.md
+  - HOW_TO_RELEASE.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README-*.md
+  - README.md
+  - gulpfile.js
+  - jekyll-text-theme.gemspec
+  - package-lock.json
+  - package.json
+  - /docs
+  - /node_modules
+  - /screenshots
+  - /test
+  - /vendor
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article
+      sharing: true
+      license: false
+      aside:
+        toc: false
+      show_edit_on_github: false
+      show_subscribe: false
+      comment: true
+      pageview: false
+
+
+## => Plugins
+##############################
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  # - jemoji

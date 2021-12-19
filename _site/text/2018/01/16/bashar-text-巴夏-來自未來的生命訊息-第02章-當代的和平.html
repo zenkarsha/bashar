@@ -1,0 +1,1043 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏：來自未來的生命訊息 第二章 當代的和平 - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="一九八七年一月：巴夏，是否現在地球人正在選擇毀滅自己的世界？我們是否會把自己爆炸掉？不會！即使目前在地球上還不甚明顯，我們的覺知是，大約在七年前，人類全都作了普遍集體的無意識協議，不會使用核武器來摧毀自己。你們所看到的地球上更多的暴力，是那些想法的最後痕跡，在現在浮現到表面來。你們正在把暴力由系統中放出，可以說是...">
+<link rel="canonical" href="https://bashar.tw/text/2018/01/16/bashar-text-%E5%B7%B4%E5%A4%8F-%E4%BE%86%E8%87%AA%E6%9C%AA%E4%BE%86%E7%9A%84%E7%94%9F%E5%91%BD%E8%A8%8A%E6%81%AF-%E7%AC%AC02%E7%AB%A0-%E7%95%B6%E4%BB%A3%E7%9A%84%E5%92%8C%E5%B9%B3.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏：來自未來的生命訊息 第二章 當代的和平</h1></header></div><meta itemprop="headline" content="巴夏：來自未來的生命訊息 第二章 當代的和平"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E6%9B%B8">書</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E5%B7%B4%E5%A4%8F%E4%BE%86%E8%87%AA%E6%9C%AA%E4%BE%86%E7%9A%84%E7%94%9F%E5%91%BD%E8%A8%8A%E6%81%AF">巴夏來自未來的生命訊息</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月16日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Ftext%2F2018%2F01%2F16%2Fbashar-text-%25E5%25B7%25B4%25E5%25A4%258F-%25E4%25BE%2586%25E8%2587%25AA%25E6%259C%25AA%25E4%25BE%2586%25E7%259A%2584%25E7%2594%259F%25E5%2591%25BD%25E8%25A8%258A%25E6%2581%25AF-%25E7%25AC%25AC02%25E7%25AB%25A0-%25E7%2595%25B6%25E4%25BB%25A3%25E7%259A%2584%25E5%2592%258C%25E5%25B9%25B3.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-16T00:00:00+08:00">
+    <meta itemprop="keywords" content="書,巴夏來自未來的生命訊息"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+
+    
+    
+    <h4 id="一九八七年一月巴夏是否現在地球人正在選擇毀滅自己的世界我們是否會把自己爆炸掉">一九八七年一月：巴夏，是否現在地球人正在選擇毀滅自己的世界？我們是否會把自己爆炸掉？</h4>
+
+<p>不會！即使目前在地球上還不甚明顯，我們的覺知是，大約在七年前，人類全都作了普遍集體的無意識協議，不會使用核武器來摧毀自己。你們所看到的地球上更多的暴力，是那些想法的最後痕跡，在現在浮現到表面來。你們正在把暴力由系統中放出，可以說是，現在你們在無意識裡已經知道施放暴力是安全的，也因為這一切都不會造成終極的毀滅。</p>
+
+<p>你們正在把以前所隱藏、掩蓋的東西公開出來，好讓你們可以四處看看並且說：「等一下，看看發生了什麼事；看看我們在做些什麼？我們真的希望我們的世界如此嗎？如果不，就讓我們改變！」你們現在知道，把所有隱藏的東西帶出來是安全的，好去檢查，好把事情創造成你們所想創造的那樣。我們之所以能在現在告訴你們這些，是因為你們已經作了決定。</p>
+
+<p>由於你們已經作了這個決定，我們也可以告訴你們以下的事：反正你們永遠也不會被允許用核武去毀滅自己。那是你們的世界，你們可以對它為所欲為⋯⋯只要你們是在自己的後院中所作的事！核子毀滅會破壞時空連續體的次元間結構，並影響到與你們毫無關係的其它文明。而這是不被允許的。</p>
+
+<p>要知道你們的政府是很有覺知的，而且他們已經知道很久了，即使被發動，你們的武器就是沒法子生效。他們已經收到很清楚的示範：聯盟中有許多宇宙飛船都是這樣的例子。他們直接集中在你們的火箭基地上，透過破壞電磁——而使所有的發射機制失靈。你們的政府及軍隊已經收到了很多此類的示範。所謂超強大國間的核武器緊張，由前述的觀點來看，只是作戲而已，他們不想失去你們的注意力。</p>
+
+<p>一點一點的，這些信息會滲透進入你們的社會中。你們愈是打開溝通的頻道，並且接受說是自己創造自己的政府的理念，以及你們愈是允許政府來服務公眾而不是統治公眾，政府就愈能與大家分享訊息，去談我們的存在，政府之所以如此作，基本上是按照政府所想像的民眾所需要被保護的方式而保護著大家。</p>
+
+<h4 id="因此當政府領袖聚在一起開高峰會議時難道他們不是在談他們所說的自己是什麼嗎">因此當政府領袖聚在一起開高峰會議時，難道他們不是在談他們所說的自己是什麼嗎？</h4>
+
+<p>並非永遠如此！</p>
+
+<h4 id="他們是否彼此友善而且允許彼此擁有力量">他們是否彼此友善，而且允許彼此擁有力量？</h4>
+
+<p>不管他們是否真正的友善，他們雙方都知道，彼此真正在說的遊戲。</p>
+
+<h4 id="遊戲就是永遠不會有核子毀滅的理念那麼也許就是金錢遊戲了">遊戲就是永遠不會有核子毀滅的理念——那麼也許就是金錢遊戲了？</h4>
+
+<p>在某方面來說，是的，理念是要維持他們害怕失去的——對民眾的力量而不瞭解全世界的平等化，將會幫他們得到自我賦予力量，同時也幫助大家加強力量。</p>
+
+<h4 id="俄國人是否有我們在四十年前所得到的同樣知識當時第一次有太空飛船墜毀在這裡">俄國人是否有我們在四十年前所得到的同樣知識？當時第一次有太空飛船墜毀在這裡。</h4>
+
+<p>不一樣。可是有足夠的信息交流過，現在你們「雙方」所知道都已經夠了。</p>
+
+<h4 id="關於進級的太空航程信息政府是否也知道">關於進級的太空航程信息：政府是否也知道？</h4>
+
+<p>有一些，請瞭解有很多政府實際已擁有某些星際宇宙飛船。他們從那些宇宙飛船中得到某些理論及科技，而做出了自己的船，可是並不順利。因為他們少了一些關於在瞭解科技時，要運用意識作為公式的一部分的幾個觀念。而且有一些材料是稍微超越他們貫通的能力。他們不時運用部分的科技；而且在某方面，即使在他們擁有之前，他們已經在努力得到這些瞭解。他們的確知道某些基本的原則。</p>
+
+<hr />
+
+<h3 id="管理政府">管理政府</h3>
+
+<p>不論如何，只要他們選擇利用他們在自我賦予力量及得到之理念上，他們會發現某些原則是行不通的——因為這些是建立在整合的觀點上。你們的政府正在開始學習，但是由於你們把政府所創造成的狀態，政府表現得好像要比社會主流還要緩慢。</p>
+
+<p>人民越是不以控訴的態度與政府互動時，不要以憤怒的態度，而是以一種有愛心的態度，以分享的，無條件之愛的態度，並且對政府表達說，你們相信和平，說你們知道有另外的簡單方法，有其它方式更能運用所存在的實相，而不是透過築牆來開路——那麼也許政府會開始轉變計畫，而願意與人民分享信息；而不會以為分享信息時，他們就會失去自己的力量。</p>
+
+<p>現在已經有許多數據被公開，因而逼迫政府去面對自己運作不順的不同部份。因此不需要批判，從這個觀點開始，不需要有負面的感覺。情況已經把你們調整好了，現在你們知道自己可以如何去服務：透過對政府建議不同的作法，讓他們聽見全體民眾都這麼說：「我們相信和平，讓我們用和平的方式做，好嗎——大家一起來。」</p>
+
+<h4 id="在我們的政府裡有沒有人可以代表我們對這一切有一份清楚的知見">在我們的政府裡，有沒有人可以代表我們，對這一切有一份清楚的知見？</h4>
+
+<p>有，有幾個人。只要單純地進入那份震動裡，就可以找到他們。他們是唯一會吸引你們的人——是能夠做好事情的人，是與你們平等的人，但是首先你必須與他們平等。因此勇敢些，以一種有愛的方式去互動——很大聲又很實際的。你們就是你們的政府，正如我們先前說過的。當你們在政府建築物中時，沒有理由可以不自在，要像在家中的感覺。可是除非你們開始某種形式的溝通、行動，否則你們永遠不會知道，事實上你和你的政府是平等的，長久以來，人們都以為政府與你是不同的社會階層——你們把照顧好自己生命的責任交給了政府。</p>
+
+<p>拿回這份責任。互動、參與！只有一個世界。如果你真的相信自己希望只有一個世界，就把它當作一個世界來行動。如果地球真的像我們的世界一樣只有一個世界時，那麼絕對不會有任何地方會把你阻擋在外。只要知道，如果你輻射此種頻率，你將會發現在地球上，絕對不會有所謂叫做政府的障礙存在——任何時間，任何地點都不會有。你會發現自己被邀請，或是你會發現那些機會全自動地提供給你。你將會流到一些地方，好讓你把一些暗示放在這裡，一些會話放在那裡，在茶會裡，與彼此相識。</p>
+
+<p>理念就是：凡是你絕對相信的事，你就會如此行動。信念與行動並非分開的，兩者是綁在一起的，兩者是一件事。你怎麼相信就怎麼行動，而你怎麼行動就會怎麼相信。你愈是願意允許自己有行動的自由，你就愈不會呆坐在那裡，只會抱怨現況。</p>
+
+<h4 id="可我只是一個個人如何能造成任何差別呢">可我只是一個個人，如何能造成任何差別呢？</h4>
+
+<p>要明白你選擇在這個時候活在地球上是有使命的。請明白如果你不能創造差別，你就不會出現在這裡。當你開始明白：你的社會中每一件事的聯繫，都與你有關，當你與事物相關時，你會開始瞭解：每一個個體都會使整體的社會有所不同。</p>
+
+<p>這份明白會使社會認識到每個個人，都有能力與社會有特定的相關，而每個人也有能力去認識自己內在有社會的整體性在。如此就形成了由個人的人格到大眾意識之間的橋樑、連繫及環扣，讓你們明白，由於你們與一切都是相連接的，你所進行的一舉一動，你的每一個支持，你所創造的每件事，都會成為其它事件的槓桿，很細微地把觀念由一個方向轉到另一個方向。</p>
+
+<p>你們將會知道，透過你們在地球上所建立的心智能場，透過操控地球本身的能場，以及生理場，你們以種種方式銜接在一起。你們稱呼自己文明的所有理念——生理，心智、情緒及靈性——全部是由同一基本均質的能場即原始意識所延生出來的，一切都是由原始意識所分化出來。而且一切都是，正如我們所常說的，是你們的世界的洋蔥的層層結構。你們由均質合一的能場中創造許多不同的層次，而均質合一的能場是你們所稱的物質的根本創造基礎。</p>
+
+<p>當你們區分這些層次時，要明白是因為自己在創造這些分化，人仍然與每一層是連接的。人與內外之所有的層次也都是相接通的。所有的層次都在你內在，因此你在內在所作的每一舉動，都會在外在物質的覺知裡有所互動——因為外在的物理世界，只是反映著你在內在所探索的每一個理念。旅行，在物理實相中移動——不論你運動的模式為何；不論是走路、跑步、開車、或是乘飛機，甚至坐宇宙飛船——任何在空間中的移動，都是你內在理念的移動，被放大並以一個象徵反映回來給你。</p>
+
+<p>因此要明白，每個人的每個細小行為都對社會整體有影響。因為每個行動——每一舉一動——都對其它行動有意義。所有的行動都是平等的，會進入你們所創造的社會的整體裡面。因此現在你們開始認識到，介於個人及社會之間是沒有隔閡的，你可以開始認識到，當你開始行動時，全社會也會以整體跟著你動，你是浸在液體之內。</p>
+
+<p>每一個他人，每一個其它的存在，在液體內每一個自我創造的觀點，永遠都會感受到你在液體中的一舉一動，所造成的暗流或潮起潮落。他們永遠都能夠知覺到你的流向、你運用的方向、你所給出的力量，以及你所加給液體的能量。你們每一個人，不論你們是否在意識有覺知，都對此一活動很敏感，對你的意願十分地敏銳，而去成為你所想成為的狀態，你在這輩子中所選擇要成為的樣子。</p>
+
+<hr />
+
+<h3 id="毒性輻射">毒性/輻射</h3>
+
+<p>我非常關心地球上的有毒廢棄物的問題，巴夏，我很希望人類能找到適當的方法，安全地來中和或淨化這些廢物。</p>
+
+<p>你們有許多已經發現在地球上有某種形式的能量存在著，特別是地球的電磁場——你們可以用無污染的方式去接取所有的能量，且源源不絕地供應你們所能想像到的所有能量需求。由於你們已經決定創造了某些科技，卻有破壞性的副產品，我們有一些理念可以用在消除這些擔憂上。</p>
+
+<p>我們曾討論過的事情之一。你們將會發現有些個人，正如我們所看到目前地球人類的意識能量，正開始調查並發現一些聚合物塑膠材料，真的有能力與有毒廢物的殘基作分子的鍵結。如此就能形成某種形式的保存，某種吸收保存的過程，好讓毒性——我們特別是指輻射毒物——再也不會外洩出來。這種聚元酯也許會在十二到十四年後出現於你們的社會中，因為我們可以由你們的科技進化的能量中預測。</p>
+
+<p>當然你們也可以創造電磁、汽泡包圍毒物以隔離之。某種形式的電磁汽泡的確能真正改變某些物質的分子組成，使它至少變成中性，即使沒法子真正使用。總之，當地球上每個人的震動速度或頻率加速到更高的狀態時，那麼當你們在低頻率時所創造的一些物質，就不再對肉體有影響。他們會有另一種實相層次，另一頻率層次，而無法再於物理實相中造成影響，因為高、低頻率已不再相關，不再同步於當初物質被創造的先前實相。</p>
+
+<p>你們的確可以創造此一宇宙的隔閡，如此舊的物質就再也不會影響到你的肉體，因為你將在完全不同的水平上運作。無論如何，正如我們所說的，當你們的社會允許自己明白，人們所需的所有電力、能源，所有的工業耗能需求，都可以利用電磁或重力原理供應。那麼就不再需要製造那些有毒廢物。電磁及重力就足以供應你們所想創造的成就。從那時開始，你們再也不必創造任何有毒的、放射性副產品。</p>
+
+<p>現在，許多個體都在探索及實驗使用電磁力已經有相當的時間了。可是由於你們建構社會利益的方式，有些實驗被打壓下來。那是因為那些實驗目前並不符合控制科技者的利益。一旦這些障礙被拿走，許多人會開始明白，某些方法存在著——有些已經存在數十年了——那些方法會消除掉人類所有的能源問題。</p>
+
+<h4 id="你是否能告訴我們如何生產那些電磁汽泡以及它是什麼頻率">你是否能告訴我們，如何生產那些電磁汽泡，以及它是什麼頻率？</h4>
+
+<p>目前你們還沒有這種科技。我們也許可以就多元酯的理念多作一些小小的協助，指出一個方向——但是只有指出而已。我們不能把全盤的理唸給你們——（A）由於你們的一些科技還沒有決定好；因此我們不能以絕對的確定性來預測這樣的事。（B）由於有些這類事情，必須由你們自己去發現。我們不能拿走你們自己去發現的過程。</p>
+
+<p>無論如何，我們覺知到，一些探討及實驗某種多元酯中的分子排列的人，會仿真某種身體內的生化過程，某種人體內D N A及R N A結構之生化安排，就是最接近結果的方法。在某一方面，我們所說的是，這些多元酯，用很鬆散的術語來說，其本質幾乎是生物-有機物，在某種程度上，對某種元素有親和力，在吸收這些重元素進入其結構時，他們會形成一種基質，某一種有磁性的基質，會真正的創造一種極化的效應，讓那些粒子被多元酯所吸收。</p>
+
+<p>換言之，粒子會撞及到多元酯——譬如說一種有輻射性的多元酯顆粒被吸收到阻擋物的一頭。因此阻擋物的另一頭就會有某樣東西被釋出，可是它極性化的方式會是一種還看不出來有極化的狀態。這種新的極化顆粒，將不會對人有害，然而它會仍然存在。在某一方面而言，它是另一種類型的污染，可是不會對人有害。我們目前所能作的就是：把基本機制告訴你們。我們目前無法得到更特定、確定，以地球科技的條件去創造此一機制的知識。</p>
+
+<h4 id="那麼巴夏你是否有看見我們在殺死地球">那麼，巴夏，你是否有看見我們在殺死地球？</h4>
+
+<p>目前，是的；但並非究竟。我們目前的看法是，基本上人類在把自己逼到一個角落裡，如此終於會使人們想到：作事可以有更有利益及效率的方式。我們的看法是，在未來的二十年左右，當你們的社會完全認識到自己在自掘墳墓，那時人們就會找到方法，並且快速地轉化自己的世界。一旦有了這份認識，改變就可以發生，就歷史而言，可以幾乎在一夜之間改變。</p>
+
+<hr />
+
+<h3 id="中東">中東</h3>
+
+<h4 id="巴夏在全世界有那麼多的衝突有一個地區老是在戰爭為了某些理由該地似乎從來不曾開展在世界其它地方所看見的正向改變">巴夏，在全世界有那麼多的衝突；有一個地區老是在戰爭。為了某些理由，該地似乎從來不曾開展在世界其它地方所看見的正向改變。</h4>
+
+<p>你們的中東。</p>
+
+<h4 id="就是中東你是否能給我們任何信息關於為什麼中東是這種狀況">就是中東。你是否能給我們任何信息，關於為什麼中東是這種狀況？</h4>
+
+<p>因為就很多方面而言，中東是接待站，是在很古老的融入時的接待點，就輪迴轉世的觀點，是一些很強烈的負面能量融入地球的所在。在你們歷史上有個人被稱作阿卡地的沙罔，是來自獵戶星的投胎。在人類歷史中，此人被認作創造了阿拉伯帝國的人；用劍征服了整個中東。因此它是建立在許多獵戶星的原則上，住在中東的每個人都十分地掙扎，因為他們相信——正如當年獵戶星人所做的一般——掙扎是唯一能表達並瞭解自己的方法，只有通過衝突才能達成。因此，基本上你們會發現，他們有許多的能量，在很多前世中，都以戰爭的形式外顯出來。</p>
+
+<p>從來不曾學到無條件的愛，才是造化中至高的力量。他們想統治、控制，這是他們唯一知道的與造物之間的關係。他們努力去瞭解自己是不同的表達，學習到他們可以表達威力及能量，如此他們就感覺到很自然地與地球連繫在一起。而現在，他們可以用更正向的方式來表達。</p>
+
+<p>他們可以開始認識一項無限重要的理念：每個人都可以按照他所需要的去得到他在生命中所想得到的任何事物，而不必去傷害他人或自己，才能得到。每個人都是如此地有威力。他們正開始被許多其它的文化所同化；讓他們有機會明白。他們能以正向的方式來混合併平衡能量，不必變成理念的掙扎或衝突。因為當把所有的理念結合時，很矛盾地，反而會允許他們以最輕易的方式去表達他們的理念。</p>
+
+<p>中東的確代表了高度的限制及焦點，並且表達出那種負面的能量狀態。因此就那一方面而言，他們是地球上所有其它實相及文化所旋轉繞行的坩鍋，中東是表達出全地球其它地方所剩下的負向性，這個小戲院代表著你們的世界中古老信念系統的高度濃縮。</p>
+
+<p>在某一種意味上，中東可以被看成：透過此一情境，可以允許其它的人去作你們所該做的改變，由於他們願意擔任作地球上絕大多數的負向性之收容所，如此就讓其它人能去做他們所想作的改變。一旦其它人將自己定好之後，那麼中東就可以有最偉大最快速的改變潛力，因為他們再也不必為其它的世人，拿著那象徵性的火把。</p>
+
+<hr />
+
+<h3 id="負向人格">負向人格</h3>
+
+<h4 id="一九八七年二月在我的國家伊朗巴夏關於那個殺死那麼多人的狂人又怎麼說呢">一九八七年二月：在我的國家伊朗。巴夏，關於那個殺死那麼多人的狂人又怎麼說呢？</h4>
+
+<p>要明白那個人只是表現出集體信念系統的反映——是你們國家間綜合的負面信念系統的集合——不僅是在那個國家，也是當時你們的整個文明。另外有些人也會經以這種方式服務過，而且還會有更多人會如此做。這些個人並不知道，他們有足夠的堅強，可以不必去反映這些負向的程度。</p>
+
+<p>因此目前在整個地區內；此一地區很多輩子以來的能量，累積成這種爆炸性，這份瞭解，這份獨特的觀點，允許某些個人去活出所有的害怕，所有的負面，所有該文明所感受到的與造物的沒有連繫。</p>
+
+<p>目前地球上的每一種文明，都在以自己的方式進行它自己的蛻變。目前每一個文化中，都有一些個人，他們成長的過程相信自己是軟弱的；而這些軟弱的個人，會接來一些他們認為是威力及強而有力的東西，也就是去操縱並傷害他人。</p>
+
+<p>可是操縱及傷害正是無力的象徵。這些人只不過在他們自己所創造的惡夢中蹦跳，而他們儘可能地帶領許多人——因為他們感受到自己內在正在死亡。在未來的十年中，該種文化會經歷許多快速的改變；事實上，在中東會有完全並完整的轉變。</p>
+
+<hr />
+
+<h3 id="沙罔之劍">沙罔之劍</h3>
+
+<p>有一點火星，這點火星將會被點燃。被點燃的火星，會觸發該區人民的情緒連鎖反應——會有很大的代價。由一九九七到二零零零年間——分歧會持續到二零一一年——該區會進行一種在近代史上不曾被認知的改變。</p>
+
+<p>火星是認識到：所有使大家隔閡的障礙、定義及種族——就是你們爭執的原因，而不是為個人而爭。個人只是承擔起來所有使人們隔閡的象徵而已——所有的理念及信念，所有的種族及古老的方式；所有的習慣及儀式，古老的種族不平等的觀念，包括種姓、及社會階層等等。</p>
+
+<p>火星會聯合併把全區結合起來，會有曙光轉化整個地中海地區，像是鯊魚的波浪一般擴散出去——是光的波浪。正如我們對你們現在能量的觀察，大約在一九九七年就會有騷然的互動，在社會、政治及宗教的明白上，使他們重新檢討自己的信念。無論如何，同時也會形成一個坩鍋，讓某些靈魂能出來大放異彩，十分熱烈。</p>
+
+<p>我們的觀點是，在很短的一段時間之內——在二零零一年之前——在該區會有很大的轉化、有新的系統，明白及模型或模版，讓全地球可以發展出一個政府。而打下世界政府的基礎，而在二零一一至二零一三年間成就世界政府。</p>
+
+<p>現在，我們的確感受到中東的情況會有一個了結。會創造出大幅度的加速極化，類似於目前世界其它地方所探索的極性。你們花了約十年的時間才通過種種的階段，他們會在很短暫的時間裡通過。也許還會有很多的暴力興起，有許多理念也許會在生理上被拆除。但是仍然，雖然是暴力——而並非必須如此——仍然有意願為新的明白留出空間。</p>
+
+<p>社會必須用種種的方法擺脫掉包圍住它的捆綁。在某一方面，即使必須拆掉整個社會結構才能達成，還是會達成的。再一次，不是必須如此。但是由於很深很深的苦難——由於那份意願造成了中東的重大變化：現在沙罔之劍將反映著光明。</p>
+
+<hr />
+
+<h3 id="新的三頭統治">新的三頭統治</h3>
+
+<h4 id="你所說的這種轉化是否指會形成一個共產國家">你所說的這種轉化：是否指會形成一個共產國家？</h4>
+
+<p>不，我們是說全地球開始明白所有的國界都是一種限制；所有的標幟及理念都只是不同的理念；在每一種文化中都有許多事物可以融合、同化並獲益。那將不是目前地球已有的任何標幟；就是很單純地作全地球的統合——只有一個地球。</p>
+
+<p>你們很快就會允許自己形成一個三頭政府，是由美國、蘇聯及中國這三大勢力所組成的。他們聯合起來成為三頭政府，會成為領導的典範，好好讓其它的文化能形成自己的和平、自己的世界政府。從那時開始，國界會開始在接著的一百年之內溶化掉。</p>
+
+<h4 id="我們是否能作些什麼以加速促進中東的過渡">我們是否能作些什麼，以加速促進中東的過渡？</h4>
+
+<p>你們可以給出愛，你們每一個人都按照自己的信念在行動；就是代表你們的真理之愛及光明，如此便能成為核心閃亮的典範，成為你們所圍繞的核心的光彩典範，那時你們可以成為三百六十度的鏡子圍繞著核心，反映給他們，讓他們瞭解自己可以往正面方向作改變的潛力。</p>
+
+<p>要認識他們，因為拒絕肯定別人的觀點而限制了自己。為了維持在有限的焦點內，就讓他們能做到自己的工作。你們愈是有意願，作為包圍他們的外圍世界，願意去改變及作一些能代表你們的愛及光明的事情，就有更強烈的光與愛照射在他們身上。那麼總會有一個時間點，使他們再也無法拒絕你們所給出的愛與光。</p>
+
+<p>你們可以運用任何打開的管道及途徑與他們互動，以表達你們服務的能力，不是說你們一定要加入去與他們互動，表現得好像你們要去改變他們一樣，使得事情看來好像是你們相信他們應該改變，並且是以一種批判的方式在作。我們所說的不是這種方式。而是你們可以運用所找到的任何機會，把自己溜進去，去分享你們是什麼樣子的人。然後他們會在四周看見更多意願的反映，願意用正向的理念與古老的負向平衡起來。</p>
+
+<hr />
+
+<h3 id="好戰星球">好戰星球</h3>
+
+<h4 id="如果一個星球上的生物已經發出好戰的心智他們會帶著征服的意圖進入我們的銀河系嗎這有沒有可能發生巴夏">如果一個星球上的生物已經發出好戰的心智，他們會帶著征服的意圖進入我們的銀河系嗎？這有沒有可能發生，巴夏？</h4>
+
+<p>要明白，帶有那種意圖的個體，是走不了多遠的。理念是，你們的世界現在的能量已經作了足夠的轉變，那麼即使在近處有另一個文明企圖來征服並統治地球，他們現在也很難找到你們。因為你們的震動已經不同於任何好戰的文明，使他們無法來到這裡侵略。</p>
+
+<p>現在，理念是：在太空中旅行即是在內在旅行。真的，太空旅行完全不是你們目前科技的想法，你們以為是在空間的表面飛行。當你們瞭解到如何掃除時、空本身的障礙，你們將會發現，那需要一種高度整合的態度，而高度整合的態度，就會使個體非常不可能進入好戰的本質，事實上如果你們是好戰的，就沒法子走得很遠。即使你們作了那樣子的嘗試，很可能你們會發現自己反而跑到另一頭去了。</p>
+
+<p>有好戰的星球，熱衷於征服的這種想法，的確可以，而且也發生過，可是他們通常會被貶降到某一層次的次元中。很多時候，那意謂著他們真的必須在物理上接近彼此，而且就我們所知，在地球的幾百光年距離內，並沒有如此好戰的種族存在著。理念是這樣子的：既然你們的震動已經改變成他們所無法瞭解的模式，即使他們看著你們，也許並不會看到你們。因此，就鄰近而言，地球才是最好戰的星球⋯⋯而我們並不害怕你們。因此，事實上，如果有人該擔心時，也許是我們而不是你們。</p>
+
+<h4 id="其它的星球之間沒有戰爭嗎">其它的星球之間沒有戰爭嗎？</h4>
+
+<p>如果按照你們的認定來作個比喻時，只因為你們的地球有戰爭，所以你們也認定宇宙中其它地方也會有⋯⋯</p>
+
+<p>就某方面而言，有其它的地方，而且在不同的銀河系之間一直都有互動，也許可以勉強被算是你們所稱的戰爭。不時地在許多不同的世界中，常會有此一主題的變化型，不是只有人類才有。然而你們許多人的想法：認為外星人的意識會對其它世界有負向的意圖,這種特定的負面意圖，並非永遠都會按照你們認定為戰爭的形式而顯現出來。</p>
+
+<p>讓你們明白，就銀河與星際之距離而言，戰爭是相當不合適的。真的不需要這種概念，因為永遠有遠超過足夠的空間可以擴展；因此有足夠的空間來容納不同的理念。每個文明在很多方面都是不同的實相，就一般而言，通常只有一個文明可以經驗到某一實相，除非不同的文明同意去分享共同的頻率及波長——如此就允許他們以種種方式來互動。</p>
+
+<p>可是如果他們不作協議，那麼就沒什麼機會去遇見其它的文明；因為他們沒有發心以利益彼此的心去互動；除非他們想引誘另一個想當受害者的整個文明，於是就由於他們的害怕、懷疑而吸引到一個會征服他人的文明。然而此一概念通常沒法子在人類典型的戰爭及統治中表現出來。正如早先所說的，星際的距離使戰爭成為很不可能。</p>
+
+<p>同時要明白，雖然看起來有星球被征服過，如果他們不曾釋放出自己是可以被征服的震動，就不可能有被征服的現象，如此你們會發現，所謂最好的防衛，就是很單純地知道自己沒有那種震動即理念。而他們，由於活在不同的實相上，永遠也沒法子找到人類。如果他們來到你們的地球上，對他們來說，看起來就是個無人的地球。</p>
+
+<p>因此有所謂的征服者及被征服者之所以會發生，完全是因為被征服者願意放棄自己的力量，讓自己的生命完全被別人所控制；放掉所有的力量，以及為自己的生命去創造的責任。而這一切之所以被取走，是因為他們自己同意，因為如果沒有一份同意，就不可能發生。</p>
+
+<p>因此這種戰爭的形式，只是很單純地，有一種文明對另一理念服從，讓自己歸入他人的隊伍，另一文明成功地運用該理念引誘另一文明歸入他們的旗幟之下。「征服」的文明，基本上就是說服另一文明，允許自己被他們統治，而增加了自己的數目及力量。他們可以經由照顧好另一文明的需要，為他們的需要負起責任來，而且在此一過程裡，拿走他們認識並相信自己可以創造自己的生活的能力。</p>
+
+<p>這種形式的戰爭是比較常見的。只是心理上的理念，一種想法。但即使如此，在我們的經驗中，也是相當不尋常，因為沒有幾個文明願意去忘記自己是誰，是什麼以至於吸引另一個文明來與他們達成這樣的「征服」，而也很少有文明願意如此去統治其它的世界；這兩種想法在我們的經驗裡都很少見。</p>
+
+<hr />
+
+<h3 id="星際戰爭">星際戰爭</h3>
+
+<p>你們現在之所以會有星際戰爭的想法，最主要的部份，是來自於很遙遠的過去。請明白一件事：雖然我們並沒有說以往所描繪的畫面，是真的事實，你們的科幻故事——特別是星球大戰的電影——的確帶有一份很強的洞見；告訴你們說那是很久以前的事。的確故事不再與現在有任何關係。至少不是所謂的迫在眉睫！它代表古老的負向循環，以及與你們源頭的許多其它星系之間的連繫。電影只是把它弄成了未來的形式。</p>
+
+<h4 id="那麼我們該如何停止戰爭而擁有一份和平的地球">那麼我們該如何停止戰爭而擁有一份和平的地球？</h4>
+
+<p>請瞭解如果你們相信和平，那麼你們就不必憎恨戰爭，你們不會透過憎恨戰爭而得到和平；只有透過愛和平才能得到和平。恨只會加強你們所不喜歡的東西；因為你們專注在恨上。要和平，和平地活、呼吸和平、分享和平。要愛、無條件地愛，會在眨眼之間轉化你的整個世界。無條件地愛全體。</p>
+
+<hr />
+
+<h3 id="和平鐘">和平鐘</h3>
+
+<p>目前（一九八七年十二月），我們想對你們建議一個和平鐘的計畫。是一種很簡單的理念，可是很有衝擊力。計畫如下：</p>
+
+<p>第一步：以人類時間的每一天，在你自己時區的正午時——在午時以整整一分鐘的時間——按照任何你感覺舒服的方法去冥想世界和平一分鐘。觀想地球世界在享受著和平及和諧，用任何你所喜歡的想像，或予以可視化。那麼你們就可以創造一種行動、一種動力，在全球創造一份電磁衝擊；因為我們知道你們地球有很多時區。</p>
+
+<p>如果在午時，地球的二十四分之一的時區內，都以一分鐘專注在世界和平的冥想上——然後再下一個時區，再下一個時區；一路繞地球一圈，繞下去，繞下去，繞下去，一天又一天！人們會真正地創造電磁動力，那真的可以旋轉你們，在你知道以前，就轉入了第四密度，進入周圍完全的同步裡。</p>
+
+<p>允許自己真正去感覺自己的力量，因為你們已經被賦予力量了。如果你們瞭解，每一個人都對全地球有極深遠的衝擊，你們就會以想像不到的方式去改變世界——很快速的。你們將會以極快的速率來加速，如果在二零零零年能夠達成和平，那麼從二零零零年開始，會有許多事情發生，那是你們甚至無法相信的。</p>
+
+<p>第二步：把每天正中午冥想世界和平一分鐘的理念與儘可能多的人分享。請個人、城市及全小區的人響應，各州、各省、各國、社會的每個階層。請收音機及電台投入，如此每天中午十二點時，他們也允許有一分鐘靜靜地冥想。用一種聲音來提醒大家，如果你們願意的話，或是用話語提醒。讓全體參與。</p>
+
+<p>基本目標是讓每一個人——是的，每一個個人——都一直作這一分鐘的冥想到二零零零年一月一日，你們將會發現高度加速的能量，專注在全球的世界和平上，那麼介於一九九零到二零零零年間，你們將已打好只有一個世界的基礎，而不必等到二零一一，二零一三。然後就會真正有我們這個時代的和平。</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-16T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/text/2018/01/16/bashar-text-%E5%B7%B4%E5%A4%8F-%E4%BE%86%E8%87%AA%E6%9C%AA%E4%BE%86%E7%9A%84%E7%94%9F%E5%91%BD%E8%A8%8A%E6%81%AF-%E7%AC%AC01%E7%AB%A0-%E9%99%90%E5%88%B6%E5%A4%A7%E5%B8%AB.html">巴夏：來自未來的生命訊息 第一章 限制大師</a></div><div class="next"><span>下篇</span><a href="/text/2018/01/16/bashar-text-%E5%B7%B4%E5%A4%8F-%E4%BE%86%E8%87%AA%E6%9C%AA%E4%BE%86%E7%9A%84%E7%94%9F%E5%91%BD%E8%A8%8A%E6%81%AF-%E7%AC%AC03%E7%AB%A0-%E5%92%8C%E8%AB%A7%E6%B3%A2.html">巴夏：來自未來的生命訊息 第三章 和諧波</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://bashar.tw/text/2018/01/16/bashar-text-%E5%B7%B4%E5%A4%8F-%E4%BE%86%E8%87%AA%E6%9C%AA%E4%BE%86%E7%9A%84%E7%94%9F%E5%91%BD%E8%A8%8A%E6%81%AF-%E7%AC%AC02%E7%AB%A0-%E7%95%B6%E4%BB%A3%E7%9A%84%E5%92%8C%E5%B9%B3.html';
+                        this.page.identifier = '20180116_text_巴夏：來自未來的生命訊息_第二章_當代的和平';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+
