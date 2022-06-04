@@ -1,1 +1,1 @@
-Sitemap: https://bashar.tw/sitemap.xml
+Sitemap: https://zenkarsha.github.io/bashar/sitemap.xml
