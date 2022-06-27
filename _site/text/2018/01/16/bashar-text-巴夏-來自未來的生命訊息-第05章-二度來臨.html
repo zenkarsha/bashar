@@ -1,0 +1,1035 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏：來自未來的生命訊息 第五章 二度來臨 - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="巴夏，你和你們的人是否熟悉基督教？我相信主耶穌是我們的救世主⋯⋯當你說相信主耶穌時，意謂著什麼？意謂著我相信有上帝創造了宇宙，包括我們全體在內。因為我們全是罪人,主耶穌⋯⋯等一下，你相信自己是個罪人？是的。什麼是罪人？請幫我定義好嗎？我瞭解罪惡的觀念，可是沒有從你聽過這個觀點，你是否可以用你自己的方式為我定義什麼...">
+<link rel="canonical" href="https://zenkarsha.github.io/bashar/text/2018/01/16/bashar-text-%E5%B7%B4%E5%A4%8F-%E4%BE%86%E8%87%AA%E6%9C%AA%E4%BE%86%E7%9A%84%E7%94%9F%E5%91%BD%E8%A8%8A%E6%81%AF-%E7%AC%AC05%E7%AB%A0-%E4%BA%8C%E5%BA%A6%E4%BE%86%E8%87%A8.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/bashar/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/bashar/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/bashar/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏：來自未來的生命訊息 第五章 二度來臨</h1></header></div><meta itemprop="headline" content="巴夏：來自未來的生命訊息 第五章 二度來臨"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E6%9B%B8">書</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E5%B7%B4%E5%A4%8F%E4%BE%86%E8%87%AA%E6%9C%AA%E4%BE%86%E7%9A%84%E7%94%9F%E5%91%BD%E8%A8%8A%E6%81%AF">巴夏來自未來的生命訊息</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月16日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Ftext%2F2018%2F01%2F16%2Fbashar-text-%25E5%25B7%25B4%25E5%25A4%258F-%25E4%25BE%2586%25E8%2587%25AA%25E6%259C%25AA%25E4%25BE%2586%25E7%259A%2584%25E7%2594%259F%25E5%2591%25BD%25E8%25A8%258A%25E6%2581%25AF-%25E7%25AC%25AC05%25E7%25AB%25A0-%25E4%25BA%258C%25E5%25BA%25A6%25E4%25BE%2586%25E8%2587%25A8.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-16T00:00:00+08:00">
+    <meta itemprop="keywords" content="書,巴夏來自未來的生命訊息"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+
+    
+    
+    <h4 id="巴夏你和你們的人是否熟悉基督教我相信主耶穌是我們的救世主">巴夏，你和你們的人是否熟悉基督教？我相信主耶穌是我們的救世主⋯⋯</h4>
+
+<p>當你說相信主耶穌時，意謂著什麼？</p>
+
+<h4 id="意謂著我相信有上帝創造了宇宙包括我們全體在內因為我們全是罪人主耶穌">意謂著我相信有上帝創造了宇宙，包括我們全體在內。因為我們全是罪人,主耶穌⋯⋯</h4>
+
+<p>等一下，你相信自己是個罪人？</p>
+
+<h4 id="是的">是的。</h4>
+
+<p>什麼是罪人？請幫我定義好嗎？我瞭解罪惡的觀念，可是沒有從你聽過這個觀點，你是否可以用你自己的方式為我定義什麼是「罪人」——因為這與你對自己的看法有關。</p>
+
+<h4 id="對我而言罪惡是我做了或想了任何違反上帝旨意的事">對我而言，罪惡是我做了或想了任何違反上帝旨意的事。</h4>
+
+<p>什麼是上帝的旨意？</p>
+
+<h4 id="上帝的旨意為了節省時間我想簡單地說神希望我在所有的情境裡都表現出無條件的愛而任何時候我沒有做">上帝的旨意——為了節省時間，我想簡單地說——神希望我在所有的情境裡都表現出無條件的愛。而任何時候，我沒有做⋯⋯</h4>
+
+<p>等一下，你說無條件的愛嗎？你是否瞭解那意謂著什麼？</p>
+
+<h4 id="我瞭解那意味著不論人們是誰以及他們做了些什麼那些我所應該愛的人例如在這裡的人們因為上帝愛他們所以我也愛他們如果上帝愛這裡的每一個人我沒有權利去幹預">我瞭解那意味著，不論人們是誰，以及他們做了些什麼，那些我所應該愛的人，例如在這裡的人們，因為上帝愛他們，所以我也愛他們。如果上帝愛這裡的每一個人，我沒有權利去幹預。</h4>
+
+<p>好，現在，你明白你可以創造干預的實相，可是我們瞭解你說自己沒有權利。你可以做，可是那並不代表你會想做。我們也不會建議那樣做可以創造地球的和諧。可是如果單只就你一個人來看。人們常常很唐突地批判他人，不是嗎？重點並不在於他們是否有權如此批判。</p>
+
+<h4 id="有錯嗎">有錯嗎？</h4>
+
+<p>沒什麼對與錯。重點在於你是選擇正向地彰顯實相，或是負向地彰顯實相。</p>
+
+<h4 id="你建議用哪一種">你建議用哪一種？</h4>
+
+<p>我建議用正向的。因為選擇正向地彰顯實相，即是將自己與「全是」整合。如果認為自己與「全是」是分離的，就會創造一種隔閡感，使你無法感受到全是的連繫，如此就會造成操控的需要。當你與全是分開時，可能你會感覺到，唯有控制及操控，才是你得到在週遭事物的方法。因此你會由於隔閡創造出許多想法及負向的彰顯⋯⋯也就是不愉快的事情，如戰爭、疾病，以及許多你們所不喜歡的理念。這就是為什麼，我們永遠都建議正向地彰顯實相。</p>
+
+<p>然而，請明白我們知道批判本身，是屬於負向彰顯的。因此我們不會說有什麼是對與錯，因為對我們而言，那就等於在批判全是。對我們而言，即使只是想到批判就是選擇負向。請明白你所偏好的，並不代表你必須批判或否定別人的——每個人都可以用自己所選擇的方式去探索自己的神性，明白自己是「全是」的一部份。如果個人選擇了隔閡、負向實相、限制、批判——那麼他就比較不容易覺知自己與全是的連繫。</p>
+
+<p>另一方面，一個整合好的人，已經選擇了無條件的愛，並且知道，沒有需要去批判那些還沒有選擇的人。因為無條件的愛是在造化之中，為了其自己的理由，對每一件事都確定其有效性。因為造化的那個部份，看見必須用其所選擇的方式去學習認識自己，而你，透過選擇無條件的愛，產生一種信心及信任，而明白到在至高的部份，個人永遠都會沒事的。最終，任何一個理念仍然被包含在「全是」的整體理念之內，而且不會有失落。無法把任何事物失落到任何地方去——除非你們創造隔閡，除非你們選擇負向及限制，並且把自己與「全是」分離出來。選擇去創造一個次元，好讓自己能從一切中移出，否則你無法將任何事物失落到任何地方去。你們所說的迷失的靈魂，是自相矛盾的。靈魂永遠知道自己在哪裡！</p>
+
+<h4 id="你說迷失的靈魂是什麼意思">你說迷失的靈魂是什麼意思？</h4>
+
+<p>我們是指，有許多人用此一特定的儀式化之說法，以表達他們的愛。很多時候，即使人們說是無條件的，但仍帶有條件。我們並沒有說你們就是如此。我們只是說，你們人類會用這樣的話語：因為你們怎麼說，就會怎麼相信，至於你們所說的罪人其至高的定義，是指一個不明白、不認識自己就是上帝的人。</p>
+
+<h4 id="認識自己就是上帝">認識自己就是上帝？</h4>
+
+<p>是的。</p>
+
+<h4 id="我就是上帝">我就是上帝！</h4>
+
+<p>當然，這就是我們所說的：地球上有很多宗教及信念，都談到上帝，或者我們所說的「全是」——是無所不能。無所不在、全知、無所不察，並且看見一切：一切，每個地方。如果按照你們的定義，上帝就是一切：那麼你們怎麼可能存在於上帝之外？人一定也是神，神一定是你。上帝知道你是上帝：為什麼你都不知道自己是上帝？</p>
+
+<h4 id="好譬如說我創造一個模型飛機我創造了它把它組合在一起可是飛機並不是我的">好，譬如說我創造一個模型⋯飛機。我創造了它，把它組合在一起，可是飛機並不是我的。</h4>
+
+<p>是的，它是你。請明白你們所經驗到的物理實相，全都是個像征。如果你們喜歡用幻相這個名詞，也好。這也許能幫你澄清。</p>
+
+<h4 id="嗯那個幻相或是象徵它需要一個代表難道不是嗎">嗯，那個幻相或是象徵，它需要一個代表，難道不是嗎？</h4>
+
+<p>那是一個理念的代表。</p>
+
+<h4 id="他人如果你是製造飛機的想法那麼你也是飛機無論你有什麼想法你就是那個想法">（他人）：如果你是製造飛機的想法，那麼你也是飛機。無論你有什麼想法，你就是那個想法。</h4>
+
+<p>對，你瞭解宇宙中的每一樣東西在物理學上都是個會震動的物質。你無法去知覺任何你所不是的東西。你本身的震動創造了你所知覺的物理實相。因此，如果你創造了眼前的一個模型飛機，那麼你就是把自己的思想延伸出去，而以你在自己之外做到了這件事情，來反映給自己。可是你所覺知的每件事，這房間中的每個人，都是你的創造。你必須創造出對他們的自己版本，才能夠去覺知他們。你們明白我嗎？</p>
+
+<h4 id="有點明白如果我把生命奉獻在跟隨主耶穌基督上">有點明白。如果我把生命奉獻在跟隨主耶穌基督上——</h4>
+
+<p>你為什麼想這麼做？耶穌並不想要你如此做。</p>
+
+<h4 id="耶穌不想要我如此做">耶穌不想要我如此做？</h4>
+
+<p>不想。他並不要你跟隨他，他希望你像他。</p>
+
+<h4 id="嗯我就是這個意思">嗯，我就是這個意思。</h4>
+
+<p>那麼就直接說出你的意思。請明白我們是根據你的用語在討論，因為在地球上，很多時候，你們所選擇的用詞，反映著你認為你所相信的上帝。在你的情況裡，你在說，透過跟隨某人，你在使自己與對方分開，同時使自己比對方渺小，而不是與對方平等！而這是耶穌要你知道的。你們每個人都像耶穌一樣有基督意識。跟著「唯一的道」走的想法並沒有幫助，而是彼此平等並互相反映，成為所示範出的能量，那就是「正路」。</p>
+
+<h4 id="他人你是否認為這就是我們如此受限的原因因為我們基督徒只把信任放在耶穌上而沒有放在自己身上">（他人）：你是否認為，這就是我們如此受限的原因？因為我們基督徒，只把信任放在耶穌上，而沒有放在自己身上。</h4>
+
+<p>任何時候，你拿走了自己的力量，就給自己加了限制，並且否認了自己的存在——沒有讓自己成為所該創造成為的樣子。因此是的，定義在於是什麼創造了限制。就某種程度而言，所描述的所有特質及經驗都是有效的：任何能使你到達你所要去的地方的工具，都是有效的工具。</p>
+
+<h4 id="第二度來臨">第二度來臨</h4>
+
+<p>然而你們人類的這種想法，就我們看來——再一次，不是為了貶低你們——是貼了許多標籤、定義，其目的就是在限制你們明白自己全都是基督。就是這麼一回事。如果你們想見到基督意識的具體現身，就回家去照鏡子，然後表現成自己就是基督，那麼你將實現基督意識希望臨在於每個人身上的理念。人類社會中所說的「耶穌再來」，並不是某個個人的再來。而是認識到地球上每一個人之內都有基督；而且活得像基督一樣。這就是你們的二度再臨。</p>
+
+<p>要知道，基督以肉身顯現，其實發生過不只一次。然而在每一種努力及投射，都把基督想成一個肉體的呈現，人類共同的真理就是：你們全都是基督的一部分。不僅基督可以創造你們所想要的實相，而且你們之所以可以創造實相的威力，也是上帝的一部份。</p>
+
+<p>當耶穌再來的訊息傳遞到人類社會之時，當時人們的明白是：耶穌是一位統治者，而人們會被統治。因此你們把基督想成是一個救世主，祂會為人們做一切——卻不瞭解基督只是一種反映，反映給每個人知道，你是基督的一部份，並且有絕對的權利來創造自己能量的提升及升天，正如耶穌的能量一樣。</p>
+
+<h4 id="當耶穌說我就是道路真理生命人若不經過我沒有人能到父那邊去祂的意思是什麼呢">當耶穌說：「我就是道路、真理、生命。人若不經過我。沒有人能到父那邊去。」祂的意思是什麼呢？</h4>
+
+<p>耶穌是說，用你們今天所瞭解的語文來重述，是：「你們在我身上所看到的是整合的震動，我知道自己是在同樣的水平上，與上帝「全是」平等。你們唯一認識自己也是如此的方法，就是要像我一樣，成為平等的震動以瞭解自己是『全是』這就是為什麼祂說：「我就是道路。」祂並不是說：「我知道唯一能使你到達的方法。」他只是單純地說，你們當允許自己知道：就整體觀而言，你所做的一切都是有效的，都是在支持、服務並給予造化本身的至高想法以效力，並且明白自己與上帝是相等的。這就是道路。</p>
+
+<h4 id="你說了某件事當你說祂並沒有說我知道唯一的道路時大家都笑了可是祂真的有說我就是道路真理生命人若不經過我沒人能到父那邊去">你說了某件事——當你說：「祂並沒有說，『我知道唯一的道路』。」時大家都笑了，可是祂真的有說：「我就是道路、真理、生命，人若不經過我，沒人能到父那邊去。」</h4>
+
+<p>請也明白這一點：你們的聖經中，包含了不到耶穌一生所說的話的百分之十；而且被記載下來的，又有很多誤解在，是根據當時記錄者的瞭解所寫下來的。請明白聖經並不是按照史實被寫出來的，而是為了使人們轉向而寫的。</p>
+
+<h4 id="聖經不是真的嗎">聖經不是真的嗎？</h4>
+
+<p>對那些書寫的人是真的，按照他們的明白而言。可是有許多仍然被誤解。</p>
+
+<h4 id="你如何知道呢">你如何知道呢？</h4>
+
+<p>我們是去感知集體意識，你們的更高層意識。現在，我們無法期望你們接受我們的說法。只有你們才能夠選擇自己所想相信的。然而我們與你們討論的，是我們由你們的更高意識中所覺知到的：更高意識知道自己等於基督意識。我們可以跟更高意識談話，你們也可以。我們只是要讓你們知道你們可以跟更高意識講話，你們將會發現更高意識會告訴你們，與我們所講的完全相同的話。</p>
+
+<h4 id="好吧我就是相信聖經可以嗎">好吧，我就是相信聖經，可以嗎？</h4>
+
+<p>絕對可以！它會引導你到你所想去的地方，這就是最重要的。我們無條件地支持你，你所選擇的道路。正如我們所常說的，每一條路都通，沒有任何一個信念會比任何其它信念更有效。全都是平等的。</p>
+
+<h4 id="他人所有的想法都是有用的是否包括其它的想法是無效的想法呢">（他人）：所有的想法都是有用的，是否包括其它的想法是無效的想法呢？</h4>
+
+<p>一樣，很好。</p>
+
+<hr />
+
+<h3 id="神的獨生子">神的獨生子</h3>
+
+<h4 id="耶穌是上帝的獨生子嗎">耶穌是上帝的獨生子嗎？</h4>
+
+<p>你們所稱的那撒勒的耶穌，只不過是整個基督意識的一個面而已。每一個世界、每一種文明，都有其自己版本的基督意識。在我們古代殘留的語文中——那語文已經不再被使用，由於我們的社會是有心電感應的——我們整個世界的綜合意識被稱作「沙克南」。信我們的沙克南，你們的基督意識，以及所有世界的綜合意識，集合起來形成了無限的造化。</p>
+
+<p>我們與你們的基督意識間的關係是很直接而且有的很多互動，由於我們是與地球上所有的意識的綜合體在互動，目的是希望能夠協助你們。因此我們經驗到與基督意識間一種直接的互動，是一種無條件的愛的關係；因為基督意識就是你們全體。因為就某一方面，我們是從地球以外來的，為了要能服務你們，我們必須透過地球來互動。所以我們必須採用無條件的愛的模式，才能進人你們的次元，運用你們所經驗過並能瞭解的象徵。因此我們與基督意識的經驗及關係，在很多方面都是很直接的——有時候甚至遠超過你們自己所允許的。</p>
+
+<p>你們也許注意到，基督意識的肉身顯化之一，是你們許多人所沒有認知的：瑪麗亞，耶穌的母親，他是基督的女性極。在集體的基督意識中，永遠都有陰與陽。從我們的觀點，這基本上意謂著什麼——就你們現在所稱的新時代：或是轉形的年代——正如我們說過的，所謂的耶穌再來，不再是基督意識單獨地顯現在一個人身上。而是喚醒每一個人內在的基督意識，好讓你們能夠真正地在地球上創造天堂——讓每個人都成為神的孩子。</p>
+
+<p>要明白此一理念，因為已經翻譯成你們的語文了，以往被譯成：基督是上帝之子，然而主耶穌基督則自稱為人子。</p>
+
+<h4 id="祂自稱為人子">祂自稱為人子？</h4>
+
+<p>到聖經裡去察。祂自稱為人於。請明白，所有那撒勒的耶穌所說的話；是在他的肉身之死約五十七年之後，才開始被人記錄。</p>
+
+<h4 id="你說多年來聖經一直被誤解">你說多年來聖經一直被誤解？</h4>
+
+<p>是的，每一個被寫下來的理念，都含有某種誤解，將所發生的事周圍加上了儀式。</p>
+
+<h4 id="上帝沒有監看嗎">上帝沒有監看嗎？</h4>
+
+<p>上帝何必要！</p>
+
+<h4 id="因為那是上帝的工作是他要的">因為那是上帝的工作，是他要的⋯</h4>
+
+<p>不，不，不。請明白：那是一份反映，一份提供，一份禮物。是無條件的愛。</p>
+
+<p>上帝是無條件的愛，祂不會逼迫你用任何方式去解釋任何事情。一切都在於你，這就是你為什麼在這裡的原因。</p>
+
+<h4 id="因此上帝的話語聖經按照你的看法並不是上帝的話語">因此上帝的話語，聖經，按照你的看法，並不是上帝的話語？</h4>
+
+<p>不，全部都是。正如所有寫聖經的人也都是神。請明白：全都是相對的。神的話語全都是相對的：上帝包含每一種矛盾，每一種典範，每一種分段，每一種混合。上帝是全是，沒有任何事物在祂之外。你們就是全是，你們所生活的空間，你的時間，你花了那麼多時間在想自己是誰？是什麼——所有這一切都是你認為自己是什麼而創造出來的。你是神的思想之一。每一個存在，造化中的所有存在，全都是上帝在以不同的方式看自己。這就是所謂的全是。每一個次元，每一個存在，每一樣事物，每一個思想：全都是上帝。許多事物之所以被創造出來，沒有其它的理由，只是因為他們能夠創造。．</p>
+
+<p>很多時候，當你認為某一段文章比另一段重要，追尋著某些至高的真理，那時你就是在分裂，專注在全是的某一個部份上，而沒有看全體——整體永遠將自己看為整體。認識自己是上帝，只是單純地允許自己擁有最寬廣的定義，並且明白上帝是真實的。上帝知道自己是祂自己的存在，同時也知道自己是內在的每一個存在的總合。同時明白其內的每一個存在，都含有整體的完整性。正如你們所說的，對全是而言，沒有任何事是不可能的：如果你能想到，對全是而言就是真的。在某一層次，某一次元，某一意識層面，它存在著。</p>
+
+<p>現在，當你在挑選，尋找並且分析文章中的不同段落，很多時候，你之所以如此做，是因為你在尋找最高的使命。請明白：存在就是。全是就是：過去是，現在是，未來也是。存在並不存在於時間之內，時間存在於全是之內。因此它是永恆的。因此要瞭解此一概念——而且任何概念都是在全是之內所創造出來的——概念是從屬於全是的。至高的真理是個概念，使命也是個概念，都是存在於存在之內的。而存在遠在有使命的概念之前就已經在了。那存在於有使命的概念之間的存在，並不需要有使命才能存在。所以全是會按照它所能的所有方式去表達並彰顯，不必有任何的理由，或任何的使命，只因為祂是造物主，所以祂能夠。於是造物主就創造：再一次只是因為祂可以。</p>
+
+<h4 id="改變象徵">改變象徵</h4>
+
+<p>你們的象徵對你們是有效的。你們以前有改變過想法，而且你們不會再改變心意，關於用什麼象徵才能幫助你們認識自己是誰。你們選擇相信什麼，對整體而言，並不很重要。如果你們知道，你們之所以相信你們所相信的，是出自子對全是的無條件之愛，而同樣重要的是，也有對自己的無條件之愛，那麼就不用擔心自己要相信什麼。也不必擔心別人相信些什麼，因為你知道，不論你相信些什麼，那麼創造一些實相讓你去經驗。而且你會經驗到的。</p>
+
+<p>我唯一想說的是，如果像征是你所相信的，你所錯過的是與創造你的上帝建立好關係。</p>
+
+<p>為什麼？再一次要明白，是你們自己錯過了：「我能覺知兩面，我包含了兩極的分歧，是看來相反的兩面的整合體，我知道自己是全是，我也知道全是就是我的高層意識。」我可以創造的理念是：明白自己與「全是」是有關連的；同時我也可以看見：是自己創造了這份關係，因此而成為全是。對我而言，並沒有任何東西能互相排斥。</p>
+
+<h4 id="聖靈如何在人間運作">聖靈如何在人間運作？</h4>
+
+<p>我們對你們的聖靈的看法是：集體電磁心智，是所有個人心靈共同創造出的實際能量。從這個觀點看「靈真的是生理現象。」，一種電的效應，一種電磁現象。它的確是你們的世界中意識的光。</p>
+
+<p>再一次，聖靈運作的方式如下：你們全體都個別浸潤在此一能量之海中。由於浸在海中，當你透過興奮、服務、正向等等方法，以加速自己的震動，因而在電磁上與能量海對齊時，這時你就變成了靈。那基本上意謂著，你與所有其它的存在和諧地共存著，你在遙感上與所有事物都連結在一起，並且知道所有的思想。事實上遙感的正確定義應該是——被愛激動的情緒。而這就是聖靈，或者世界之靈。</p>
+
+<hr />
+
+<h3 id="天主教堂">天主教堂</h3>
+
+<h4 id="巴夏天主教堂的源頭是什麼">巴夏，天主教堂的源頭是什麼？</h4>
+
+<p>目前天主教會內的許多儀式，都是來自於古代德魯伊教的作法。那是亞特蘭大文明中教典的殘留。這些儀式都被重新定義過，以適合不同的議會及領袖的觀念，因此這些被誤會的觀念就一直傳遞到教庭的組織內。正如地球上許多的宗教一樣，天主教也是古亞特蘭大教義的一個旁枝。透過德魯伊的修法，經歷了重新定義的階段，在地球上凡是願意支持交融定義的地區中冒出來。不僅混合了古代德魯伊的修法⋯⋯同時也融入了八千年前，來自獵戶星座所投胎的教義。</p>
+
+<p>特別是對規則條款十分地開心：也對結構很關心：也特別對很深而沉重的能量很關心——對亞特蘭提斯的陸沈及毀滅，有一些負向性繁生出來，因而有某種程度的反應。想要對意志力加上很強的掌握，由於這種信念，因而相信，唯有透過壓制、命令、統治，才能使教徒重新與無限連繫起來。</p>
+
+<h4 id="呃大多數人都相信是耶穌創造了天主教">呃，大多數人都相信，是耶穌創造了天主教⋯⋯</h4>
+
+<p>不，不，不，不。是繞在耶穌周圍的人們，對天主教有某種程度的開創，而不是耶穌。這從來就不是耶穌的意圖。可是你們明白，重點在於那些信徒或使徒，當時也塞滿了一些古老的德魯伊修法的知識。他們對基督意識的明白，乃是根據那些古老的教義，而沿著潮流把它解釋成你們今天所擁有的基本結構。在基督意識來臨的時代，那是他們對該特別的彰顯所得到的明白。</p>
+
+<p>並不是基督意識的目的，要建立那一種天主教的結構。那是包圍耶穌的人們的意圖，因為那是他們當時的明白，是建立在他們已經學過的古老修法之上。他們按照自己的明白，繼續了此一傳承，可是卻有很多的誤解在。</p>
+
+<h4 id="死後當我們死時會發生什麼之後會怎樣">死後、當我們死時，會發生什麼？之後會怎樣？</h4>
+
+<p>這是不同的事。首先，你會顯然地不再認為自己是肉體。當你將自己由物理的限制中移出時，接著你會明白，這輩子所經驗的一切，都是自己的選擇，因此你可以在地球上或是任何其它星球上創造任何其它的實相！！或是完全不再投胎。你可以選擇在這個層次上的明白，而且非常明顯地看見，事實上，你就是造物主。</p>
+
+<p>現在，當你在肉體死亡時，首先會遭遇的是，你是在思想形式的世界中的一個思想形式，因此通常會經驗到你在世間時最強烈的信念。你將會經驗到信念的實現，那些信念似乎都物質化了，不論是天堂或地獄，或是任何介於兩者之間的。</p>
+
+<p>例如，如果某人相信有地獄，而且會是十分痛苦的，如果他馬上發現自己進入那自我創造的情境裡，他很可能沒法子忍受那麼多的痛苦，一旦他知道，他所承受的痛苦，並不是他所能忍耐的，痛苦就會減少，因為在非物質實相中的心靈，能馬上把想法翻譯進入他的經驗裡。當他一覺知到：當他改變想法時，周圍的情境也跟著改變了，那麼很快地，他會明白，自己不必泡在這種情境裡。他很清楚地知道，在任何一個剎那，不論他相信些什麼，即使就在那個層次——特別是在那個層次——就會快速地彰顯，而進入他所擁有的經驗實相裡。不是有意驚嚇你們，不過「地獄」，人們所捉住的觀念，只是因為有虐待狂，真正的虐待狂，所以才能在人間流行那麼久。</p>
+
+<h4 id="下一步的投胎那麼我可以進入另一個次元不必再投胎了">下一步的投胎那麼我可以進入另一個次元。不必再投胎了？</h4>
+
+<p>你不必再投胎，永遠是你的選擇。現在，既然你在這兒，我會假定你至少曾經選擇再投胎一次——進入這一輩子裡面。</p>
+
+<h4 id="這不是我的第一輩子">這不是我的第一輩子？</h4>
+
+<p>不是。在這個房間裡的人，平均都活過兩千至三千輩子，就地球特定的循環來看，你們在過去五萬年來一直在輪迴。</p>
+
+<h4 id="為什麼呢">為什麼呢？</h4>
+
+<p>為什麼不？因為你們選擇如此。因為你們選擇要探討限制的理念，而這些都已經在地球上表現出來了。為了如此做，你們選擇在很多不同的輩子裡彰顯自己，探討人類社會所有不同的存在理念。因此每次以不同的身份，幫你經驗到一切的存在，有時候甚至不只一次。每一件事物，因為現在是轉形的生命，這一輩子可以是你所選擇的循環中的最後一輩子，因為現在舊循環已經結束，正要轉入另外一個循環裡。</p>
+
+<h4 id="巴夏我想多問問有關耶酥的事我讀了很多開於耶穌的最後幾年而我知道由聖經上被刪除掉的那一段時間的訊息他有去印度嗎是在幾歲的時候">巴夏，我想多問問有關耶酥的事。我讀了很多開於耶穌的最後幾年，而我知道由聖經上被刪除掉的那一段時間的訊息。他有去印度嗎？是在幾歲的時候？</h4>
+
+<p>有去印度的想法。我們知覺到是在17歲及30歲左右。同時也與埃及有連繫。除此之外，還有許多的離體經驗而旅行到沒有史載的地方。請明白耶穌是允許自己認識他自己的神性，他自己的基督意識，而他只是很單純地反映給你們，你們也可以做到。</p>
+
+<p>當你重述他所說的話，就啟示了一切：「我就是道路，真理、生命。」</p>
+
+<p>如果你重述這句話，並且對自己為真，那麼是的。</p>
+
+<p>沒有什麼很大的奧秘在那裡，不用辯論了。</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-16T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/text/2018/01/16/bashar-text-%E5%B7%B4%E5%A4%8F-%E4%BE%86%E8%87%AA%E6%9C%AA%E4%BE%86%E7%9A%84%E7%94%9F%E5%91%BD%E8%A8%8A%E6%81%AF-%E7%AC%AC04%E7%AB%A0-%E6%B4%BB%E5%9C%A8%E9%82%8A%E7%B7%A3%E4%B8%8A.html">巴夏：來自未來的生命訊息 第四章 活在邊緣上</a></div><div class="next"><span>下篇</span><a href="/text/2018/01/16/bashar-text-%E5%B7%B4%E5%A4%8F-%E4%BE%86%E8%87%AA%E6%9C%AA%E4%BE%86%E7%9A%84%E7%94%9F%E5%91%BD%E8%A8%8A%E6%81%AF-%E7%AC%AC06%E7%AB%A0-%E7%94%9F%E5%91%BD%E6%9C%83%E7%99%BC%E6%8F%AE%E5%AE%83%E7%9A%84%E5%8A%9F%E7%94%A8.html">巴夏：來自未來的生命訊息 第六章 生命會發揮它的功用</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://zenkarsha.github.io/bashar/text/2018/01/16/bashar-text-%E5%B7%B4%E5%A4%8F-%E4%BE%86%E8%87%AA%E6%9C%AA%E4%BE%86%E7%9A%84%E7%94%9F%E5%91%BD%E8%A8%8A%E6%81%AF-%E7%AC%AC05%E7%AB%A0-%E4%BA%8C%E5%BA%A6%E4%BE%86%E8%87%A8.html';
+                        this.page.identifier = '20180116_text_巴夏：來自未來的生命訊息_第五章_二度來臨';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+

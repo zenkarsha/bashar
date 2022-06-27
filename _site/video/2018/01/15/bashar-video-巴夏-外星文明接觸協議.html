@@ -1,0 +1,1039 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏：外星文明接觸協議 - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="巴夏：我在你們今天這個時候向你們問候，你們都好嗎？好的，好的，謝謝！感謝你們與我們共同創造了這個默許的傳訊，今天我們傳訊的標題就是「外星文明接觸協議」。通常在我們要接觸的時候，我們將通讀一個總清單，給你們所有的不同階段，不同方面，不同的步驟的概述，通常涉及到接觸一個新的文明。當然，這取決於文明本身，並不是每一步都...">
+<link rel="canonical" href="https://zenkarsha.github.io/bashar/video/2018/01/15/bashar-video-%E5%B7%B4%E5%A4%8F-%E5%A4%96%E6%98%9F%E6%96%87%E6%98%8E%E6%8E%A5%E8%A7%B8%E5%8D%94%E8%AD%B0.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/bashar/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/bashar/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/bashar/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏：外星文明接觸協議</h1></header></div><meta itemprop="headline" content="巴夏：外星文明接觸協議"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E5%BD%B1%E7%89%87">影片</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月15日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Fvideo%2F2018%2F01%2F15%2Fbashar-video-%25E5%25B7%25B4%25E5%25A4%258F-%25E5%25A4%2596%25E6%2598%259F%25E6%2596%2587%25E6%2598%258E%25E6%258E%25A5%25E8%25A7%25B8%25E5%258D%2594%25E8%25AD%25B0.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-15T00:00:00+08:00">
+    <meta itemprop="keywords" content="影片"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+      
+        <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1KB614MZLVQUgS-cJEei6rRhWKg4lJR-tNA/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+        <div class="video__download__link">
+          <a href="https://drive.google.com/uc?authuser=0&id=1KB614MZLVQUgS-cJEei6rRhWKg4lJR-tNA&export=download" target="_blank">下載影片</a>
+          
+          <br />
+        </div>
+      
+    
+
+    
+    
+    <p><mark>巴夏</mark>：我在你們今天這個時候向你們問候，你們都好嗎？好的，好的，謝謝！感謝你們與我們共同創造了這個默許的傳訊，今天我們傳訊的標題就是「外星文明接觸協議」。</p>
+
+<p>通常在我們要接觸的時候，我們將通讀一個總清單，給你們所有的不同階段，不同方面，不同的步驟的概述，通常涉及到接觸一個新的文明。當然，這取決於文明本身，並不是每一步都是必要的，有時可能會有額外的步驟，考慮到社會的信仰體系、社會功能某些方面等等。</p>
+
+<p>雖然如此這會給你一個大致的概念，不僅是在我們社會中的我們所參與「第一次接觸」的階段，而且它也會給你一個確切的了解你所在的進度。因此，我們將通讀列表，其中的一些事情將是不言而喻的，一些事情我們將提供一點點微小的解釋，只是為了澄清概念。納尼亞，請你幫助念下列表中的第一件事。</p>
+
+<p>主持人：好的，<strong>1. 發現文明</strong></p>
+
+<p><mark>巴夏</mark>：好吧，這是相對而言不言而喻的，我們意識到，有這樣的文明存在著，在這個舞台（階段）上可以讓首次通信連接和接觸得以發生。像你們這種情況，我們了解到你們到達一個層次，並有一段時間，你們已經開始意識到，你們可能在宇宙中並不是孤獨的，你們開始發出一個邀請的振動，表明你們很好奇想了解更多。下一個：</p>
+
+<p>主持人：<strong>2. 觀察這個文明</strong></p>
+
+<p><mark>巴夏</mark>：我們觀察，我們測量能量，這就是你們開始看到你們所謂的全球範圍UFO活動的激增，開始精確的評估這個星球上的形勢，像你們這種情況，我們發現你們有不同的國家，不同的派別，不同的信仰體系，我們開始制定一個理解，如何與你們在現實中為自己所建立的振動聯繫起來。下一個：</p>
+
+<p>主持人：<strong>3. 判定接觸的潛在可能性</strong></p>
+
+<p><mark>巴夏</mark>：再次讀取所有這些讀數和吸收、整合所有信息，我們提出了一個「接觸可能發生在某一時間框內的可能性」的理解。下一個：</p>
+
+<p>主持人：<strong>4. 如果接觸可能性很高，在這個文明中選擇一個人生或連接</strong></p>
+
+<p><mark>巴夏</mark>：所以就像我們說過的那樣，這個通靈人在你們線性時間框架裡是我們其中的一個過去世，我們幾乎總是選擇一世在最終將會接觸的文明中，以便我們可以通過這個人生經驗更加深入地了解這個文明，然後能夠借鑑未來的自己，在這種情況下就是「我」巴夏。因為我們這樣做，所以它給了我們能力去理解引語、習語、文化，讓我們互相之間更平易近人，關係更親近。沒有這個過程，沒有這一步驟，事情會花稍許更久的時間，因為我們互相之間確實是外星人，因為我們的社會在很多方面與你們的非常不同，甚至之前少量關於我們社會的描述，對於我們社會實際上的運作方式來說只佔極小的比例。很多發生在我們世界、我們現實中的事，我們還沒通過信息傳遞給你們。儘管如此，我們互相之間有足夠的理解得以溝通。</p>
+
+<p>主持人：然後你想要，<strong>5. 設計人生為未來的接觸提供必要的基礎</strong></p>
+
+<p><mark>巴夏</mark>：是的，所以過去世將經歷一個途徑，一個過程，將給予他們為了未來溝通交流所需要的東西，在這種情況下，在這個通靈人的生命中會有某些特定事件發生，來讓他在時間恰當的時候準備好有能力去通靈。</p>
+
+<p>主持人：<strong>6. 形成目擊事件，觀察反應和回應</strong></p>
+
+<p><mark>巴夏</mark>：這對我們來說總是最有趣的一部分，因為即使有觀察已經發生了，有時你可能會撇見正在做觀察的飛船，現在目擊正正經經地開始了，我們讓你真正地看到飛船，我們認真地觀看和觀察，從你們社會出發了解你們社會結構中對於「我們飛船存在」的反應。</p>
+
+<p>主持人：<strong>7. 預測接觸各個階段的時間點</strong></p>
+
+<p><mark>巴夏</mark>：然後通過測量我們從你們所有人得到的反應和回應，通過稍微近距離的相遇，觀察到我們文明的飛船和少數其它東西這一套方法，然後我們可以開始看到大致時間點結構自動同步性地展開，由於它涉及到你們的社會，其中一個結果，要理解的是目前仍然是真實的，公開接觸的最高可能性的時間窗口大約在2025年至2033年。採集我們飛船目擊事件的反應和回應信息的結果產生出了同步性。</p>
+
+<p>主持人：<strong>8. 同步指導準備與個體的連接</strong></p>
+
+<p><mark>巴夏</mark>：換句話說，現在岱羅的人生是巴夏過去的自己的生活，現在我們為通靈人創建一個重要的事件，實際上是我們的飛船在兩個場合的目擊事件，在稍後的電影中你將會作為見證人看到這是如何展開的，以便你可以確切地看到這是如何發生的。但是然而這是一個刺激性的事件促使通靈人開始有意識地調查，正如你們經常說的「這到底怎麼回事？」、「這不是我們所告知世界的樣子，我要深入調查這些」，然後引導他走上了這條道路，更加速的方式來學習他所需要學習的東西。這樣，當成為通靈管道的時機到了，他會更好的準備。</p>
+
+<p>主持人：<strong>9. 開始聯繫有連接的個體</strong></p>
+
+<p><mark>巴夏</mark>：然而一些同步性地指引讓通靈人進入通靈課程，並學習通靈，在那些時候他甚至不知道將要有意識地成為一個通靈管道，然後在這個課程上所發生的心靈感應連接是交流的真正開始，有意識的通靈交流讓他自己決定是否要繼續在這條道路上走下去，因此：</p>
+
+<p>主持人：<strong>10. 隨著時間的推移傳播信息</strong></p>
+
+<p><mark>巴夏</mark>：正如你們現在所看到的，我們與你們所有人一起已經完成了，把理念和信息都帶入你們的社會，看看你們會用它做什麼。</p>
+
+<p>主持人：<strong>11. 觀察對信息的反應和回應</strong></p>
+
+<p><mark>巴夏</mark>：看看你們會用它做什麼，這就意味著在了解應用和使用這些信息後，看你是否能夠與你自己的能量校準和能否在你們的社會中保持正直，這將告所我們很多關於你在未來對於更多信息的反應，以及你是否真的準備好了。</p>
+
+<p>主持人：<strong>12. 開始與有連接的個體更高層面的交流</strong></p>
+
+<p><mark>巴夏</mark>：這意味著一個融合的開始，如果這個個體也是過去的「我」，開始真正對這些理念打開心扉，理解現在我們之間存在有非線性意義上的連接，不是線性意義上的，不是這樣說，「好吧，這是我的未來，這是過去的我」，但在非線性意義上理解這種連接的更高維度的觀點，例如，從一個更高的角度來看，我們是一體的，同一個靈魂，同一個存有同時在你們會稱為兩個不同的平行現實的時間框架中表達它自己。</p>
+
+<p>一旦通靈人開始掌握這些想法，一旦下載到通靈人並開始滲透進入他的意識系統，於是他看待事情的方式開始像我們那樣，超越第三維度、第四維度、第五維度，然後可以通過該連接的個體傳遞這類加高強度、加快速度的信息。</p>
+
+<p>主持人：<strong>13. 選擇額外的個體來傳播信息</strong>，謝謝，<strong>14. 形成額外的目擊來觀察回應的任何變化</strong></p>
+
+<p><mark>巴夏</mark>：所以第二階段的目擊，你會發現像比如「菲尼克斯之光（鳳凰城目擊事件）」那樣的事件，和各種各樣的事情以非常非常強大的方式引人注目，來再次看看社會會對此做什麼，個人會對此做什麼，很多人在那種目擊事件後開始充分加快步伐了，但是我們也注意到整個社會仍然似乎不想談論像這樣的事情。</p>
+
+<p>但這是一個普遍的評語，我們顯然知道，在你們世界各地的反應有不同的表達方式，因為不同的國家，不同的信仰體系等等，因此，你們世界的有些部分有點願意更公開地承認這些事情，你們世界的有些部分仍然對這些問題和經歷比較保密。所以當更強大更公開更明顯的目擊再次呈現給你們，我們再次讀取看看你們所有的個人和集體。</p>
+
+<p>主持人：<strong>15. 形成接觸符號</strong></p>
+
+<p><mark>巴夏</mark>：這很明顯就如你這裡所看到的塞多納渦流陣列和許多其它代表接觸振動頻率種類的符號，然後開始連同普遍的信息也傳播到你們社會中去，這樣你能夠有一個快捷、簡明版本的信息，這些形式的能量，作為意識許可來幫助加速，看看你實際上被什麼吸引而去使用它。因為你吸引來這些符號告訴我們很多關於每個人特定的振動頻率，個人振動頻率恰好是基於他們所吸引的東西。</p>
+
+<p>主持人：<strong>16. 在時間和地點合適的情況下開始相位接觸</strong></p>
+
+<p><mark>巴夏</mark>：所以，換句話說，這個要點我們跟你們很多人說過很多了，你們許多人在等待接觸發生，實際上許多方面已經發生過面對面的接觸。但接觸通常發生在一個稍微變換的現實，這類似於你們的物理現實，但實際上不是你們所認為的真實正常的物理現實。然後你忘記了這些事情已經發生了，這服務於一個目的是為了讓你以你自己的步調回憶起這些接觸已經發生過了。我們使用你回憶起來的速率作為測量裝置來判定你什麼時候準備好更有意識地實現接觸。</p>
+
+<p>主持人：<strong>17. 觀察回憶起相位接觸的速率</strong></p>
+
+<p><mark>巴夏</mark>：我們剛說過了</p>
+
+<p>主持人：<strong>18. 重新評估和傳播公開接觸的潛在時間點</strong></p>
+
+<p><mark>巴夏</mark>：再次，目前的時間窗口還是一樣的，雖然在世界各地可能有某些小氣泡的窗口，能夠有點加速我們給你們的大致上的窗口，這取決於你們社會中可能發生的其它事情，例如，你們自己發現，生命可能會在你們星球外的其它地方存在，不管這是不是意味著發現智慧的文明，這不是問題，只是這個特有的想法是你們憑藉自己發現在地球之外的其他地方可能有生命的存在，這可以改變你們的觀念模式，來幫助加速與其他文明的接觸。</p>
+
+<p>主持人：<strong>19. 觀察時間點公告的回應</strong></p>
+
+<p><mark>巴夏</mark>：再次，讓你們知道像接觸的可能性概率這樣的事情，我們再次評估你們是如何做出回應和反應的，它增加了更多的信息關於該時間窗口是否需要向上或向下滑動，或在窗口內可能需要發生的其它事情，或可能需要出現的其它報告。</p>
+
+<p>主持人：<strong>20. 觀察該文明狀況的任何變化</strong></p>
+
+<p><mark>巴夏</mark>：我們再次密切關注社會中正在發生的事情，並認出經由正面和負面的表達和加速，來判定憾讓我們知道事情什麼時候即將到頭，什麼時候新的水平線將要超過，當重大的轉變即將在你們星球上的集體和個人意識中發生的時候。因此，我們可以再次更好地評估接觸時間點。</p>
+
+<p>主持人：<strong>21. 協助平衡星球的能量</strong></p>
+
+<p><mark>巴夏</mark>：這就是為什麼我們的飛船在塞多納漩渦上空，特別的目的為了將我們的能量加持進這個漩渦，並以非常強大的方式與你們星球上其它至高點上的飛船相連接，從而幫助平衡這些漩渦的能量，然後發散這些頻率。所以當你與漩渦接觸時，它們會幫助放大你所帶來到漩渦的能量，不管是正面的還是負面的，從而協助和幫助平衡、混合、加速你們星球上的全球能量，從根本上穩定你們世界上的能量場使它更有助於公開接觸，因為在它真正的將成為一個能夠與許多其他文明發生接觸層級的兼容振動之前，振動狀態必須提高，要向我們的振動妥協。</p>
+
+<p>主持人：<strong>22. 形成接觸的主要工具</strong></p>
+
+<p><mark>巴夏</mark>：跟符號的概念很相似，有某些東西，取決於社會屆時一定會發生。因此在一些社團中，例如正在做的，像《第一次接觸》紀錄片那樣的接觸工具，有助於加速進程，你將看到的這實際上是一種接觸工具，並將產生一個效果，取決於你以及是世界各地其他人對它的反應和回應。</p>
+
+<p>在其他世界的其他文明可能需要其它類型的社會文化表達方式，要不是就像一本書，或戲劇或其它形式的信息或創造性的表達，將讓他們使用那樣的工具，在某種程度上會最好地服務於社會，以幫助增加接觸的可能性。</p>
+
+<p>主持人：<strong>23. 開始過濾不協調的狀態</strong></p>
+
+<p><mark>巴夏</mark>：這就是我們談論的關於分光稜鏡或者火車站的軌道去往不同方向的概念，確保你與你想要上的火車和諧地對齊，因為在未來跳選火車會越來越具挑戰性，因為軌道的相隔正在越來越遠，越來越遠。換而言之，所有的頻率都開始純真地將自己提煉成不同的趨向，這些趨向最終代表了非常具體的現實，即使現在在你們的現實中，你可能體驗到許多不同種類事物的發生，或者至少觀察到許多不同種類的事物，包括那些不一定與你振動協調的事物。</p>
+
+<p>在未來，這將是越來越有挑戰性地見證或經歷任何與你所選擇的任何振動軌道無關的事物。因此，這簡單的事一個激勵，以確保你在正確的軌道上正確的火車，與你真正的自我協調的路線。</p>
+
+<p>主持人：<strong>24. 成為接觸計畫的首要導師</strong></p>
+
+<p><mark>巴夏</mark>：正如我最近說的那樣，我父親所在第一次接觸委員會首腦的位置現在已經交給我了，因為成為第一次接觸的專家，在這個時候代表你們的星球，我的文明首要的專家現在已經下降到我來負責其餘的項目。</p>
+
+<p>主持人：你做得不錯</p>
+
+<p><mark>巴夏</mark>：好，謝謝，你也是</p>
+
+<p>主持人：<strong>25. 向該文明介紹接觸委員會</strong></p>
+
+<p><mark>巴夏</mark>：這即將到來，雖然你們已經有一個簡短的初步認識，相對最近我的父親事實上通過這個通靈人與你們的文明交流，這是你們現在所處的階段，這是你們在第一次接觸協議的時間表所輪到的位置，在不久的將來會更清楚地向你們介紹現實中全體第一次接觸委員會。因為現在你們已經到達了這一點，你們必須知道他們是誰，他們必須知道你們是誰。</p>
+
+<p>主持人：<strong>26. 加速目擊和意識到文明之外的生命</strong></p>
+
+<p><mark>巴夏</mark>：這些事情再次出現，你們還沒有在這個階段，但它正在接近，在未來幾年內的某個時候。</p>
+
+<p>主持人：<strong>27. 觀察回應</strong></p>
+
+<p><mark>巴夏</mark>：再一次</p>
+
+<p>主持人：<strong>28. 開始先驅者（precursors）接觸</strong></p>
+
+<p><mark>巴夏</mark>：我們將在即將到來的紐約傳訊中更詳細地討論關於先驅者。但總的概念是，有某些種類的存有，當你在他們面前時，會引起你的某些反應，我們將密切關注對那些存有所產生的反應，來真正判定你是否準備好要有真實的外星人自然地在你們中間行走。</p>
+
+<p>主持人：所以我們要__29. 觀察對先驅者的反應__，然後我們要__30.開始孤立的物理接觸__</p>
+
+<p><mark>巴夏</mark>：是的，這將開始變得多一點點接近你們物理現實的振動，我們可以在孤立的地方，在單獨的時刻，在零星各地開始，在那個時候開始與準備好的某些個人、某些團體公開進行接觸。</p>
+
+<p>主持人：你要__31. 隨著時間的推移擴大接觸__</p>
+
+<p><mark>巴夏</mark>：是的，這將進入2025年至2033年的時間窗口，因此，到這個時間窗口結束為止，在整個全球對與外星文明的公開接觸將有一個普遍的認識，與外星文明的公開接觸實際上已經正式開始。</p>
+
+<p>主持人：<strong>32. 開始在公開接觸前的最終目擊</strong></p>
+
+<p><mark>巴夏</mark>：是的，因為與世界各地的一些個人、一些團體等等，在這個意義上的開放性接觸，並不是最終的公開接觸，公開接觸是與你們星球上的每一種生命形式，不只是人類，你們是一個整體的系統，與地球公開接觸對我們來說意味著與「地球」即整體意識用各種方法進行公開接觸，你還無法想像，但它正在到來。</p>
+
+<p>主持人：所以這是物種之間交流的需要</p>
+
+<p><mark>巴夏</mark>：是的</p>
+
+<p>主持人：<strong>33. 觀察最終目擊的回應</strong>、<strong>34. 開始公開接觸</strong>、<strong>35. 最終決定繼續公開接觸</strong></p>
+
+<p><mark>巴夏</mark>：因為即使在那一時刻，有可能是和我們接觸的你們星球上任何文明的人，可能會選擇做出消極的反應，我們隨後將會把這些因素考慮進去，考慮接觸是否應該以這種方式發生，這可能是任何一個輕微的正在發生接觸方式的調整，致使接觸不能繼續下去了，你將會介於調整範圍內的某處，在那一時刻，將根據對於社會和文明來說，什麼才是真正最好的來決定是否看開始基於正確的公開接觸。</p>
+
+<p>主持人：<strong>36. 開始信息交換</strong></p>
+
+<p><mark>巴夏</mark>：如同我們最近說過信息交換的其中之一，你們將在公開接觸中給予交付給你們全部真實的歷史，填補現在你們所理解的「過去」的所有空白。這樣的事情例如關於亞特蘭提斯的真正信息，你們起源的真正信息，其他文明在你們星球上來來去去的真正信息，還有因為種種原因，你們目前實際上還沒有記錄在你們歷史中的其它許多東西。</p>
+
+<p>主持人：<strong>37. 開始任何特殊的程序</strong></p>
+
+<p><mark>巴夏</mark>：這將取決於那個時候對於任何特殊程序可能的需要，因為那將會是真正的開始，你們的文明將開始併入和參與星際聯盟，我們將拭目以待你們的文明需要發生什麼，以便讓這種轉變在那時盡可能平滑地進行，無論在那個時候你們可能有什麼特殊的需要。</p>
+
+<p>主持人：<strong>38. 準備該文明作為星際聯盟的成員</strong></p>
+
+<p><mark>巴夏</mark>：正如我們所說的那樣，這將包括許多不同的階段，直到通過完成成為星際聯盟的正式成員。如果這是你們所希望的，你們還沒有真正地完全決定下來。</p>
+
+<p>主持人：你想要__39. 訓練該文明去發現其他文明__</p>
+
+<p><mark>巴夏</mark>：是的，就如我們經常說的，有其他的文明達到大約跟你們文明一樣的基本水平，他們中很多文明在某種意義上被單獨遺留下了，因為你將成為他們的UFO，你將跟他們第一次接觸，我們已經把他們公開地留下作為你們的訓練基地，以便讓妳們跟隨我們的腳步。</p>
+
+<p>主持人：令人吃驚！<strong>40 .指引文明開始與其他文明接觸</strong></p>
+
+<p><mark>巴夏</mark>：是的，同樣我們將在那裡指導你們，並指引你們前進的道路，這樣你們就不會無意間炸毀任何星球。嘿嘿，只是個玩笑，我們這麼想的。</p>
+
+<p>主持人：<strong>41. 開始成為星際聯盟的正式成員</strong></p>
+
+<p><mark>巴夏</mark>：在你們與其他文明互動，通過成為那些第一次接觸的教導者，有了些經驗後，你們將成為星際聯盟的正式成員，這意味著你們已經對廣闊的星系，廣闊的宇宙開放了，與我們和其他文明分享科技，跨越繁星，真正地成為銀河人類。</p>
+
+<p>主持人：<strong>42. 開始與新成員相關的特定程序</strong></p>
+
+<p><mark>巴夏</mark>：是的，你們有你們的力量，因此許多不同種類的程序來自星際聯盟中你們的成員，他們將利用你們帶給星際聯盟的：那就是獨一無二的你。因為這是我們所珍惜的所有一切的多樣性，通過讓你們真正地表達你們本質的力量和獨特性，加強了所有你們所在的獨特社會，也將加強星際聯盟的統一和和諧。</p>
+
+<p>主持人：最終__43. 繼續保持和有經驗的星際聯盟文明成員的關係__</p>
+
+<p><mark>巴夏</mark>：是的，在那時，你們將被認為是一個有經驗的文明成員，並且有許多許多許多事情，許多機會，許多不同種類的經驗，可以開放給一個有經驗的文明成員，現在，這可能遠遠超出了你所想像的成員實際上的樣子，但你將能夠在那個時候探索許多不同的東西，超越了任何這些你已經習慣了的所謂的科幻場景，這意味著實際上成為聯盟的一個成員就遠遠地超越那些了，比你可能知道的更深遠地深入你意識的深處，那麼⋯⋯</p>
+
+<p>主持人：那麼我確實有一個問題，當你提到關於最終決定繼續公開接觸，或者甚至更早的時候，是不是有另外一個時間再來評估一個文明是否將向前發生接觸？</p>
+
+<p><mark>巴夏</mark>：是的，但我們總是在稍後的時間，提供給文明機會來做出最後的評估</p>
+
+<p>主持人：曾經你分享過關於文明的百分比實際上超出了那個階段</p>
+
+<p><mark>巴夏</mark>：是的</p>
+
+<p>主持人：那是什麼？</p>
+
+<p><mark>巴夏</mark>：一般而言，讓我們這麼說，平均大約75%我們接觸過的文明，實際上將會選擇保持成員關係，不過有些並沒有</p>
+
+<p>主持人：為什麼他們不呢？有什麼理由嗎？</p>
+
+<p><mark>巴夏</mark>：他們可能會發現，以他們自己的估計來看，一旦因為接觸，他們就會變得足夠的統一，因為他們看待事物非常的不同，他們也許會發現，他們已經決定，他們將為自己創造一個獨特的和不一樣的命運，我們肯定會讓他們這樣做，然後離開，他們靠自己找到他們所需要的任何東西，而不一定成為一個成員。</p>
+
+<p>換句話說，這並不是意味著他們沒必要與我們進行互動，他們只不過是不一定擔當聯盟的正式成員，他們將更多地擔當起以一個獨立的星球國度。這是一個原因，還有其它很多原因，但是這只是其中一個，這有幫助嗎？</p>
+
+<p>主持人：我想是的，對大家有幫助嗎？</p>
+
+<p>觀眾：是的</p>
+
+<p><mark>巴夏</mark>：好的，現在你知道了你在計畫裡的哪裡了，你現在可以拿一個釘子釘住並說「你在這裡」，這裡是未來即將到來的日曆記事，所以現在它給了你一些意義，這實際上是一個重要的習題，它給了你一些你到底已經走了多遠的感覺，因為總的來說，你離列表的最後一行並沒有那麼遠。因此在這個概念的上下文中，你可以看到你在取得進展。</p>
+
+<p>你可以看到，朝著加速推進到我們剛剛描述的那種發展方式，對於你來說其餘的真的沒有那麼多。因此，我們感謝你們願意與我們和其他文明一起以這種方式向前推進到了這一點，因為你們是家人，「再度覺醒」家人的一員，所以他們可以重新加入到大家庭中，「歡迎他們回家」對我們來說是巨大的喜悅，謝謝！</p>
+
+<p>然後，作為你們現在給予我們禮物的回報，我們請求可以以什麼樣的方式來繼續為你們服務，請開始你們想要的提問吧！</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-15T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/video/2018/01/15/bashar-video-%E5%B7%B4%E5%A4%8F-%E5%9F%83%E5%8F%8A%E9%87%91%E5%AD%97%E5%A1%94%E7%9A%84%E7%9C%9F%E6%AD%A3%E7%9B%AE%E7%9A%84.html">巴夏：埃及金字塔的真正目的</a></div><div class="next"><span>下篇</span><a href="/video/2018/01/15/bashar-video-%E5%B7%B4%E5%A4%8F-%E5%A4%A2%E6%98%AF%E5%9C%A8%E9%86%92%E5%89%8D%E5%B9%BE%E7%A7%92%E4%B8%8B%E8%BC%89%E4%B8%8B%E4%BE%86%E7%9A%84%E5%97%8E.html">巴夏：夢是在醒前幾秒下載下來的嗎</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://zenkarsha.github.io/bashar/video/2018/01/15/bashar-video-%E5%B7%B4%E5%A4%8F-%E5%A4%96%E6%98%9F%E6%96%87%E6%98%8E%E6%8E%A5%E8%A7%B8%E5%8D%94%E8%AD%B0.html';
+                        this.page.identifier = '20180115_video_巴夏：外星文明接觸協議';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+

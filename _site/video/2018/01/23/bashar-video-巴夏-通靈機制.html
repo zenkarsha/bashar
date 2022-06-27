@@ -1,0 +1,899 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏：通靈機制 - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="巴夏：我在你們今天這個時間向你們問好，日安！好的，好的，謝謝！再次，我們感謝你們每一個人，感謝你們所有人一起在此時此刻，以這樣一種方式共同創造了這次互動，默許了這場傳訊，在我們各自的文明之間架起了橋樑，我們各自的意識之間建立了紐帶，創造一個嶄新的我們都可以成長學習和玩耍的第三現實，我們難道不感謝妳們所分享的禮物嗎...">
+<link rel="canonical" href="https://zenkarsha.github.io/bashar/video/2018/01/23/bashar-video-%E5%B7%B4%E5%A4%8F-%E9%80%9A%E9%9D%88%E6%A9%9F%E5%88%B6.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/bashar/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/bashar/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/bashar/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏：通靈機制</h1></header></div><meta itemprop="headline" content="巴夏：通靈機制"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E5%BD%B1%E7%89%87">影片</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月23日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Fvideo%2F2018%2F01%2F23%2Fbashar-video-%25E5%25B7%25B4%25E5%25A4%258F-%25E9%2580%259A%25E9%259D%2588%25E6%25A9%259F%25E5%2588%25B6.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-23T00:00:00+08:00">
+    <meta itemprop="keywords" content="影片"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+      
+        <div class="video__container"><iframe data-src="https://drive.google.com/file/d/15X_9Si0_nIfZDvkon1ptZjulNDpCGKQaVg/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+        <div class="video__download__link">
+          <a href="https://drive.google.com/uc?authuser=0&id=15X_9Si0_nIfZDvkon1ptZjulNDpCGKQaVg&export=download" target="_blank">下載影片</a>
+          
+          <br />
+        </div>
+      
+    
+
+    
+    
+    <p><mark>巴夏</mark>：我在你們今天這個時間向你們問好，日安！好的，好的，謝謝！再次，我們感謝你們每一個人，感謝你們所有人一起在此時此刻，以這樣一種方式共同創造了這次互動，默許了這場傳訊，在我們各自的文明之間架起了橋樑，我們各自的意識之間建立了紐帶，創造一個嶄新的我們都可以成長學習和玩耍的第三現實，我們難道不感謝妳們所分享的禮物嗎？而且以這樣一種方式讓我們體驗到你們所有人。</p>
+
+<p>我們想以「通靈機制」這個標題來開始這場傳訊，我們想首先提醒你們每一個人，包括那些以前聽到過的和那些也許還沒有聽過的人，那就是你的人格，你認為你自己是一個人其實是一個通靈實體。因為你是更偉大的存有，靈性存有，遠不止這個人格，你在物質實相中作為人格來表達你自己，以非常真實的方式。因為它是一個人造的投影，一個受限的投影，在某種意義上作為你所是一個更偉大的存有的一部分。</p>
+
+<p>當你照鏡子時，你認為自己是這個人，實際上是你所是的更偉大的存有正被通靈（傳導）進入物質實相。所以通靈對你們所有人來說在某種程度上都是自然發生的。當然你可以用它做不同的事情，你可以調整它去編織它，以各種不同的方式來表達它。</p>
+
+<p>你面前手頭上的圖表，是為你下載的，解釋這圖表有點像電路圖，我們正在處理能量，我們正在處理頻率、共振，我們將首先說你們所有人都有不牢靠的大腦，你的大腦是量子共振器，因為他們通過共振接入量子實相，諧振識別，在量子層面匹配頻率，然後開始轉化成為你的宏觀現實。</p>
+
+<p>你可以，當你把振動引入到你人格的通靈振動，也是鍵入你自我意識的其他層面，其他的實體也可以選擇匹配你的頻率或者你匹配他們的，概括地說以這個圖表來解釋說明，這種匹配發生的方式，至少從我們的角度來看，我們與你們的關係是這樣的：</p>
+
+<p>首先，正如你所看到的，無論是來自於我們的信息，還是僅僅存在於「存在構造」本身之中的信息，這都不重要。首先遇到的是所謂的妳們集體共識現實的協議，我們總是會通過你們的共識現實過濾我們傳遞給你們的信息，來確保我們沒有說漏嘴和洩漏秘密，用信息在你們的社會中胡作非為，以你的判斷來看，這對你並不適合，因為共識現實還不知道。</p>
+
+<p>所以，會有一種強加給我們的過濾系統，將會阻止任何不恰當的可能會中斷或干涉過程的信息，以便讓你有機會去體驗你需要經歷的過程，以此獲得你需要擁有的，在你人生當中探索主題有關的體驗。因此，如果有一些我們不該告訴你們的東西，基於你們的共識現實的協議，那麼這就是我們根本無法訪問的信息。我們可能甚至都不知道我們無權訪問它，它只是不會在那裡。</p>
+
+<p>所以，我們所帶來的信息一直是，總之從我們的角度來看，是可以與你們分享的東西，接著我們將從共識層面的現實、共識協議來到你們自己個人的高我，我們會與你的非物質的高我一起工作，也就是作為一個人的另一半的你，在物理現實中的物質頭腦和非物質的高我一起協同工作，可以說與另一半的你，這才讓你成為了一個完整的人。</p>
+
+<p>就用委婉的話來說，高我站在山頂，另一半的你在物理現實的山谷底下，山頂上非物質的那一半在指引你，因為它能比山谷裡的人看得更遠，所以它會告訴你這裡的路：向左走，向右走，一直往前走，轉身，回頭，到處走走，我能看見道路，我在指引你。</p>
+
+<p>然後物質頭腦接受到了那個指引，完美地跟隨沿著這條特別的道路，通過達成一個協議，通過和諧共處，通過同步性地與高我相一致，並作為一個完整的人發揮著作用。</p>
+
+<p>所以我們一直是與高我一起工作，同樣確保有另一個過濾系統到位，這將會傳遞適合你物質頭腦的、你的物質人格去體驗的信息給你，以這樣一種對你最有效的方式向你傳遞信息。當然並不總是我們的工作來傳遞所有那樣的信息給你，你有你的指導靈，可能還有在接觸其他的存有，也許你知道他們，也許不知道，他們也有傳遞信息的工作，用各種各樣的方法傳遞信息給你，正如我們經常說的，你的指導靈最常使用的方法之一就是同步性本身，因為當他們（指導靈）在你面前應用得當的時候，它們（同步性）往往會是最有效果的，使用你已經穿越過的現實，他們可以僅僅給你最溫柔的推動，而不是在你的頭腦中發表一個長篇大論。</p>
+
+<p>為了在正確的地點和正確的時間，讓你在當你需要轉身的時候正好轉身，在你需要在這裡的時候剛好在這裡，像這樣，沿著最小阻力的路徑傳遞已經存在於你們現實中的信息，他們讓自己盡可能的不引人注目，所以，為了不干擾你的進程。於是通過注意那些微妙的被滲透的跡象，你有能力成為你自己最好的嚮導。</p>
+
+<p>但是正如你可以看到的就通靈而言，最後一個層面是人格本身，在圖中特有的核心，你看到那個被劃分成黑白的小圓圈，它代表了人格結構中的正、負信念系統。但在它的周圍，你可以看到一個裡面畫有線條的圓圈，以某種方式運轉著，這是過濾系統，你自身人格結構的能量過濾系統，你正在通靈傳導的人格結構，它採用的導向，過濾器採取的過濾方向不僅基於你選擇探索的主題，而且還基於隱藏在人格結構中的正面或者負面的信念系統。</p>
+
+<p>所以在底下你可以看到，有不同的狀態，有不同的方向，這些都是過濾器可能會處於的狀態。第一個你看到的是所有的信息被允許通過，無阻礙的、無過濾的，以一種平衡的方式。第二個你可以看到的是完全阻塞的信息，建立了一個障礙，使信息在某種意義上被反彈了，或者返回它原來的地方，或者沒有盡可能清晰地穿過去。然後你可以看到的方向（取向）所代表的是，朝向信息的正面自旋或負面自旋。</p>
+
+<p>此外要明白的事，這個過濾器，這個裡面畫有線條的圓圈一直都在波動變動和共振。它不是持續不變的，它是這樣－那樣變動的，這樣－那樣，上下，斜向，堵塞，堵塞，堵塞，通過，通過，正面－負面，正面－負面，負面－正面，負面－正面，阻塞，阻塞，通過，通過，它每時每刻都在旋轉，非常非常迅速地判定哪些信息是需要獲得通過的，哪些信息是不希望獲得通過的，是你害怕會通過，還是你想要那些信息通過，所有這些不同種類的東西不僅是從你所探索的主題中得到提示，而且也是來自你的正面和負面的信念系統。</p>
+
+<p>這個正面向上自旋的取向，這個負面相向自旋的取向，就如你看到這兩個45度的角，這只是一個圖示。然而，換句話說這些實際上是代表了一個假的正負面性。實際上，你可以容許自己把一個正面的自旋放在某個東西上面，其實那東西是處在一個負面的狀態；或者你可以容許自己把一個負面的自旋放在某個東西上面，可能這東西其實是代表了正能量。</p>
+
+<p><img src="/assets/images/巴夏178：負極信念的騙術.jpg" alt="巴夏178：負極信念的騙術.jpg" /></p>
+
+<p>舉個例子，你們社會中的人也許會說：焦慮其實是興奮，他們正在掩蓋他們的基於恐懼的信念，把正面的自旋放在上面，假裝它其實是興奮，卻沒有注意到負面信念，這就是假的正面性。或者是你的真正的興奮，真的能夠代表與你真正的自我對其，卻被賦予了壓抑興奮的負面自旋，因為害怕朝那個方向前進。</p>
+
+<p>所以，實際的理想通靈狀態是所有信息都流過的第一個取向，實際上理想的情況是，你希望過濾器壓根不要波動太大，你不想要向上的正面自旋，你不想要負面的自旋向下，你不想要阻塞，你想要自由地流動，以便讓所有的信息都通過，無論來自源頭的信息顯示為任何自旋，而不是被基於信念系統的人格結構給過濾掉。</p>
+
+<p>所以讓你自己擺脫任何負面的信念系統，也讓你自己對於信息的傳遞保持相對中立，一般而言，這將使過濾器保持在一個取向，將允許信息以盡可能未過濾的方式通過，這是理想的狀態。</p>
+
+<p>當你平衡你自己，平衡你的物質人格與高我，那麼這個通靈迴路會遵循最小阻力的路徑，並帶來完整的表達，不僅你自己的真實人格與高我最大程度地對其，這將允許你以盡可能最平衡的方式穿越人生和探索你的探索主題，而且可以連接到任何其他的實體，也能夠通過你來傳遞信息，也可以被允許傳導，以最小阻礙、最少混淆的方式，也可以說是最小旋轉。因此它清晰的被傳達，以中性的方式被直接傳達，僅僅為了它本身的目的被傳達，然後把它留給你，你來決定在你的人生中你是否吸收那些信息成為你生命的一部分，而不是傳達任何此類旋轉的信息：</p>
+
+<p>「這是有史以來最驚人的信息，你不應該聽任何其他的信息」</p>
+
+<p>「或者你應該照我說的去做，因為如果你不這樣做，你會遇到麻煩」</p>
+
+<p>這些是正面與負面的自旋，只要讓它處於中立，這樣你就可以開始決定什麼是適合你的，這樣你就可以開始經歷過程去學習這些信息，消化理解使它成為你自己的，這樣你就可以開始選擇是否匹配那些信息的頻率，來決定與否這信息對你來說是不是真實的，這有道理嗎？</p>
+
+<p>所以這是通靈的基本線路，再次信息的來源，始終通過共識協議，共識協議是可以改變的，始終通過個我，高我也是可以改變的，進入物質人格，物質人格顯然一直都在變化，基於你堅信是真實的，你內在的正面信念和負面信念的核心思想，並允許該過濾器以一種最代表了理想平衡的方式自旋和共振。</p>
+
+<p>所以，任何你需要的信息，無論是來自哪個源頭，都在盡可能地以最大程度未過濾的方式傳達給你，進入你的生命中，這聽起來怎麼樣？好的。</p>
+
+<p>所以你可以讓自己在另一個有空的時間，簡單地吸收這些圖示，你可以從中看到更多，當你以它冥想，當你專注於它，允許你自己為自己結晶話具體化這個概念，並領會到這些圖表示如何在你的心智中，在你的高我中，在你的共識中被真實地感受到，允許你自己使用這些圖表來想像信息中的能量迴路流經你，允許該過濾系統在恰當的量子頻率上共振，以保持在最小阻力的路徑上暢通地傳達信息，使其認同，使其同步化，使其和諧話，使其以最有效的方式服務於你。</p>
+
+<p>並且允許其他人也這樣做，為他們自己，因為當每個人都被允許處在完美的共振頻率，然後通過在你生活中同步性的巨大狂喜式的爆發，一齊你將非常激動，你將非常和諧，你將完全同步，這將會擴大和擴張和擴展，永不停止，直到你爆炸。</p>
+
+<p>但那很有趣，那樣爆炸的方式很有趣喲，你會爆炸成另一個版本的你自己，你會感到疑惑，原來的「你」哪去了，因為你會真正成為一個新的人，因為每一刻的你都是新的。但是這個概念實際上會讓你觸及到你神經網上的正在發生的某些事情，來讓你有更多的發自肺腑的體驗，更多的物質體驗到這個事實：你實際上在通靈你的人格。因此，你確實是一個不同的人，每時每刻，每時每刻，每時每刻，當你聯通你自己的更高源頭，所接受到的全部信息，建構了這種人造人格，你所稱呼為「你自己」。</p>
+
+<p>這只是一個短暫的表象，一個短暫的碎片反射，閃爍進你的眼睛，閃爍進其他人的眼睛，變幻無常的，像變色龍那樣的偽裝擬色，一直都在變化，一直都是新的，你可能會認為它看起來是一樣的，但它從來沒有真正相同過，如果你看得足夠仔細。</p>
+
+<p>這張圖可以幫助你理解如何在你的物理現實中，以更為圖形和內在的方式來看待這些事情。所以領會它們，使用它們，如果你希望的話，這取決於你自己。或者如果沒有別的了，你可以把它們放在你的鸚鵡籠子的底部，然後你就會從中找到用處了。</p>
+
+<p>我們感謝你們在今晚這個時間，允許我們敘述這個概念給你們，讓它被你們吸收，它會透過你，並且如果你允許它的話，它將幫助你做出一些你想在生活中做出的調整，關於在生活中你認為你自己是誰，你告訴自己你所信的真實的故事，那樣你就可以改變故事，如果它不再為你效勞，因為這就是你，這是你的故事。</p>
+
+<p>那麼，作為你們給予我們的禮物，允許我們以這種方式體驗到你們的回饋，我現在問你們，我們可以以什麼方式來為你們服務，你們可以開始你們想要的提問了。</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-23T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/video/2018/01/23/bashar-video-%E5%B7%B4%E5%A4%8F-%E9%80%99%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E7%9C%9F%E5%AF%A6%E7%9A%84%E5%97%8E.html">巴夏：這一切都是真實的嗎？</a></div><div class="next"><span>下篇</span><a href="/video/2018/01/23/bashar-video-%E5%B7%B4%E5%A4%8F-%E9%80%B2%E5%85%A5%E7%AC%AC%E5%9B%9B%E5%AF%86%E5%BA%A6.html">巴夏：進入第四密度</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://zenkarsha.github.io/bashar/video/2018/01/23/bashar-video-%E5%B7%B4%E5%A4%8F-%E9%80%9A%E9%9D%88%E6%A9%9F%E5%88%B6.html';
+                        this.page.identifier = '20180123_video_巴夏：通靈機制';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+

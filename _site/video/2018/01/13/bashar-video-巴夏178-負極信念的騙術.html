@@ -1,0 +1,890 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏178：負極信念的騙術 - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="這件事裡存在負面信念。所以，在你認識到是負面信念做的這件事，並且用盡其所有騙術的時候，你就可以開始認真的檢視其中每一個騙術了。而使用這個模版的方法就是拿一些具體的負面概念，依靠我們之前已經討論過的步驟來檢視它們，找出這個負面概念是什麼。比如說…舉個例子：「我不被愛」。然後拿出這個概念，把它放在圖中心。接著開始觀察...">
+<link rel="canonical" href="https://zenkarsha.github.io/bashar/video/2018/01/13/bashar-video-%E5%B7%B4%E5%A4%8F178-%E8%B2%A0%E6%A5%B5%E4%BF%A1%E5%BF%B5%E7%9A%84%E9%A8%99%E8%A1%93.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/bashar/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/bashar/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/bashar/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏178：負極信念的騙術</h1></header></div><meta itemprop="headline" content="巴夏178：負極信念的騙術"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E5%BD%B1%E7%89%87%EF%BD%9C%E7%B7%A8%E8%99%9F%E7%B3%BB%E5%88%97">影片｜編號系列</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月13日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Fvideo%2F2018%2F01%2F13%2Fbashar-video-%25E5%25B7%25B4%25E5%25A4%258F178-%25E8%25B2%25A0%25E6%25A5%25B5%25E4%25BF%25A1%25E5%25BF%25B5%25E7%259A%2584%25E9%25A8%2599%25E8%25A1%2593.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-13T00:00:00+08:00">
+    <meta itemprop="keywords" content="影片｜編號系列"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+      
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1xdK337eSgFOfvUCBTJ8Rj--kXKnOYaJnNA/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1xdK337eSgFOfvUCBTJ8Rj--kXKnOYaJnNA&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1xJj3nwgHKm3qkdf7K_kLlBfhMpSDu3RQSA/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1xJj3nwgHKm3qkdf7K_kLlBfhMpSDu3RQSA&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+      
+    
+
+    
+    
+    <p><img src="/assets/images/巴夏178：負極信念的騙術.jpg" alt="巴夏178：負極信念的騙術.jpg" /></p>
+
+<p>這件事裡存在負面信念。所以，在你認識到是負面信念做的這件事，並且用盡其所有騙術的時候，你就可以開始認真的檢視其中每一個騙術了。而使用這個模版的方法就是拿一些具體的負面概念，依靠我們之前已經討論過的步驟來檢視它們，找出這個負面概念是什麼。</p>
+
+<p>比如說…舉個例子：「我不被愛」。然後拿出這個概念，把它放在圖中心。接著開始觀察那些所有不同的方法，騙術使用它們來加強這個「我不被愛」的念頭。騙術讓這個念頭看起來是它在自主選擇，使它合理化，邏輯化，並且有價值，漸漸養成一種猜疑，迫使你不去尋找「你是被愛著」的真相。</p>
+
+<p>騙術使用的其中一個最狡猾的方法就是加強你內在追求負面方向的能力，使你相信：「如果你真的去尋找概念的正面一面，你是找不到的。因為根本不存在。不可能是真的。所以當你去尋找並且發現正面概念不存在時，你將會失望。你會發現你真的如同你被告知的一樣不好。」</p>
+
+<p>因此為了不惜一切價避免對負面自我的強化，你就僅僅只是留在負面的自我裡。看看，騙術多狡猾！它實際上是在說：「不要去尋找不要去證明。就呆在負面狀態中。因為處於負面狀態至少要比證明負面狀態是真的要好。」它其實是在用自身來強化自身。</p>
+
+<p>它會說：「你是不會想去尋找的，然後發現我告訴你的或許實際上是真的。因為至少在這裡你還有疑惑，一絲絲疑惑。我會允許你有那麼多疑惑。那是你應得的。但是如果你去探尋我告訴你的是否是真的，那麼你只會發現我說的是真的。然後你就連懷疑也沒有了。所以至少呆在負面狀態，緊緊抓住那一絲疑惑。這樣至少能讓你活著——痛苦——但是活著。」</p>
+
+<p>「但是如果你去尋找然後發現我告訴你的事情絕對真實，你毫無價值。那時候你的整個世界將會坍塌，你會消滅自己，你會無法活下來。因為如果你絕對地知曉自己不屬於創造，你怎麼活下去？如果你絕對地認為自己毫無價值，你怎麼活下去？你怎麼活下去？你活不下去！」負面信念如此說到：「你活不下去！」</p>
+
+<p>「所以就呆在這兒吧。跟我給你的那點小小疑惑玩耍。這樣啊…，嗯，我不知道。也許你說的是真的。或者也可能是假的。我不知道。但是這裡安全一些。至少在這裡我還活著，痛苦但是活著。所以我將保持你長存不滅，而我把疑惑隨身帶著。我會繼續懷疑。繼續懷疑。我真的如此毫無價值，可能嗎？也許我不是的。喂…但是如果你去尋找可能會發現你確實毫無價值哦！好吧，我還是呆在這好了。」一次又一次⋯⋯</p>
+
+<p>但是現在，請允許你的更高意識，通過我們投射回你自己。去看見負面信念編織的騙術網，看見這個網創造出來的這些橋段，看見那個「你必須保有負面信念」的幻象。現在你只需看著它，這個網將開始把它自己烙印在你的神經網絡中。然後我們做一下全息練習。15分鐘後有冥想。我們將把那個影像燒進你的神經框架，直達模版層（高我設計人生藍圖的層面）。</p>
+
+<p>這樣從此以後，每當你遇到一個負面信念你都不會忘記它在你身上使用的這一袋子騙術。那會給你一個動念，僅僅一個動念就足夠了。於是當你發現自己陷入一個負面信念並把持不放。說，可憐的我啊！這就是我的定數了！我永遠也逃脫不掉的！沒有出路的！改變不了的！你對我說的不是真的！你跟我說「我被愛著」，你在害我！</p>
+
+<p>這時，你會記起這個模版。突然說，誒，等會兒，等會兒，有什麼東西闖進來。我聽見一聲耳語。我聽見高我的一聲回音，這也許是個騙術。你會開始回憶起那一袋子用在你身上的騙術。突然間你意識到它的荒謬，愚蠢，不合邏輯，毫無道理。你將認清負面信念如同其他任何信念一樣僅僅是個信念。你不必非要相信它所告訴你的。你可以選擇去相信自己更喜歡的。</p>
+
+<p>你可以轉換到正面信念架構裡。意識到你擁有自由，你擁有選擇權，你擁有靈感，你擁有成長，你擁有正面信念同步轉化能力而不是負面的同步轉化，你能夠擴展而不是收縮。你能夠開始看透那個負面信念正拚命試圖讓你去信以為真的幻象。負面信念之所以不顧一切、孤注一擲，因為它將此絕望建立在如果你將負面信念拋棄，那麼你將會死亡—帶著它一起死亡。</p>
+
+<p>然而需要進一步瞭解的概念是，死亡也是謬誤、是幻象。負面信念永遠不會真的死掉。它只不過變身成為你擁有的無窮無盡選擇中的一個平等選項。你會從正面的面向看待它，從正面的視角。那個負面信念？是的，它還在那兒。我仍然可以繼續選擇那個負面信念。但是既然現在它只不過跟其它信念一樣是一個平等的選項。我寧願不選它。我更喜歡這個而不是它。</p>
+
+<p>所以，負面信念不會真的死亡。它會盡其所能使出渾身解數使你信服：一旦你消滅它，一旦你改變信念，因為這個負面信念就是全部的你，你消滅它就是消滅你自己。你拋棄那個負面信念就是在自殺。你將找不到任何東西來替代它。因為沒有可以替代它的信念。你會終了於空無中，在無盡的孤獨悲慘中，直到永遠⋯⋯阿門！</p>
+
+<p>這就是負面信念的一袋子騙術。所以在我們說過的今天通訊的第三部分，我們將通過全息經歷（冥想）把這些烙印在你們的神經網絡裡。你們將開始見到事情在轉變。即便僅僅是在負面信念的全盤計畫裡、在它的一袋子騙術裡留下一絲缺口。這一絲缺口將足以讓你看見出路。讓你看見這條通往光明的出路。僅此足矣。</p>
+
+<p>它僅僅是一份去知曉的能力，去看見的能力，去覺知的能力，去知曉、去看見、去覺知那個存在於黑暗中的出路。這份能力足以讓你開始向那個出路邁進。你將會持續不斷地遭遇負面信念各種騙術的連番轟炸。它會試圖再次把你從那個出路上嚇離。但是現在你知道了那只不過是一袋子騙術。你明白了它講給你聽的事實上並不靠得住。那只不過是負面信念企圖借此來保全自己。</p>
+
+<p>所以，當你距離那個出路越來越近、越來越近，相信我，負面信念會跟你好好幹一架的。它會將事情放大，把它們弄得好像如果你選擇忽視就會有生死危機一樣。這樣距離出路越近，每前行一步就會愈來愈難。但是只要你堅持把目光放在通道一端的光亮上，無論負面信念說什麼，你終究會抵達那份光。而在前行的每一步上，你都將得到「動念」（靈感）。</p>
+
+<p>我們剛剛所描述的就是負面信念通常的所作所為。你每朝那份光瞥去一眼，它就會轟炸你，各種誇張、放大它的一袋子騙術把你從出路引開。再把出路遮上。但是現在，事情將會有所不同，因為你知道了這個模版，你把它烙印進你的神經網絡中。如今你在黑暗裡看見了光。你正一步一步地向它走去。</p>
+
+<p>每每負面信念帶著它的一袋子騙術企圖對你轟炸來鞏固它自己，你都會調準回初始狀態，調整頻率對準那個模版。然後你會開始發現負面信念論點中的漏洞。這些論點將支離破碎。它們無法保持完整，因為你永遠都明白無論負面信念再拿什麼來轟炸你，拿什麼來企圖轉移你的注意力，都只不過是那個模版的一部分。</p>
+
+<p>一旦它被燒進你的神經網絡，一經永久鏈接。你會發現你將無法再對負面信念全盤買賬。當然也許有些時候你可能允許自己有個慢慢強壯起來的幻象。「喂夥計，要買塊手錶嗎？」你也許會考慮一下。「嗯不錯，那是塊兒挺漂亮的⋯⋯誒？等會兒，你是在這兒跟我兜售你的貨品嗎（比喻騙術）？呃好吧⋯⋯」</p>
+
+<p>你會抓住它的把戲。識穿它。你會稱它為（像打撲克牌時的）虛張聲勢。現在，接下來是最真正有力的部分。一旦這個模版被焊入，一旦你經常地去到初始狀態。你便不會再識別不出負面感覺，認不出那些負面概念僅僅是一袋子騙術。一旦你稱它為虛張聲勢，那麼真真最重要的部分來了，你會把注意力放在通道末端的那一小點光上。</p>
+
+<p>你將會把那光牽引過來穿透你自己。你實際上還會分出一部分光給負面信念，讓負面信念知道它是有價值的，是被愛著的。你願意允許它繼續存在，因為它總是存在著的。你承認它不會死去。你將它合理地視為一個平等選項，允許它明白你僅僅是因為更喜歡選擇別的東西，而它並不會因此而死亡。</p>
+
+<p>現在，你成為力量中心。你使負面信念安心，它還是會繼續存在。但是當你這樣做的時候，你變的比負面信念強大。它不再充滿你的世界。你知道你現在是誰。你來自更高意識。你柔和地安撫負面信念，它會繼續是屬於你的一部分。因為不存在「外邊」。沒有地方去打發掉任何東西。你永遠會包含著它。</p>
+
+<p>因為擴張是包容的產物而不是排他的結果，所以你會永遠包容負面信唸作為一個可能的選項。在你的眼裡它將與其他任何選項一樣有效且平等。你獲得了自由，去選擇你要彰顯什麼、你要經歷什麼。即便你現在承認在你整個實相裡，負面信唸作為一個平等選項存在，只要它知曉自己被愛著並且清楚它是一個同樣有效的選項，它就不會再找你麻煩了。</p>
+
+<p>它不會再堅持站在最前沿。因為一旦每件東西都是一個平等選項的時候，它都會平等地沐浴在光和創造之愛的頻率中。那是一種如洪水般席捲而來的被支持的感覺，這種感覺使得負面信念可以一直沉浸在安靜、滿足、幸福、快樂中，愛著它自己、愛著你、愛著那全然如是（神/一/源頭）。</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-13T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/video/2018/01/13/bashar-video-%E5%B7%B4%E5%A4%8F177-%E4%BD%A0%E8%85%A6%E4%B8%AD%E7%9A%84%E8%81%B2%E9%9F%B3.html">巴夏177：你腦中的聲音</a></div><div class="next"><span>下篇</span><a href="/video/2018/01/13/bashar-video-%E5%B7%B4%E5%A4%8F179-%E8%AB%87%E8%80%B6%E7%A9%8C-%E7%B4%84%E6%9B%B8%E4%BA%9E.html">巴夏179：談耶穌、約書亞</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://zenkarsha.github.io/bashar/video/2018/01/13/bashar-video-%E5%B7%B4%E5%A4%8F178-%E8%B2%A0%E6%A5%B5%E4%BF%A1%E5%BF%B5%E7%9A%84%E9%A8%99%E8%A1%93.html';
+                        this.page.identifier = '20180113_video_巴夏178：負極信念的騙術';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+

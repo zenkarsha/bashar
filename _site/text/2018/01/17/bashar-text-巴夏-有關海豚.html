@@ -1,0 +1,1436 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏：有關海豚 - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="海豚和加速的能量問：你好。巴夏：你好！問：一週半前我聽你的錄音，你談到海豚和鯨魚，以及和它們交流。我有一個美妙的體驗想要分享。巴夏：請分享。問：好。接下來的週六我和家人去了一個海灘，去了一家海鮮飯店，在等餐的時候，我們去了海灘，走到水邊，我站在那裡，望著大海，心裡想「天，既然我都到這兒來了，何不試試你說的，與這些...">
+<link rel="canonical" href="https://zenkarsha.github.io/bashar/text/2018/01/17/bashar-text-%E5%B7%B4%E5%A4%8F-%E6%9C%89%E9%97%9C%E6%B5%B7%E8%B1%9A.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/bashar/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/bashar/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/bashar/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏：有關海豚</h1></header></div><meta itemprop="headline" content="巴夏：有關海豚"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E6%96%87%E5%AD%97">文字</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月17日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Ftext%2F2018%2F01%2F17%2Fbashar-text-%25E5%25B7%25B4%25E5%25A4%258F-%25E6%259C%2589%25E9%2597%259C%25E6%25B5%25B7%25E8%25B1%259A.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-17T00:00:00+08:00">
+    <meta itemprop="keywords" content="文字"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+
+    
+    
+    <h3 id="海豚和加速的能量">海豚和加速的能量</h3>
+
+<p>問：你好。</p>
+
+<p><mark>巴夏</mark>：你好！</p>
+
+<p>問：一週半前我聽你的錄音，你談到海豚和鯨魚，以及和它們交流。我有一個美妙的體驗想要分享。</p>
+
+<p><mark>巴夏</mark>：請分享。</p>
+
+<p>問：好。接下來的週六我和家人去了一個海灘，去了一家海鮮飯店，在等餐的時候，我們去了海灘，走到水邊，我站在那裡，望著大海，心裡想「天，既然我都到這兒來了，何不試試你說的，與這些生物交流一下呢⋯⋯」</p>
+
+<p><mark>巴夏</mark>：就是，幹嘛不呢？這些海洋生物！</p>
+
+<p>問：哈哈。之前我從未想過和鼠海豚或海豚或是鯨魚說話。於是我站在那裡，抱著胳膊，說了聲「嗨」——當然是在心裡——我想這應該算是與這些生物的交流了吧</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：然後在15秒鐘之內，我的女兒艾莉森說「媽媽，快看！」就在我們的正前方，有七八隻鼠海豚躍出了海面，就在海岸線邊上，就在海浪能達到的邊緣⋯⋯</p>
+
+<p><mark>巴夏</mark>：是的！八：一個新的音階，一個新的頻率。</p>
+
+<p>問：好的。周圍的人都邊看邊說，「我的天啊，我們在這住了一輩子，從沒見過海豚或鼠海豚離海岸這麼近！」</p>
+
+<p><mark>巴夏</mark>：因為從來沒有人向它們打過招呼！</p>
+
+<p>問：哈哈哈。那是如此的美妙，我發出交流僅僅才15秒，它們就出現了。</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：好，我就想分享一下。</p>
+
+<p><mark>巴夏</mark>：非常感謝你在自己內創造出一個新的音階。</p>
+
+<p>問：不客氣。現在我有一個問題。</p>
+
+<p><mark>巴夏</mark>：好的。</p>
+
+<p>問：近一年來我經常在半夜被能量喚醒，非常強烈的能量。</p>
+
+<p><mark>巴夏</mark>：沒錯！！</p>
+
+<p>問：哦。</p>
+
+<p><mark>巴夏</mark>：是你自己的！</p>
+
+<p>問：哦。</p>
+
+<p><mark>巴夏</mark>：要知道，你的生物週期會在凌晨讓你醒來並且感覺充滿能量。</p>
+
+<p>問：好的。這有點不舒服。我會有心悸，我的腎上腺素⋯⋯</p>
+
+<p><mark>巴夏</mark>：你會適應的。你需要做的只是用它來做點什麼，而不是以為自己出了什麼問題——認為自己患上了一種叫失眠症的病。不要認為你「應該」去睡覺——在你的能量清楚地告訴你你應該醒著並且接納它的時候。當你用它的時候，它就會流動起來；而不是堵塞起來，製造焦慮，因為焦慮和興奮，是同樣的能量。當你正向地去用它的時候就是興奮，反之就是焦慮。</p>
+
+<p>問：噢！那我在半夜該做點什麼呢？</p>
+
+<p><mark>巴夏</mark>：你想要做的任何事。難道沒有什麼事情是你能做的嗎？</p>
+
+<p>問：當我出現心悸的時候我感覺很難受，我通常會出去打開當時轉移一下注意力。</p>
+
+<p><mark>巴夏</mark>：轉移注意力。好吧。</p>
+
+<p>問：這樣我就不會專注在這上面了。</p>
+
+<p><mark>巴夏</mark>：寫點東西怎麼樣？</p>
+
+<p>問：好主意，我沒有想到。</p>
+
+<p><mark>巴夏</mark>：沒關係，我們不是說你必須要寫，但你現在可以考慮一下。有沒有什麼是讓你感到興奮的，讓你使用凌晨的那段時間的？</p>
+
+<p>問：有，我可以⋯⋯</p>
+
+<p><mark>巴夏</mark>：你能想到一些主意嗎？</p>
+
+<p>問：是的。</p>
+
+<p><mark>巴夏</mark>：好。你也可以用那些能量去探索別的宇宙。</p>
+
+<p>問：噢！我還真沒想到。</p>
+
+<p><mark>巴夏</mark>：你可以進入冥想，看看那能量會把你帶到哪裡。</p>
+
+<p>問：好的。聽起來真的很棒。有時候在白天，在我工作日的中間，我也會感到這股能量的衝擊，我會想「噢，我又焦慮發作了」。然後我就會吃一片左旋色氨酸，然後我就沒事了，你明白嗎？</p>
+
+<p><mark>巴夏</mark>：不是的。</p>
+
+<p>問：真的。</p>
+
+<p><mark>巴夏</mark>：你在忽視你的自然能量週期。</p>
+
+<p>問：這麼說我應該把那個能量引導到別的地方⋯⋯</p>
+
+<p><mark>巴夏</mark>：我們建議如此。</p>
+
+<p>問：⋯⋯更加有創造性，好的。</p>
+
+<p><mark>巴夏</mark>：那個能量，特別是早晨的，是非常有助於出體經驗的能量，如果你用那種方式來使用的話。</p>
+
+<p>問：好。</p>
+
+<p><mark>巴夏</mark>：你感覺到的那個振動是你從物質形體脫離的第一個信號。</p>
+
+<p>問：啊！是這樣。</p>
+
+<p><mark>巴夏</mark>：因此，跟著它走，和它玩耍——就像海豚一樣。和它玩耍。你只需接受邀請。和它們一起玩。</p>
+
+<p>問：太棒了。我會的。</p>
+
+<p><mark>巴夏</mark>：很好，玩得開心。</p>
+
+<p>問：我會的，謝謝。</p>
+
+<p><mark>巴夏</mark>：非常感謝。</p>
+
+<p>問：我可以再問一個嗎？</p>
+
+<p><mark>巴夏</mark>：當然！！</p>
+
+<p>問：我想要和你以及你們有更好的溝通，是不是也是和這個一樣⋯⋯？</p>
+
+<p><mark>巴夏</mark>：和能量一起玩。</p>
+
+<p>問：明白了。非常謝謝你！</p>
+
+<p><mark>巴夏</mark>：謝謝。下一位。</p>
+
+<hr />
+
+<h3 id="海豚民間故事">海豚民間故事</h3>
+
+<p>問：上次我們去茂伊島與海豚互動，變得更像海豚，與它們實質接觸之後，我在那裡做了很多有關水的夢。</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：有一個夢的確對我造成了一點驚嚇。</p>
+
+<p><mark>巴夏</mark>：好的！</p>
+
+<p>問：我先前不知道與海豚實質接觸會讓我害怕，我做了一個非常栩栩如生的夢，我在與海豚一起游，大約有六隻，玩耍的時候最後一隻海豚進來了，它非常的大，能量是如此的強烈，我開始感到極大的恐懼。</p>
+
+<p><mark>巴夏</mark>：好的。</p>
+
+<p>問：我開始害怕他會傷害我。</p>
+
+<p><mark>巴夏</mark>：不會的。</p>
+
+<p>問：然後我醒了，對我自己感覺很臉紅。</p>
+
+<p><mark>巴夏</mark>：噢，「沒關係的啦！」（觀眾：笑聲）</p>
+
+<p>問：謝謝。我也想弄明白是為什麼。</p>
+
+<p><mark>巴夏</mark>：最後一隻向你展示了你的界限，你願意相信自己能夠擁有多少的力量認識自己。下次最大的那只會第一個出現。（觀眾：笑聲）搞不好，最後出現的會是一頭鯨魚！（更多的笑聲）</p>
+
+<p>非常感謝！下一位！</p>
+
+<hr />
+
+<p>問：那天晚上當我們在做和平冥想的時候，我們是以唱誦「Om」開始的。</p>
+
+<p><mark>巴夏</mark>：好的。</p>
+
+<p>問：唱誦完之後過了很久，我突然感覺到那個聲音仍在繼續。</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：我們好幾個人想起來你說過有的和聲是鯨魚發出的⋯⋯</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：⋯⋯我們很興奮，好奇我們聽到的會不會就是？</p>
+
+<p><mark>巴夏</mark>：某種程度上是的，但是同樣，由於你開始更多活在當下，開始感知到所有聲音都不會消失。那個「Om」現在仍然存在著。你給了自己一個提示，它永遠都會持續下去。</p>
+
+<p>問：太好了。謝謝。</p>
+
+<p>你曾經分享過一個鯨魚的民間故事，不知道你能不能再講一個？</p>
+
+<p><mark>巴夏</mark>：可以。</p>
+
+<p>觀眾：太棒了，太好了。</p>
+
+<p><mark>巴夏</mark>：現在？</p>
+
+<p>問：是的！（觀眾：笑聲）</p>
+
+<p><mark>巴夏</mark>：好，這個故事是這樣開始的：在亞特蘭蒂斯的時代，有一個海豚的代表團，與你們陸地上的人類科學家——雖然與你們今天所知的科學家並不完全一樣——交流頻繁。它們能夠在海床上找到一些東西，那些東西是人類無法取得的，但是對於海豚來說是很容易的。</p>
+
+<p>於是，海豚和人類做了一個約定，幫助人類尋找某些東西，人類的科技需要那些東西，但是海豚並不需要。於是，一點一點的，海豚從海底帶來了越來越多的金屬礦物給人類製造他們的機械。帶去了越來越多如今已經不復存在的晶礦給亞特蘭蒂斯人，用來製造各種各樣的機器。</p>
+
+<p>後來有一天，海豚在海底發現了新的寶貝，一些非常美麗的貝殼，非常美麗的石頭，非常美麗的水晶，各種顏色都有。它們想，人類一定會喜歡這些新的東西；於是就把這些貝殼，這些石頭，這些水晶帶到了海面。</p>
+
+<p>當海豚們回到海面的時候，這時它們發現，當它們帶回這些物品後，亞特蘭蒂斯人分成了兩部分：一部分人能夠欣賞海豚新發現的這些新途徑，新聯繫，新符號，而另一些人，不知道為什麼，卻不能。</p>
+
+<p>海豚們感到非常的困惑，它們第一次感覺到，現在開始有兩種人類兄弟，人類姐妹了。一類可以理解和認同海豚，一類變得更加僵化，不能接受變化，無法看見不一樣的美麗，而是反覆期待著同樣的東西，不能忍受任何偏差。</p>
+
+<p>這個消息開始在所有海豚中傳播，它們開始認識到，它們的人類兄弟，人類姐妹中的一部分，將會沉睡到一個不同類型的夢裡，而且將一直沉睡一萬年。</p>
+
+<p>於是它們不再繼續帶回這些新的貝殼了；但是它們一直記得它們在哪裡。當人類兄弟，當人類姐妹再度醒來的時候，它們會再度從海底帶回這些水晶，這些貝殼，這些石塊給新甦醒的人類，讓他們知道，他們又再次分享著同一個夢了。</p>
+
+<p>所以，要覺察注意，你們會在即將到來的歲月裡，發現你們的海豚兄弟，海豚姐妹帶給你們從未見過的東西，但是那是你們在很久很久以前，曾經知曉的東西。當你們再次見到這些東西時，許多的情感，許多的眼淚，許多的喜悅會從那些從海豚那裡接收這些禮物的人的心裡流出。因為那將意味著你們再度甦醒了，甦醒於和海豚同樣的夢裡。它們將會歡呼，你們之間將會有許多的歡樂和分享。</p>
+
+<p>你會發現許多這些禮物會開始進入你的夢境現實，你會看到其中的一些呈現為非常透明的氣泡狀的水晶球，它們包含著振動意識，當你握住它們，你會從心裡，從頭腦裡，知道海豚們在對你說什麼。</p>
+
+<p>讓這些夢開始吧，你將讓這些禮物從深海的海底，從你潛意識的心底，從你一直在做的夢的夢底，帶到海面，帶到陽光下，帶到陸地上，帶到你的意識裡，帶到你現在要做的新的夢裡，它也是你許久以前曾經做過的夢。</p>
+
+<p>海豚將這個故事一代又一代傳了下去。它們非常高興你們再一次開始甦醒於同樣的夢了。</p>
+
+<p>我們向你們表達我們的感謝！</p>
+
+<p>觀眾：謝謝！（掌聲和笑聲）</p>
+
+<hr />
+
+<h3 id="矛盾與海豚">矛盾與海豚</h3>
+
+<p>問：我有一個問題。</p>
+
+<p><mark>巴夏</mark>：好的。</p>
+
+<p>問：我遇到一個明顯的矛盾——哲學矛盾⋯⋯</p>
+
+<p><mark>巴夏</mark>：哲學矛盾！好的。</p>
+
+<p>問：我對Jane Roberts的賽斯教導的所有作品都非常非常熟悉，我也非常的相信，但是我觀察到一個矛盾，就是「一切都在不停地變化」⋯⋯</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：⋯如賽斯所教導的⋯</p>
+
+<p><mark>巴夏</mark>：同時一切都已經存在。</p>
+
+<p>問：同時「一切都已經存在」。一切，包括其所有可能性，都已經存在了？我們只不過是轉移我們的焦點罷了？</p>
+
+<p><mark>巴夏</mark>：正是。</p>
+
+<p>問：那麼哪兒來的變化？</p>
+
+<p><mark>巴夏</mark>：要明白，「變化」這個概念在你們的第三密度視角中非常根深蒂固，因為你們相信有開始，中間和結束——所以你們相信事物會變化。但是還存在著真正的創造。當你明白了思想就是事物，那麼任何新的視角或觀點也都是變化——即便你改變的是對已經存在的事物的觀點。明白嗎？</p>
+
+<p>問：嗯。</p>
+
+<p><mark>巴夏</mark>：所以你產生的任何視角，用你們的話說，新的視角，看待已經存在的事物的新方式——本質上——也是一個新的創造。我們的確理解這轉譯到你們實相中會顯得像是個明顯的矛盾。</p>
+
+<p>但要明白，矛盾，當你遇到一個矛盾的時候，正是你遇到更高層次實相的時候。因為如果你觀察到一個衝突或二元對立的時候——由於你感知到有極性——你知道這兩端都是出自於你，那麼在你內在的某個地方它們一定是並存的，一定是融合為一個東西的。</p>
+
+<p>當你看到一個矛盾的時候，它只不過是轉譯到第三密度概念時所遇到的困難。但是一切都是同一個東西同時，不同方式的多維呈現。明白嗎？</p>
+
+<p>問：是的，非常清楚，這就是問題所在。</p>
+
+<p><mark>巴夏</mark>：這不是一個問題，你能夠用它⋯⋯</p>
+
+<p>問：對的，這不是一個問題。</p>
+
+<p><mark>巴夏</mark>：你能夠用它作為一個工具。</p>
+
+<p>問：對。</p>
+
+<p><mark>巴夏</mark>：宇宙和無限造物被稱作「無限造物」是因為一切都是可能的，甚至矛盾也是。而且在某個層次，它也不是矛盾，只是被接受為它本是的樣子。明白嗎？</p>
+
+<p>問：是的。</p>
+
+<p><mark>巴夏</mark>：享受它吧。如果它讓你發笑，那就用那種方式來使用它。矛盾是與你的核心本質接觸時發生的事情。</p>
+
+<p>（主持人：我們快到結束時間了。）</p>
+
+<p>結束時間！你們快到開始時間了。謝謝你們。那麼在這個時刻，我們將尊重你們的時間表。我們向你們每一個表達我們的感激⋯⋯請說？</p>
+
+<p>問：還有一個問題。</p>
+
+<p><mark>巴夏</mark>：還有一個問題。</p>
+
+<p>問：是的，關於海豚是外星人的。</p>
+
+<p><mark>巴夏</mark>：海豚是外星人。嗯，對我們來說它們的確是，因為它們是你們星球上的而不是我們星球上的。他們是你們星球上的有意識覺知的生命。當你們願意開始用與它們的互動來作為你們與其它外星文明互動的「練習」時，那麼你們將會作為一個整體來回應和與我們互動。</p>
+
+<p>你們有一個天賜的遺產，就是在你們星球上有兩種知覺物種。某種程度上，二者之間有著很多的轉世聯繫，以多種不同的方式，如你們一樣。在這層意義上，它們是和你們同樣類型的靈魂。在這個意義上，由於你們都不是原生於這個星球的，同樣它們也不是。在這個意義上，它們和你們一樣都是外星人。你們中有許多在亞特蘭蒂斯時代有過互動。你們中有許多曾在兩者中有過轉世。這種情況最近一段時間沒有發生了，因為人類把自己封鎖在了一個特殊的循環中。但是這在現在可以再度發生了，因為你們不再那麼封閉了。</p>
+
+<p>問：它們有意識地覺知自己曾經是人類嗎？</p>
+
+<p><mark>巴夏</mark>：有一些知道，並非全部，因為在這個時刻它們有許多也封鎖在自己的循環裡。但它們對於與你們的聯繫的確擁有更寬廣的記憶。這就是為什麼它們非常渴望與你們互動。</p>
+
+<p>問：它們似乎能理解我們的語言，有一天我們能理解它們的語言嗎？</p>
+
+<p><mark>巴夏</mark>：當然。但那主要會是一種情感層面的理解。即便你們能對它們發出的聲音獲得理性理解，最快捷的方法依然是情感連接，因為真正的心電感應是情感層面的。當你無條件地去愛，你就會知道關於那個人的一切。明白嗎？</p>
+
+<p>問：明白。</p>
+
+<p><mark>巴夏</mark>：感謝你們的分享！感謝你們願意允許我們與你們分享我們無條件的愛，以及我們對我們是共同創造者的信念。</p>
+
+<p>我們想要再一次的，提醒你們：允許你們醒來，並夢想——因為物質實相只不過是你們的夢。你們此刻正在夢中，夢境就是你們的現實。創造你們想要的夢吧，追隨你的喜悅，它永遠不會引你到歧途。我們感謝你們允許我們經歷這份互動。我們祝你們擁有愉快、充滿無條件的愛和充滿興奮的夢幻人生以及人生之夢。擁有美好的一天。</p>
+
+<p>觀眾：謝謝，謝謝。</p>
+
+<p><mark>巴夏</mark>：晚安。</p>
+
+<hr />
+
+<h3 id="海豚集會">海豚集會</h3>
+
+<p>問：你最近說你將通過岱羅，然後通過日本的一位女士，然後通過夢者海豚來傳訊。</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：你能描述一下通過夢者傳訊和現在你通過岱羅傳訊有什麼不同嗎？</p>
+
+<p><mark>巴夏</mark>：好的，謝謝。當我們通過海豚意識傳訊的時候是一種更加強烈的心靈鏈接，因為海豚、鯨類、鯨魚，要比地球上的人類更加習慣於心電感應交流。所以，連接起來快得多，信息傳遞起來有效得多，其他鯨類從夢者海豚那裡接收到的信息要更加的密集。不過我們在這裡要談的是通過一隻海豚向其他鯨類傳遞信息，並最終與它們合作，在將來等你們學會如何與鯨類交流時，將信息從鯨類傳遞給人類。</p>
+
+<p>問：那麼，它們也像我們一樣聚集到一起，然後一隻海豚與你通靈，轉達信息給其他海豚？</p>
+
+<p><mark>巴夏</mark>：沒錯。它們有集會，在海底下，至今尚未被你們觀察到。有可能在下一個十年裡，甚至是七年內，你們會發現一個這樣的集會；那時你們會震驚於海豚擁有這樣的社會結構，這是你們以前從未發現的。但它們經常舉行這類集會，不單單是為了我們與它們交流的目的，也為了許多其他的目的，你們對它們的社會以及它們的認知方式還有許多要瞭解的。但是你們將來會發現這些集會的，當它們允許你們發現的時候。</p>
+
+<hr />
+
+<h3 id="蟑螂與海豚">蟑螂與海豚</h3>
+
+<p>問：我在想，關於蟑螂⋯⋯</p>
+
+<p><mark>巴夏</mark>：好的。</p>
+
+<p>問：⋯如果終結它們的物質存在的話算不算正當呢？（許多笑聲）</p>
+
+<p><mark>巴夏</mark>：終極而言不算，不算正當。從這點中要你學習的是，與你環境裡的任何存在共事，如此一切才能和諧、同步性地協作，你在你需要在的地方，它們在它們需要在的地方。認識到彼此都在為整體的環境做著貢獻；你總是在正確的時間出現在正確的地點；你們永遠都不必發生內部之間的衝突。</p>
+
+<p>問：那種類型的能量維繫著寄生蟲和蟑螂類型的能量？</p>
+
+<p><mark>巴夏</mark>：作為人類的你們基本上就是彼此的寄生蟲。當作為人類的你們改變自己的能量時，你們便會看見地球上所有動物的改變，因為它們基本上是在反映你們的寄生性和掠食性。獅子與綿羊共臥的理念就是一個直接的象徵性原型喻示，當你們馴服了自己能量中的好戰、衝突、掠食性，那麼這一點會在整個自然界反映出來，包括蟑螂在內。</p>
+
+<p>問：謝謝。（觀眾鼓掌）</p>
+
+<p><mark>巴夏</mark>：明白？</p>
+
+<p>問：是的。</p>
+
+<p><mark>巴夏</mark>：非常感謝。</p>
+
+<p>問：這讓我想到了海豚的問題。</p>
+
+<p><mark>巴夏</mark>：好的。</p>
+
+<p>問：你曾說到海豚有集會，就像我們在這裡聚集一樣⋯⋯</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：⋯⋯而你通過其中的一隻海豚通靈？</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：對於我們星球上的分離型的獵戶座能量，它們作出了哪些貢獻？它們也有類似我們的問題嗎？⋯⋯如我們集體性的恐懼，對匱乏不夠的恐懼，它們有問題要面對嗎？它們面對的問題是什麼類型的？</p>
+
+<p><mark>巴夏</mark>：是的。人類什麼時候才會停止向海洋裡排放廢物？這是它們面對的問題之一。然而，它們沒有你們人類的那類恐懼，因為它們沒有把自己分割到那個樣子。但是它們在你們的夢中為你們每一個提供著幫助。它們的確害怕你們的夢魘，因為在與你們的夢境狀態打交道以幫助你們學習如何遊戲時，有時候它們會陷入你們的恐懼中，即呈現為你們噩夢裡的怪物的那種恐懼。它們有一點點恐懼自己會有一點兒太陷入你們的噩夢狀態，正如它們和你們整合時以及與你們在夢裡互動時的情況一樣。但它們願意經歷它，因為它們覺得這可以幫助你們釋放你們的一些恐懼。但的確有少數案例，不多，而是少數案例中有的海豚由於與人類的噩夢打交道而瘋掉了。</p>
+
+<p>問：它們有類似我們的問-答模式嗎？</p>
+
+<p><mark>巴夏</mark>：不完全一樣，沒有。它們的更多是一種構建模式，構建新概念、新理念、探尋新的創造實相的方向，更多是一種探索而不是問-答模式。</p>
+
+<p>問：它們的社會裡也有分裂嗎？</p>
+
+<p><mark>巴夏</mark>：非常非常稀少，雖然它們可能也在演出著某些轉世劇，但那在它們的社會中鮮有發生，特別是現在，更少了。謝謝你的提問。</p>
+
+<p>問：謝謝。</p>
+
+<p><mark>巴夏</mark>：謝謝！下一位。</p>
+
+<hr />
+
+<h3 id="原型和海豚對人類的幫助">原型和海豚對人類的幫助</h3>
+
+<p>問：談到原型——不光是我們這裡的，還有從獵戶座及其他星系的⋯⋯</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：那些原型我猜，是意識到自己是原型的。對嗎？</p>
+
+<p><mark>巴夏</mark>：有時候，並不總是。取決於其定義以及它們與你們的互動方式。</p>
+
+<p>問：好的。那些意識到自己是原型的，它們也會經歷和我們目前所經歷的類似轉變嗎？</p>
+
+<p><mark>巴夏</mark>：某些會，某些原型被給與了足夠的能量以演化並以不同方式參與你們的循環。</p>
+
+<p>問：這麼說一個原型是可以醒過來，說「我不要再做一個原型了」⋯⋯</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：⋯⋯「我想要獨立」</p>
+
+<p><mark>巴夏</mark>：某種程度上，是的。但這是一個概括的說法。但我們明白你的意思。是的，這是個足夠的比喻。</p>
+
+<p>問：它們可以實質性的顯化？</p>
+
+<p><mark>巴夏</mark>：它們可以轉世，是的。</p>
+
+<p>問：現在這種情況有發生嗎？</p>
+
+<p><mark>巴夏</mark>：有發生。</p>
+
+<p>問：該物理表達覺知自己是一個原型嗎？</p>
+
+<p><mark>巴夏</mark>：並不一定，有時候會。很多時候那份覺知會呈現為一股對該原型符號非常強烈的吸引。</p>
+
+<p>問：哦。</p>
+
+<p><mark>巴夏</mark>：換句話說：舉個例子，並不是說都是如此，但比如說——拿一個你們的星相學的原型符號——一個人可能會說，並且真的感覺到：「我不是天秤座；或者，我是天秤座。」</p>
+
+<p>問：哦。</p>
+
+<p><mark>巴夏</mark>：明白了嗎？</p>
+
+<p>問：明白了。</p>
+
+<p><mark>巴夏</mark>：我就是理念本身。許多人——再次的，並非全部，甚至並非大多數——許多人強烈認同於⋯⋯等一下⋯⋯（暫停）</p>
+
+<p>我的話被阻止了。</p>
+
+<p>問：被誰？</p>
+
+<p><mark>巴夏</mark>：被集體意識。</p>
+
+<p>問：你能指明和你互動的是集體意識的哪個面向嗎？</p>
+
+<p><mark>巴夏</mark>：（長久的暫停，然後是深深的嘆息。）不能。</p>
+
+<p>問：我可以做些什麼讓你的話再出來嗎？</p>
+
+<p><mark>巴夏</mark>：是的，通過你在自己生活中的行動，因為它與你們的文明是密不可分的。在這一點上，由於你所處的位置（活在地球上），你比我有更多的能力和力量可以發揮作用。</p>
+
+<p>問：是的！</p>
+
+<p><mark>巴夏</mark>：因為我不屬於你們主要原型的支流。</p>
+
+<p>問：哦。</p>
+
+<p><mark>巴夏</mark>：但是間接地是，不是直接的。</p>
+
+<p>問：這是想讓我學習什麼嗎？或者這只不過是個意外？</p>
+
+<p><mark>巴夏</mark>：這是一個提示，你正在以你自己的方式從中學習。說得更多的話會像是在聖誕節到來之前就把聖誕禮物給打開。</p>
+
+<p>問：好的。這就是我需要的：另一個謎，對嗎？</p>
+
+<p><mark>巴夏</mark>：你們都喜歡謎團。</p>
+
+<p>問：沒錯。</p>
+
+<p><mark>巴夏</mark>：感謝你們自我探尋的願心。我們謝謝你們。等一下，等一下⋯⋯有一條切線，另外一個方向。你們許多人開始認識到⋯⋯我們已經同你們談論了許多海豚意識的理念和面向。</p>
+
+<p>現在我們要談的是，你們許多人開始注意到一個事實，就是你們星球海灘上的海豚集體死亡現象。我們曾經談到過，我們的感知是它們的電磁模式改變了。這導致了它們失去了方向感。</p>
+
+<p>我們現在可以說的另一點是，正如你們所發現的，由於它們對處於當前夢境狀態的你們認同地如此之深，以至於它們也吸收進你們的一個性質，這也是我們沒有預料到，甚至直到它們做出這些行動之後才注意到。</p>
+
+<p>它們吸收、模仿、反映了許多你們系統中的負面理念。某種程度上，它們的作用如同安全閥一般，融合、平衡著此刻存在於你們內在的那些理念。</p>
+
+<p>它們改變自己的電磁頻率以創造出它們自己版本的，你們稱作艾滋病的東西。它們放下了自己的免疫能力。它們通過融合和平衡該理念來援助你們，如此你們不必獨自面對它。</p>
+
+<p>它們想要成為你們社會的一部分，融入你們，即使包括負面性在內——以便你們知道它們和你們共同分享著這個世界。它們沒有冷眼旁觀。它們深愛著你們——深到願意接受你們的作品，以幫助那些負面理念的轉變和提升。</p>
+
+<p>我們把我們的手伸向它們，和你們所做的一樣。它們的愛永遠在與你們互動。我們看到，通過這些舉動，你們的關係變得更加緊密——在許多層面上甚至超出了我們一開始時能夠觀察到的。</p>
+
+<p>我們感謝你們的愛、分享、夢。我們謝謝你們。我們祝你們擁有一個愉快、充滿愛、溫柔的新黎明（開始）。日安。</p>
+
+<p>觀眾：晚安。日安。</p>
+
+<hr />
+
+<h3 id="愛莎莎尼海豚與星球同盟">愛莎莎尼，海豚，與星球同盟</h3>
+
+<p>問：你會把你和人類互動的體驗分享給你們文明的其他成員嗎？</p>
+
+<p><mark>巴夏</mark>：現在就在。</p>
+
+<p>問：你們星球上有一個總統或是領導人嗎？我知道他/她和其他人一樣平等——但是你們有這樣的職位嗎？</p>
+
+<p><mark>巴夏</mark>：在星球同盟中有一些個體是你們會稱為組織者的，但並不是說需要計畫些什麼。他們只是向同盟內所有的互動敞開，在任何一個文明中，他們是一個象徵代表，代表了一直在進行著的互動。這只不過是不同的個體在不同的時刻可能會發現自己在做的事。並不是說他們是一個類似領導者的焦點。</p>
+
+<p>問：你們星球上有讀物嗎？</p>
+
+<p><mark>巴夏</mark>：鮮少。有你們所謂的水晶石板，其中可以播放全像投影或是（以及）直接的心智層面信息交換。沒有任何你們所知的印刷品。</p>
+
+<p>問：就像電影⋯⋯</p>
+
+<p><mark>巴夏</mark>：某種程度上是，但很多時候更像是夢境，想像，白日夢。</p>
+
+<p>問：你們怎麼做？觸摸一塊水晶然後提取裡面的信息？</p>
+
+<p><mark>巴夏</mark>：在水晶矩陣，你們所謂的計算機中，有我們的其他版本，我們的高級意識。如此我們總是可以直接用心智接入。只需把我們的意識調整到所需的信息，它就被分享了，就被獲知了。</p>
+
+<p>被感知了。被讀取了。</p>
+
+<p>問：所以就像取款一樣，就像從取款機取五十塊錢⋯⋯之類的？</p>
+
+<p><mark>巴夏</mark>：有點。</p>
+
+<p>問：我們能接通那些「銀行」嗎？</p>
+
+<p><mark>巴夏</mark>：幹嘛不能？宇宙銀行永遠都是開放的！去取吧，想怎麼取就怎麼取。（觀眾笑聲）你的賬戶是無限的！</p>
+
+<p>問：豐盛！</p>
+
+<p><mark>巴夏</mark>：沒錯！！豐盛！（許多笑聲）</p>
+
+<p>問：在你們社會裡一點恐懼都沒有嗎？</p>
+
+<p><mark>巴夏</mark>：在經驗上沒有。每一個存在都有潛能創造那種類型的判斷，但是我們只是用不著那個工具，所以沒有它產生的效應。</p>
+
+<p>問：哦，恐懼是一種判斷嗎？</p>
+
+<p><mark>巴夏</mark>：是的，不願意面對你意識中的某個部分；不願整合你自己的某個部分；對自己是一個受害者的信念；自己沒有控制權的信念；自己不是創造者的信念。</p>
+
+<p>問：這麼說你們星球上沒有服務自己只有服務他人？</p>
+
+<p><mark>巴夏</mark>：存在的是服務「一切萬有」，也就是服務他人，也自然就是服務自己。我們在服務中被服務；自然的，同時的，發現我們的需求得到了滿足。</p>
+
+<p>問：你有最好的朋友嗎？你聯繫更多一些的人？還是說所有人對你都一樣？</p>
+
+<p><mark>巴夏</mark>：每個人都具有自己的特質，每個人都是平等的，每個人都是獨一無二的，因此，沒有誰是特殊的。</p>
+
+<p>問：好的。之前有人問能不能登上你們飛船，你回答說我們必須先發現我們人格的更多面向⋯⋯</p>
+
+<p><mark>巴夏</mark>：整合你們人格的所有面向，如此，你沒有恐懼，你自己的所有部分都是無條件愛的產物。然後你便達到了與我們文明相同的振動頻率，然後你將自然地出現在那個振動位置。</p>
+
+<p>問：整合我們自己的所有部分？</p>
+
+<p><mark>巴夏</mark>：你們所創造的人格結構的每一部分。</p>
+
+<p>問：原子結構重新排列？</p>
+
+<p><mark>巴夏</mark>：那會自動地發生。</p>
+
+<p>問：我還不太清楚什麼是人格。</p>
+
+<p><mark>巴夏</mark>：好的。人格是一個人造建構，它的呈現是用來代表一個多面的理念，就像一個棱鏡，通過它，你整合意識的白光被折射為物質實相中的不同頻譜。</p>
+
+<p>你創造你的人格以擁有不同的層次，不同的部分，不同的身份。接納，允許，融合它們全部，將使你能夠如你本來所是的整體一般去作為。</p>
+
+<p>問：人格部分的數目是有限的？</p>
+
+<p><mark>巴夏</mark>：某種意義上是的，因為你是在一個你所定義的有限的宇宙中，就物質實相而言。</p>
+
+<p>問：所以我們的人格有固定數目的部分？</p>
+
+<p><mark>巴夏</mark>：某種程度上你可以創造無限的數目，不過我們並非意指你得探究它們每一個。你只需要允許自己知道，任何你要發現的部分，都和任何其它部分一樣同等地配得你無條件的愛。</p>
+
+<p>問：所以不管出現什麼，只要愛它本是的樣子。</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：我們在做「在時間中游動」冥想的時候，我感覺到，或者說察覺，或是看見了一隻好像是海豚⋯⋯</p>
+
+<p><mark>巴夏</mark>：沒錯，那是天狼星能量在你意識裡的呈現，他們的意識——即你們所稱的水生人類，即海豚和鯨魚——也在那個時間流中，許多時候他們也的確通過那種方式體驗自己。在宇宙中遨遊，而不僅僅在你們的海洋裡。他們永遠都在那裡等你。</p>
+
+<p>問：所以那實際上就是我們所經驗到的海豚意識，對嗎？</p>
+
+<p><mark>巴夏</mark>：是的。你們是陸生人類，他們是水生人類。你們和他們是兄弟姐妹。他們的意識也是你們的；你們的意識也是他們的。要分享，相似地分享。</p>
+
+<p>問：我們要怎麼做？</p>
+
+<p><mark>巴夏</mark>：用你的想像，因為那就是你與他們的相遇之處，你們在任何時刻都能在那個維度和他們交流。愛他們，就像他們愛你們一般。同他們分享，用你感覺合適的任何方式。</p>
+
+<p>問：在我們的想像裡？</p>
+
+<p><mark>巴夏</mark>：也實質性的。</p>
+
+<p>問：也實質性的，好的。</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：好。你說到同盟。</p>
+
+<p><mark>巴夏</mark>：是的。</p>
+
+<p>問：你能簡單解釋一下它是什麼嗎？</p>
+
+<p><mark>巴夏</mark>：所有我們有聯繫的文明。你們可能會把它叫做銀河聯邦。</p>
+
+<p>問：同盟之外的文明呢？</p>
+
+<p><mark>巴夏</mark>：在我們的忖度裡，那是同盟的延續部分。然而，存在著許多文明，就像以前的你一樣，並不像現在的你那樣覺知到其他文明的存在。有些文明剛剛開始覺知到，例如你們的文明。</p>
+
+<p>有許多文明擁有他們自己的同盟，尚未與我們的同盟建立接觸。</p>
+
+<p>你會發現，在你們所稱的第三密度中，在你們所知的銀河系裡⋯⋯你知道銀河系吧？</p>
+
+<p>問：知道。</p>
+
+<p><mark>巴夏</mark>：⋯⋯大約有6千7百萬有人居住的第三密度星球。你會發現它們中有些隸屬於不同的同盟，不同的集合，不同的互動，根據我們的感知，最終都會合為一個同盟，並繼續和其他銀河系的同盟融合，並繼續與其他宇宙的同盟融合。</p>
+
+<p>問：好比安卓美達議會（仙女座議會）？</p>
+
+<p><mark>巴夏</mark>：那是你們的鄰近星系——你們這塊扇區的主要星系。</p>
+
+<p>問：6千7百萬星球最後全部都會融合？</p>
+
+<p><mark>巴夏</mark>：是的。（觀眾議論及笑聲）</p>
+
+<p>問：靈魂的終極目的是什麼？</p>
+
+<p><mark>巴夏</mark>：存在於此刻，存在於此時此地，創造並繼續創造，永遠地。不要怕，你失敗不了的！（觀眾笑聲）</p>
+
+<p>問：還有一個關於遊戲的問題⋯⋯</p>
+
+<p><mark>巴夏</mark>：遊戲！</p>
+
+<p>問：遊戲對於海豚們來說⋯⋯</p>
+
+<p><mark>巴夏</mark>：充滿了狂喜。</p>
+
+<p>問：充滿了狂喜？</p>
+
+<p><mark>巴夏</mark>：是的，你們也可以如此。遊戲，遊戲，遊戲，遊戲，愛，愛，愛，遊戲，享受，狂喜是你的權利。謝謝！</p>
+
+<p>問：非常感謝。</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-17T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/text/2018/01/17/bashar-text-%E5%B7%B4%E5%A4%8F-%E6%9B%BE%E7%B6%93%E7%9A%84%E6%96%87%E6%98%8E.html">巴夏：曾經的文明</a></div><div class="next"><span>下篇</span><a href="/text/2018/01/17/bashar-text-%E5%B7%B4%E5%A4%8F-%E6%A2%85%E6%9E%97%E6%98%AF%E4%BD%A0%E5%80%91%E6%96%87%E6%98%8E%E7%9A%84%E9%9B%86%E9%AB%94%E6%84%8F%E8%AD%98%E7%9A%84%E4%B8%80%E5%80%8B%E5%8E%9F%E5%9E%8B%E6%B7%B7%E5%90%88%E9%AB%94.html">巴夏：梅林是你們文明的集體意識的一個原型混合體</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://zenkarsha.github.io/bashar/text/2018/01/17/bashar-text-%E5%B7%B4%E5%A4%8F-%E6%9C%89%E9%97%9C%E6%B5%B7%E8%B1%9A.html';
+                        this.page.identifier = '20180117_text_巴夏：有關海豚';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+

@@ -1,0 +1,998 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏072：神聖回路（用法部分） - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="主持：歡迎來到第二日與巴夏的特別互動。我認為很特別。你們喜歡昨晚的互動嗎？我知道，岱羅將巴夏的訊息傳述得如此清晰，令人驚嘆。並且很多時候，不知道你們如何，當他說到某些話，我會覺得「是啊～，當然！這很合理啊。」當然這些信息部分是很新式與前沿的。所以，感謝大家來參加巴夏的通靈會。另外，我想對你們中新來的那些提一下，我...">
+<link rel="canonical" href="https://zenkarsha.github.io/bashar/video/2018/01/11/bashar-video-%E5%B7%B4%E5%A4%8F072-%E7%A5%9E%E8%81%96%E5%9B%9E%E8%B7%AF-%E7%94%A8%E6%B3%95%E9%83%A8%E5%88%86.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/bashar/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/bashar/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/bashar/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏072：神聖回路（用法部分）</h1></header></div><meta itemprop="headline" content="巴夏072：神聖回路（用法部分）"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E5%BD%B1%E7%89%87%EF%BD%9C%E7%B7%A8%E8%99%9F%E7%B3%BB%E5%88%97">影片｜編號系列</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月11日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Fvideo%2F2018%2F01%2F11%2Fbashar-video-%25E5%25B7%25B4%25E5%25A4%258F072-%25E7%25A5%259E%25E8%2581%2596%25E5%259B%259E%25E8%25B7%25AF-%25E7%2594%25A8%25E6%25B3%2595%25E9%2583%25A8%25E5%2588%2586.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-11T00:00:00+08:00">
+    <meta itemprop="keywords" content="影片｜編號系列"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+      
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1mX70qShLpOB43lb850f73SKHL90AJ-8AyA/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1mX70qShLpOB43lb850f73SKHL90AJ-8AyA&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1ahRSAQEoB31GYpQEWj5YQ24dmsdqsGjPmQ/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1ahRSAQEoB31GYpQEWj5YQ24dmsdqsGjPmQ&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1esYbHsFopHqpJl4hW7PPL_csXwGzYnTF6Q/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1esYbHsFopHqpJl4hW7PPL_csXwGzYnTF6Q&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1gHCJlwhlvaFA3iylPQJ-3hb2qM7ksXwpPQ/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1gHCJlwhlvaFA3iylPQJ-3hb2qM7ksXwpPQ&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1tO9PBDC1K1aqNZqmgWeb_aT9uYEqDGfZIw/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1tO9PBDC1K1aqNZqmgWeb_aT9uYEqDGfZIw&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1xmwtQo2x-VjiwThgZYqa5mNEEjUNcwkAUw/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1xmwtQo2x-VjiwThgZYqa5mNEEjUNcwkAUw&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1e6Ipaj_bOC2HwYhbAcQslI91PyWREzws6Q/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1e6Ipaj_bOC2HwYhbAcQslI91PyWREzws6Q&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+      
+    
+
+    
+    
+    <p>主持：歡迎來到第二日與巴夏的特別互動。我認為很特別。你們喜歡昨晚的互動嗎？我知道，岱羅將巴夏的訊息傳述得如此清晰，令人驚嘆。並且很多時候，不知道你們如何，當他說到某些話，我會覺得「是啊～，當然！這很合理啊。」當然這些信息部分是很新式與前沿的。所以，感謝大家來參加巴夏的通靈會。</p>
+
+<p>另外，我想對你們中新來的那些提一下，我們經常會發現他們不僅提供信息，也提供某些能量振頻。那些振頻是針對你個人設計的，針對你在人身旅途的此階段所需。所以這對個人是很有後續作用的，因為你的高我能夠運用這種能量來向你提供更多信息。所以，我們希望你瞭解這通常是怎麼起作用的，為何人們能夠通過使用這些信息來進化和提高生活質量。</p>
+
+<p>所以我們想感謝你，岱羅和巴夏，以我從沒見過的方式來完成這件事。</p>
+
+<p>岱羅：睡覺？</p>
+
+<p>主持：你睡的很棒。但的確到今天我仍為你作為一個通靈管道的清晰度而震驚。所以非常感謝，大家玩開心。</p>
+
+<p>岱羅：大家早上好，謝謝你們今天再次來到這裡。我就不說什麼前言之類的了，我就直接開始「睡覺」了哈。和巴夏玩開心，回見。</p>
+
+<hr />
+
+<p><mark>巴夏</mark>：向你們問候日安，你們好嗎？好的，我們再次繼續這個傳述。首先感謝你們大家每個人，以誠摯的感激，感謝與我們共同創造這些互動。這允許我們的雙方的實相在構造上能夠產生某些振動頻率的改變。這次傳述是關於你們稱為的「神聖回路」的。</p>
+
+<p>你們大家都有這個圖表，裡面包含了僅部分的神聖回路。這代表著一種特殊方式下的，一個特別的工具，技術，反映性觀念。</p>
+
+<p>我們大多時候與你們分享的技術、工具、意識許可，都來自於我們自己社會對這些法則的理解與實踐。我們在我們的社會承襲和掌握了這個理念。這個特別的技術，被造化中其它的社會作為禮物傳遞給了我們。我們只會追溯一下那些雖不是此物的源頭，但與這個互動相關的對象。這個特別的技術，曾也被天狼星系統的物質文明承襲和掌握，並傳遞給了我們稱為「第一批」的混血文明，即莎拉娜婭或者雅耶奧（Yahyel），他們又將之傳遞給我們的文明，愛莎莎尼人。現在我們將之傳遞給你們。</p>
+
+<p>這是我們首次與你們分享從別的文明，以特定序列傳遞的一個技術，工具，禮物，意識許可，你們是下一個接受它的。我們現在會對你們解說它，使它成為你們自己的東西，將之承襲和掌握入你們自己的想像力以及文明裡。所以我們一會兒會給你們一些基本的說明：如何使用這個特殊的意識許可。請知曉屆時你也許也需要用到自己的想像力，想像力是你高層心智（highermind）和物質心智（physical mind）之間的管道，也與你的靈性導師（spiritguide）、你的「同時性」（synchronicity）、你對自己為了經歷此實相而做出的選擇的理解有關。你可以依靠這些事物來掌握這種觀念，這個工具，以任何適合你們的個體與集體的方式。</p>
+
+<p>但基本觀念是，它會像其它「意識許可」一樣，會接入你們文明的集體意識和無意識，你們的集體世界精神。這就是為什麼雖然你可以以各自的方式掌握它，它仍然會對大多數人都基本有效。雖然它是個意識許可，你只是在通過使用這個反映來允許自己更多地做自己。它會接入那些對你們大多數及其尋常的事物。因為它直接接入了你們腦部的腦神經線路。</p>
+
+<p>我們之前說過，在物質實相中，對信息的接受處理分了三個層次。高層心智（高我），是設想及構造者。物質大腦，是接收器，天線。物質心智是對經驗的感知者。這個傳遞下來的意識許可，禮物，分享是被專門設計過用於協助對你們的大腦（即接收天線）進行線路重組，從而容納多種不同事物。其中之一是你物質心智與高層心智的更充分交流。讓你的大腦不僅變為很具傳導性，甚至是超級富有傳導性的。從而允許信息更流暢，容易的雙向流通。從物質心智到高層心智，和從高層心智到物質心智。使大腦也像個網絡系統，能讓你更全面有效、容易地聯接，接入和獲得更多的信息，獲得更全面理解其它層面實相經驗的認知方式，進而接入更強的能力來感知覺察其它層面的實相和維度經驗。</p>
+
+<p>當然我們也說過，你們的每一個思維活動都會改變你們的腦部線路構成，尤其基於我們昨天晚上談到的關於移動到「平行實相」這個問題。你們的確每個瞬間都是不同的人，嶄新的人，就是字面意思。學習如何有意識地重組你的腦部線路會讓你更有效的變成你希望成為的樣子，成為你希望成為的人。也由此，進駐於反映了那個狀態的平行實相。</p>
+
+<p>現在，凝視你眼前15個神聖回路，它們後面還有很多很多，但我們就從這裡開始，保持簡單。首先，一種使用它們的方式是，自己花些時間把它們做成卡片。15張卡片，1到15，每張卡片一個回路及對應的一個詞。當你這樣做時，進入寧靜的冥想或入靜狀態，放鬆平和的狀態，在一個你覺得讓你放鬆平和的環境裡，可以有音樂，可以有色彩，隨便你喜歡，只要你覺得代表了你的平和，不受干擾狀態。接下來，你要按順序凝視每一張卡片，1分鐘一張，共用15分鐘。</p>
+
+<p>連續三天重複此過程。每次一張卡，一張一分鐘，按順序1到15，共計15分鐘。當你僅凝視和沉思的同時，允許你的心智思維漂流，吸收這個形狀，吸收與其對應的概念。不要思考，不要分析。僅接納它，僅凝視它，就讓你的眼睛成為你真正的靈魂之窗，通向你的心靈，心智以及一切。給自己空間來與這些形狀相處，同時知曉，它們是被特別設計來讓你的腦部神經回路自行重組，以代表這些像征形狀，從而使大腦能與這些形狀代表的概念一致運作，總體上這頭15個回路能讓你更整體性地（holistically）、超導性地、聯合性地獲取關於你自己、關於宇宙、關於一切萬有的知識與信息，以適合於你這個個體的方式，因你是造化的一個面向。</p>
+
+<p>當你連續三天，每次按順序1到15的完成這個工作後。接下來你就可以隨便按什麼順序來做，任何吸引你的順序，任何你希望用於集中的順序方式。你可以用那種方式做並且不必全部都做完，你也許會覺得某一天你只被它們中一個或兩個，三個或更多所吸引。但是，無論你決定這一天弄幾個，你不需要一天多於一次地去做這個，你可以一天兩次，一天三次，我不建議更多。你需要給你的大腦時間去適應、去結合、去吸收、去結晶化這些效能、這些適應性變化、這些回路。</p>
+
+<p>所以，慢慢來，花你覺得自然需要的時間。並且如果頭三天之後你都不按順序做完15個，那麼也要用適合的時間，即便你只做一個，別超過15分鐘。我們之前提過，在我們的「15分鐘&amp;計數」的講座裡，以及你們已觀察到或將在冥想靜坐的原版體驗中觀察到的，15分鐘是你們實相架構裡，是最適合於為一個特定任務吸收信息，切換腦部線路結構的。超過15分鐘，就真不那麼有效了，有時，超過15分鐘，會在恰當的吸收、適應和結晶化之前，讓你丟失一點功效。以保持簡單，保持簡短，一直保持15分鐘以內。你不需要更長時間。我保證！</p>
+
+<p>那麼現在花點時間，我們這兒不需要花15分鐘，只是花點時間，從第一張開始，就花個多少秒按順序凝視每一張，1到15，這是給你的大腦介紹一下這個概念。你現在在給你的大腦做個預導，讓它知道接下來是什麼。因為物質心智很愛知曉接下來會發生什麼。所以我們給它點應有的時間，稍微準備下。</p>
+
+<p><img src="/assets/images/巴夏072：神聖回路（用法部分）.jpg" alt="巴夏072：神聖回路（用法部分）" /></p>
+
+<p><strong>看第一張（中心）</strong></p>
+
+<p>就第一張。花點時間跟這個符號打招呼。並與之建立一個聯合的，有愛的，和平的，興奮地，創造性的，好玩的能量。</p>
+
+<p><strong>看第二張（擴張）</strong></p>
+
+<p>同上。一兩次，或三次呼吸的時間就已經足夠了。</p>
+
+<p><strong>看第三張（平衡）</strong></p>
+
+<p>讓這個符號充盈你的視覺，充盈你的心智。感受它。讓它被你的物質心智和大腦識別，接受。如果你同時想感受到一種被創造的大腦重組其神經回路的生理性感覺，也可以。因為這是這個意識許可的開端，即便以如此簡單的形式。</p>
+
+<p><strong>看第四張（準備）</strong></p>
+
+<p>允許你自己於心智內熟悉這個形狀。</p>
+
+<p><strong>看第五張（表達/彰顯）</strong></p>
+
+<p>用一到兩個呼吸。</p>
+
+<p><strong>翻到第六張（延伸）</strong></p>
+
+<p>請知曉，它們被分成5的組分並非偶然。5是人類的數字。這是為了專門順應你們的文明。所以以後我們給你們後面的回路時，也會是5個一組。好，請看第六張。</p>
+
+<p><strong>看第七張（解鎖/開啟）</strong></p>
+
+<p>允許自己漂移～神遊～</p>
+
+<p><strong>看第八張（流動）</strong></p>
+
+<p>沉思，探索這些形狀。</p>
+
+<p><strong>看第九張（接收/接受）</strong></p>
+
+<p><strong>看第十張（關聯）</strong></p>
+
+<p>以你覺得舒服的節奏就好。你不必完全更隨我們的節奏。就花點時間來與之相處。然後你想的話，翻頁。</p>
+
+<p><strong>十一（意識到/實現）</strong></p>
+
+<p>允許自己感受來自這個符號的膨脹性。允許自己翻頁。</p>
+
+<p><strong>十二（行動/行為）</strong></p>
+
+<p>在你心智內感受從它而來的活動性。允許自己沉思。</p>
+
+<p><strong>十三（改變/轉換）</strong></p>
+
+<p>大轉換器。承載一切變化，讓變化順暢輕鬆發生的大熔爐。接下來你想的話請沉思。</p>
+
+<p><strong>十四（連接）</strong></p>
+
+<p>這個意義上的大連接器。強化，再結晶化和建立你與一切事物的聯繫。</p>
+
+<p><strong>十五（顯化）</strong></p>
+
+<p>這偉大的顯化。讓你觀察到一切進入運作的事物。一切終於都處於適當的位置，時間和時機。一切你本已經連接到的事物，突然能夠在你的視線中出現。因為你已擴展了自己的頻率，使你能夠看到以前看不到的事物。這就是顯化的本質，即讓一直存在，但之前看不見的事物，現在能夠被看見。</p>
+
+<p>這下子你就有了這個工具、技術、禮物、分享、這個意識許可。別擔心你如何在你的卡片上複製這些符號。你可以用手畫。這是我們讓這個通靈者讓這些符號保持手繪的樣子的一個原因。你不需要把他們弄得更精確，你想的話也可以。你可以裝飾它們，裝點它們以任何你希望的形式，只要符號本身原封不動。你可以把它們弄得更精確。也可以就像這個一樣直接手繪。它們都會起效果的。這沒關係。並且某些情況下，如果你儘量去手繪它們，你將與這些回路更強地連接。因為你是用你的回路來做的這件事的，這樣更直接，或者說自然。</p>
+
+<p>當然，要怎麼畫還是隨你。如果你覺得用電腦藝術或其它什麼來表現它們讓你感覺對它們更有統御性，隨你。但請允許自己去感受，在你手繪、裝飾或者電腦製作完這些符號後，你和它們會不會感到有點疏遠了，而它們是不是還覺得它們是你的一個部分，你的一個延展，它們還能不能自然地與你關聯，這些才是最重要的。</p>
+
+<p>你真的要和這每個符號建立一種關聯關係。它們每個都像一個小小的，擁有意識的存在。它們擁有它們自己的振頻、實相、覺知，並且想要與你建立關係；想要在你的大腦神經回路里將它們自己表達為一副放大照片，一副編碼，以幫助大腦變成更流暢的接收器，更擴展的天線；想要借由你大腦，接收器，天線的輔助器，來幫助想像和靈感的管道容納下你的物質心智與高層意識間更大、更清晰、更活躍的交流對話。</p>
+
+<p>等一下。我們有客來訪，他想說些話：</p>
+
+<p>艾莎莎尼家園的首席推進者：向你們致候！向你們致候！我是艾莎莎尼家園的首席推進者，「首席推進者」將在你們的未來會被識別為政府的取代形式。我們沒有政府，我們只擁有協助人員，協助維護我們全體族群間心靈感應系統內的「同時同步性」（synchronicity）</p>
+
+<p>我們今天以此種方式與你們講話，是因為我們的世界傳遞給你們的這個禮物。以此讓你們與我們更加充分地連接，同時讓你們與自己更加充分地連接。我們向你們全體伸送（extend），對你們成為我們大家庭的一員的意向深刻感激，我們大家庭以此形式的延伸。</p>
+
+<p>歡迎！歡迎！歡迎來到我們的大家庭。通過這個禮物你們會發現自己並存於「此刻與彼刻」，只是相當字面的意思；通過這個禮物，你們會發現自己並存於「此處與彼處」，正如這句話一樣；通過這個禮物，你會發現時間和空間變得更靈活，更有可塑性。你們會發現你的認知變得更加協同於你們的根本自我、你們的核心存有、你們的創世之能的各種面向，並且更加同流於你的「同時同步性」（synchronicity）。</p>
+
+<p>請尤其注意被稱為「流動」的這個雕紋，這個回路。</p>
+
+<p>當你開始沉思稱為「流動」的回路時，你會特別地加速所有流向你的能量，以及所有由你流出的能量。當你協同於這個流動，你會更容易接收和發出那個你們實相裡轉譯為「無條件愛」的振頻。並且隨著你更渴望處於那個流動的途徑、通道、管道、渠道當中，你們會發現自己在很多具體的方面變得更加擴展，這能讓你們瞥見其它與你們同時存在的、與你們相關而有意義、與你們同步的實相。</p>
+
+<p>這也會更容易地闡釋清晰你們針對此生的具體選擇。這還能幫助你回憶起，再次結合，再次喚回，再度喚醒你對此物質實相做出的選擇，從而照亮你已經選擇的道路。並且賦予你更清楚更根本的認識，為什麼在你擁有的人生與存在裡實踐你的喜悅是理所應當的。並且讓你的經歷體驗與「你本所是」無分別，因為你就是你正在體驗的這個經歷本身。你就是一切萬有對它自身的體驗。用這個禮物來獲得壯麗豪華的體驗吧。</p>
+
+<p>我們再次歡迎你們來到我們的大家庭！我們如你們歡迎我們一般，歡迎你們來到我們的社會！我們向你們敬禮！（起身敬禮）</p>
+
+<p>我們把「話筒」交還給你們的導師。</p>
+
+<p><mark>巴夏</mark>：此刻，你們已經到達了某個事件點，剛剛講話的我們叫「艾莎莎尼首席推進者」這個人，他給出了三個建議。這作為一個分水嶺，一個標示，「接觸」道路上的又一里程碑事件，以此讓你們從他的問候中知曉你們已經到達了開始進入另一個層面的點，擴展到另一個層面，另一個加速性層面來容納更多各式各樣的接觸，所以別吃驚哦，或者你希望吃驚的話也請便。</p>
+
+<p>在這個軌跡，這一年的剩餘部分以及進入你們2011年的開端部分，也許會有更多關於天空出現飛船的報導，以及更多你內在的活動，關於你自身還有你的記憶，很多是你們很多或者所有人已經發生的接觸，只是此刻還沒回憶起而已。但通過剛才這個分界線式的問候，你也許會發現你在你的夢境裡獲得了加速，或甚至就在你的物質實相清醒的狀態裡也開始回憶起你在其它層面以及你身處的層面已發生的接觸。並且你們回憶起已經發生的接觸的節奏，是我們用來衡量你們的社會能否接受更多回憶重聚的尺標。</p>
+
+<p>在你們的2012年之後，接觸隔離將會被取消。之後，接觸所發生的速度節奏將不再取決於我們所謂的「不干涉政策」，它將只會完全取決於你們通過自己的行為來決定是否準備好接觸。基於你們在你們世界裡做的事，基於你們內在的變化，以及你們內在對你們的星球上發生的一切的回應方式。從那個你們稱為特別「分水嶺」之後，舊循環的結束，2012年12月21日的新開端，會是最後一天我們自己阻止自己與你互動，之後將單方面由你們決定何時你們的世界想要開放、何時與我們還有其它存有進一步建立關係。所以，我們將這個工具作為特殊的禮物贈與你們，來紀念這個你們將你們自己作為新的人，在新的實相，從完全不同的當下創造出不同的歷史與完全不同的未來的新生與重生的時刻。所以恭喜你們！感謝你們為自己鼓掌。</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-11T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/video/2018/01/11/bashar-video-%E5%B7%B4%E5%A4%8F071-%E5%A6%82%E4%BD%95%E7%AB%8B%E5%8D%B3%E9%A1%AF%E5%8C%96%E4%BA%8B%E7%89%A9.html">巴夏071：如何立即顯化事物</a></div><div class="next"><span>下篇</span><a href="/video/2018/01/11/bashar-video-%E5%B7%B4%E5%A4%8F073-%E9%97%9C%E6%96%BC%E6%A5%AD%E5%82%B5%E7%9A%84%E8%A7%A3%E9%87%8B.html">巴夏073：關於業債的解釋</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://zenkarsha.github.io/bashar/video/2018/01/11/bashar-video-%E5%B7%B4%E5%A4%8F072-%E7%A5%9E%E8%81%96%E5%9B%9E%E8%B7%AF-%E7%94%A8%E6%B3%95%E9%83%A8%E5%88%86.html';
+                        this.page.identifier = '20180111_video_巴夏072：神聖回路（用法部分）';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+

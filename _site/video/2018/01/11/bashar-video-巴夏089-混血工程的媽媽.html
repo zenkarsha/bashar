@@ -1,0 +1,937 @@
+<!DOCTYPE html><html lang="zh-Hant">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>巴夏089：混血工程的媽媽 - 巴夏影音訊息匯集</title>
+
+<meta name="description" content="巴夏：我在你們的這一天的這個時間祝你們日安，你們都好嗎？好的。首先我們要再次感謝你們每一位，允許通過以這種特別的門戶在這個時間裡再次的傳訊。每一次通過這樣的通訊，創造這樣的通訊，提供給我們的文明一個機會，通過你們每一位來體驗無限創造許許多多方式的自我表達，而這擴展了我們對無限的理解，所以我們感謝你們的這一禮物。我...">
+<link rel="canonical" href="https://zenkarsha.github.io/bashar/video/2018/01/11/bashar-video-%E5%B7%B4%E5%A4%8F089-%E6%B7%B7%E8%A1%80%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%AA%BD%E5%AA%BD.html"><link rel="alternate" type="application/rss+xml" title="巴夏影音訊息匯集" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.min.js"></script>
+<script src="/bashar/assets/js/jquery.lazyloadxt.extra.min.js"></script>
+<script src="/bashar/assets/js/is.min.js"></script>
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+        lazyloadxt: '/bashar/assets/js/jquery.lazyloadxt.min.js',
+        lazyloadxt_extra: '/bashar/assets/js/jquery.lazyloadxt.extra.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><a title="👽" href="/">巴夏影音訊息匯集</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/">首頁</a></li><li class="navigation__item"><a href="/archive.html">目錄</a></li><li class="navigation__item"><a href="/about.html">關於</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>巴夏089：混血工程的媽媽</h1></header></div><meta itemprop="headline" content="巴夏089：混血工程的媽媽"><!----><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E5%BD%B1%E7%89%87%EF%BD%9C%E7%B7%A8%E8%99%9F%E7%B3%BB%E5%88%97">影片｜編號系列</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 01月11日</span>
+            </li><li><img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fbashar.tw%2Fvideo%2F2018%2F01%2F11%2Fbashar-video-%25E5%25B7%25B4%25E5%25A4%258F089-%25E6%25B7%25B7%25E8%25A1%2580%25E5%25B7%25A5%25E7%25A8%258B%25E7%259A%2584%25E5%25AA%25BD%25E5%25AA%25BD.html" alt="Hits"></li>
+
+          <!---->
+        </ul></div><meta itemprop="author" content="巴夏"/><meta itemprop="datePublished" content="2018-01-11T00:00:00+08:00">
+    <meta itemprop="keywords" content="影片｜編號系列"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+    
+      
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1A-fd4AyIE0HbeAiaz_JXwQF9OlbRqJGBcA/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1A-fd4AyIE0HbeAiaz_JXwQF9OlbRqJGBcA&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+          <div class="video__container"><iframe data-src="https://drive.google.com/file/d/1EMkOVMQSguJPJlauPK0jOO-fHTku-DzRCA/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
+          <div class="video__download__link">
+            <a href="https://drive.google.com/uc?authuser=0&id=1EMkOVMQSguJPJlauPK0jOO-fHTku-DzRCA&export=download" target="_blank">下載影片</a>
+            <br />
+          </div>
+        
+      
+    
+
+    
+    
+    <p><mark>巴夏</mark>：我在你們的這一天的這個時間祝你們日安，你們都好嗎？好的。首先我們要再次感謝你們每一位，允許通過以這種特別的門戶在這個時間裡再次的傳訊。每一次通過這樣的通訊，創造這樣的通訊，提供給我們的文明一個機會，通過你們每一位來體驗無限創造許許多多方式的自我表達，而這擴展了我們對無限的理解，所以我們感謝你們的這一禮物。</p>
+
+<p>我們意識到在你們的時間的這一天，我們會用稍微不同的方式，一如既往地向你們表達我們的謝意，為了這場我們共同創造的特別的傳訊，我們邀請你們來以你們想要的無論任何形式來繼續這場對話。</p>
+
+<p>問：巴夏。</p>
+
+<p><mark>巴夏</mark>：是，日安。</p>
+
+<p>問：我做一下自我介紹，我叫Melander。我很榮幸的主持一個節目，叫Melander的神秘宇宙。</p>
+
+<p><mark>巴夏</mark>：好的，我們明白那個內容。</p>
+
+<p>問：我非常尊重你所做的，我想提供給你一個機會來說說你感覺，以及你要說的任何信息。我有幾個問題，我的節目是關於外星人母親的，我知道你可以識別出那些混血兒的母親。</p>
+
+<p><mark>巴夏</mark>：時不時的，我們會同那些有此類（參與了與外星人生育混血種族）經驗的人溝通和交流。</p>
+
+<p>問：就我自己而言，我有許多此類的經驗，我不知道是否需要詳細的告訴你關於我的事情，也許你可能⋯⋯</p>
+
+<p><mark>巴夏</mark>：在許多情況下，我們能簡單的掃瞄一下我們感知到的這場傳訊中的頻率，我們能察覺你的意思，你盡可以繼續問任何你認為合適的任何問題。</p>
+
+<p>問：好，首先我想問問你，在我的節目中不斷的接觸到了混血兒的母親，並且識別出了她們。我在我的生活中曾經有過一段經歷，我可能是個混血兒的母親，我有過相關的經歷。我想知道那是真的嗎，那發生過嗎？</p>
+
+<p><mark>巴夏</mark>：是的，是的，是的。</p>
+
+<p>問：謝謝</p>
+
+<p><mark>巴夏</mark>：當然許多像你一樣有過許多這樣的經驗的人，實際上通常從童年就開始了接觸，有時甚至是在出生之前，其目的為了是準備好你們所說的胎兒，能量調整，基因調整等等，那將會有一個你的靈魂同意的協定，在你的物理生活中最終參與到這個計畫當中來。所以在那樣的接觸中，你會需許多這樣的經驗，尤其是一旦你到了你們所說的分娩期，就會有許多這樣的機會，你的遺傳材料和其他個體的遺傳材料會被利用來創造出混血生命，他們當中的許多在這個階段還是你們所說的孩子。</p>
+
+<p>問：非常感謝，你有沒有特別的關於我的孩子的信息？
+<mark>巴夏</mark>：有若干個.你對他們有什麼特別的問題嗎，還是要讓我們來繼續下去.</p>
+
+<p>問：請你繼續</p>
+
+<p><mark>巴夏</mark>：好的，等一下，等一下，等一下⋯我們感知到了，主要的與你的特別的能量有連接的孩子在5到10個之間，我們說的是主要的有連結的孩子。這裡指的是：你們所說的外星人就是灰人，因為主要是這一種族參與了混血工程，當這一種族利用你們的遺傳材料或者任何人的遺傳材料的時候，可能會在一定程度上改變你的原始的基因材料，並將其溶入到了任何一個混血孩子的身上，因此，那些包含了50%以上你的DNA的混血，在這個最初的群體當中，我們說是有5到10個孩子。也許還有許多孩子也擁有你的遺傳物質的片段，但是我們沒必要直接把他們算作是你的孩子，因為他們只有50%以下你的遺傳，50%以下你的遺傳物質。因此這5到10個孩子大體上與你有最近的遺傳關係，就是利用了你的遺傳物質創造出了他們。</p>
+
+<p>問：有什麼特別的嗎，為什麼他們選我，給了我這麼多的孩子</p>
+
+<p><mark>巴夏</mark>：這是個平均的數量，是的</p>
+
+<p>問：他們有沒有計畫給我人類的孩子。</p>
+
+<p><mark>巴夏</mark>：他們沒有說你是否決定要生育人類孩子，那就不是他們的計畫了，那是你的，如果你願意，但是由你決定。他們只關心那些混血孩子，因為能夠延續他們的種族</p>
+
+<p>問：我有機會見見他們嗎?</p>
+
+<p><mark>巴夏</mark>：孩子們？是的。大約在你們的2005年至2013年之間，你們會發現會對於這些提供了遺傳物質的媽媽而言有越來越多的機會最終能夠在地球上和這些孩子們互動，就在你們的時間的不久的將來，這些孩子們最終會開始居住在地球上，和他們的媽媽們生活在一起。</p>
+
+<p>問：我們會同他們有身體上的互動嗎，我的意思是接觸他們，和他們一起生活。</p>
+
+<p><mark>巴夏</mark>：是的，會有機會，起初這些孩子們會做些適應環境的準備，之後進入你們的世界，他們當然需要你們作為父母的指導和支持，某種意義上，他們會進行些生活情境的練習，你明白嗎？</p>
+
+<p>問：是的。非常感謝，我還想再問些問題。你可以給我一些啟發和建議嗎，我在我的節目中可以給公眾提供些教育。</p>
+
+<p><mark>巴夏</mark>：好的，我們真正能給任何致力於創造而非壓力的人的建議，永遠都是最大限度的，這是極為重要的，以你的最高的創造性的興奮和喜悅去行動，因為那個能量是代表了你們真正核心自我的頻率。如果你們總是願意以最能令你興奮，以你能想像的最有創造力的方式來表達你自己的方向去行動，那你就會完全的與你自己選擇的所謂的使命和目標一致。因為你會成為你自己，通過做你自己會讓你能夠以最好的方式服務他人，因為通過做你自己，無論你得到的靈感想要做什麼，都會自動有人需要你的行動來幫助他們。你明白嗎？總的來說就是如此。</p>
+
+<p>問：非常感謝，最後一個問題：我們的環境怎樣為這些混血孩子做出準備？我們怎麼會被介紹給這些孩子，會有一個主要的聲明什麼的嗎？</p>
+
+<p><mark>巴夏</mark>：通常不會。將會有一段時間，這會是很適當的，但是首先你們會發現，他們只是會，說來說去可能會有些例外，在你們的星球上會有些隔離區，忽然有些人就會受到吸引而搬到那裡去。在搬到那些與隔離區後，他們會發現那裡會是合適的環境來慢慢的介紹這些混血孩子，這樣的環境能保障安全，直到他們能完全的適應環境為止，這會是最有效的方法。</p>
+
+<p>問：你可以描述一下這些混血孩子們的身體外貌是什麼樣的嗎？他們長什麼樣?</p>
+
+<p><mark>巴夏</mark>：再次的，這取決於他們在任何一個混血孩子身上利用了多少人類的遺傳物質，他們有些看上去更加像人類，有些則不那麼像人類。但是大體上來說，我們種族也是混血工程的一個代表，我們在外表上還是和人類比較相似的，只是我們更單薄和脆弱一些。（混血孩子們）以你們高度而言平均有4到5英呎高，灰白色的皮膚，顏色就像你們的紙張的顏色；比人類更大的眼睛，比人類更大的頭顱。但是在某種意義上我們認為你們大多數人最初見到他們的時候會有一點吃驚，並且認為他們非同尋常的可愛。至少以我們理解的人類的標準來看</p>
+
+<p>問：太奇妙了，巴夏，我可以再問你一個問題嗎？</p>
+
+<p><mark>巴夏</mark>：那就是個問題。你想再問個問題嗎？</p>
+
+<p>問：是，我想。</p>
+
+<p><mark>巴夏</mark>：好的，如果你想問你就問吧，</p>
+
+<p>問：好的，謝謝。你真好。這些神的最終目的是什麼，無論他們是誰？</p>
+
+<p><mark>巴夏</mark>：神，你是說這些參與了混血工程的外星人嗎？</p>
+
+<p>問：真正的問題是我想要知道造物主這麼做的終極目的是什麼。</p>
+
+<p><mark>巴夏</mark>：造物主沒有目的，除了做自己以外。那就是造物主唯一的目的。無論造物主有其他的什麼目的，都僅僅是以各種各樣的方式做他自己，不然就會給造物帶來太多的限制。關於造物是沒有限制的，它一定是無窮無盡的，否則就不是真正的造物。因此，造物主除了以一切可能的方式去體驗自身以外，並不需要給自己設立目標，那意味著每一種類型的存有，每一個地方，每一個時刻都存在於造物之中，都是造物主的一個部分。造物主可以從所有的視角以一切的方式來體驗著自身，表達著自身，本質上來說是以一切可能的方式與自身互動。</p>
+
+<p>造物主唯一的目標是作為造物來體驗自己，沒有什麼比那個更是造物主最終的目標了，因為那是造物主的本質。唯一的目標就是表達它的本質。你跟上了嗎？</p>
+
+<p>問：是的，感謝你的解釋。</p>
+
+<p><mark>巴夏</mark>：因此並不是任何事物都格格不入，或者所謂與造物主格格不入。是的，也許有些事物是破壞性的；也許有些事物是建設性的。你可以理解好比說存在一股代表了順應的潮流；也存在著一股代表著抗拒的潮流。但那並不是違背造物的意志，而僅僅是某些事物會比其他的事物更有效率，某些事物會比其他的事物更能代表整體性，某些事物會比其他的事物更能代表隔離。因此最終的目的就是對於每一個種族，每一個個體無論在哪裡，無論什麼時候都可以自己決定他們是否願意作為一個整體來發揮作用，並因此更加代表了造物的層次；或者是更加的隔離，在那個意義上代表了更加破壞的層次。但是那取決於每一個個體。你跟上了嗎？</p>
+
+<p>問：是的，我跟上了。這些孩子們的健康怎麼樣，他們吃什麼樣的飲食，他們來到地球之後會喜歡這裡的食物嗎?</p>
+
+<p><mark>巴夏</mark>：在這個混血工程最初的階段，他們的健康倒不是很好，直到做出了某些相應的調整，目前他們以你們的話來講就越來越健康了。他們的飲食會非常清淡，大部分會是流體的形式，就是你們所說的液化的蔬菜和水果。有些食物是原產於你們的世界帶過去給他們的，為了讓他們能夠有能力將來適應，有些食物不是產自你們的世界。他們攝取非常少量的固態食物，再次的也是純天然未加工的形式，他們不會吃任何你們所說的烹飪過的精加工過的食物，他們只會吃那些天然的食物。你明白嗎？</p>
+
+<p>問：是的，我明白。</p>
+
+<p><mark>巴夏</mark>：對你有幫助嗎？</p>
+
+<p>問：相當有幫助，非常高興能和你談話，我想把機會留給別人了。</p>
+
+<p><mark>巴夏</mark>：好的，再次感謝你為了這個共同創造的傳訊和互動。</p>
+
+  </div><section class="article__sharing d-print-none"><!-- Addthis BEGIN --><script type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e91755a11a7e002"></script>
+  <div class="addthis_inline_share_toolbox addthis_default_style"></div><!-- Addthis END -->
+</section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2018-01-11T00:00:00+08:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/video/2018/01/11/bashar-video-%E5%B7%B4%E5%A4%8F088-%E5%A6%82%E4%BD%95%E5%89%B5%E5%BB%BA%E4%BD%A0%E7%9A%84%E6%99%82%E9%96%93.html">巴夏088：如何創建你的時間</a></div><div class="next"><span>下篇</span><a href="/video/2018/01/11/bashar-video-%E5%B7%B4%E5%A4%8F090-%E8%B7%9F%E4%B8%8A%E6%88%91%E5%80%91-%E4%B8%8D%E8%A6%81%E8%90%BD%E4%B8%8B.html">巴夏090：跟上我們，不要落下</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js([SOURCES.jquery], function() {
+    $(function() {
+      console.log('%cCircumstances don\'t matter, only my state of being matters.!', 'font-size:33px;color:black');
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+
+!function(e){setInterval(()=>{e.each(e("iframe"),(a,r)=>{let t=e(r).attr("src");t&&t.match(/(ads-iframe)|(disqusads)/gi)&&e(r).remove()})},300)}(jQuery);
+</script>
+</div><section class="page__comments d-print-none">
+                      <div id="disqus_thread"></div>
+                      <script>
+                      var disqus_config = function () {
+                        this.page.url = 'https://zenkarsha.github.io/bashar/video/2018/01/11/bashar-video-%E5%B7%B4%E5%A4%8F089-%E6%B7%B7%E8%A1%80%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%AA%BD%E5%AA%BD.html';
+                        this.page.identifier = '20180111_video_巴夏089：混血工程的媽媽';
+                      };
+                      (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://basharbuddha.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                      </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巴夏"><meta itemprop="url" content="/"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 巴夏影音訊息匯集 1111
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '409e98731f84c109a'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><!---->
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1X0LTCL0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4W1X0LTCL0');
+		
+	</script></body>
+</html>
+
