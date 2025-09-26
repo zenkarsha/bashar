@@ -65,6 +65,10 @@
                       <div class="video__container">
                         <iframe data-src="https://www.youtube.com/embed/{{ _article.youtube_video_id }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="video" allowfullscreen></iframe>
                       </div>
+                    {% elsif _article.youtube_video_ids %}
+                      <div class="video__container">
+                        <iframe data-src="https://www.youtube.com/embed/{{ _article.youtube_video_ids[0] }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="video" allowfullscreen></iframe>
+                      </div>
                     {% elsif _article.google_video_id %}
                       <div class="video__container">
                         <iframe data-src="https://drive.google.com/file/d/{{ _article.google_video_id }}/preview" frameborder="0" allowfullscreen class="video"></iframe>

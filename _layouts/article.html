@@ -24,6 +24,19 @@ type: article
           {% endif %}
           <br />
         </div>
+      {% elsif page.youtube_video_ids %}
+        {% for item in page.youtube_video_ids %}
+          <div class="video__container"><iframe data-src="https://www.youtube.com/embed/{{ item }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="video" allowfullscreen></iframe></div>
+          <div class="video__download__link">
+            <a href="https://www.youtubeto.com/watch?v={{ item }}" target="_blank">下載影片</a>
+            {% if page.download_mirror %}
+              {% for link in page.download_mirror %}
+                &nbsp;|&nbsp;<a href="{{ link }}" target="_blank">備用載點</a>
+              {% endfor %}
+            {% endif %}
+            <br />
+          </div>
+        {% endfor %}
       {% elsif page.google_video_id %}
         <div class="video__container"><iframe data-src="https://drive.google.com/file/d/{{ page.google_video_id }}/preview" frameborder="0" allowfullscreen class="video"></iframe></div>
         <div class="video__download__link">
