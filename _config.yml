@@ -2,8 +2,8 @@
 ##############################
 text_skin: default
 highlight_theme: default
-url: https://zenkarsha.github.io/bashar
-baseurl: /
+url: https://zenkarsha.github.io
+baseurl: /bashar
 title: 巴夏影音訊息匯集
 description: 👽
 
