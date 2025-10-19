@@ -9,7 +9,7 @@
     <p>{{ _locale_statistics | replace: '[POST_COUNT]', _post_count | replace: '[PAGE_COUNT]', _page_count }}</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap">
-        {%- assign _max_show = 5 -%}
+        {%- assign _max_show = 7 -%}
         {%- assign _max_show_modulo_two = _max_show | modulo: 2 -%}
         {%- assign _length = paginator.total_pages -%}
         {%- assign _length_mimus_one = _length | minus: 1 -%}
