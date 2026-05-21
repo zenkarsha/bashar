@@ -45,4 +45,4 @@ source: http://blog.sina.com.cn/s/blog_a491af250102v5at.html
 - 我連接。
 - 我的生活是心想事成的夢。
 
-![巴夏7部分Master意識許可](/assets/images/巴夏7部分Master意識許可.gif)
+![巴夏7部分Master意識許可](/bashar/assets/images/巴夏7部分Master意識許可.gif)

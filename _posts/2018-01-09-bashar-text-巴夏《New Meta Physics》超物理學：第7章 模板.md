@@ -30,7 +30,7 @@ X + Y + Z + T + (-X) + (-Y) + (-Z) + (-T) =  O
 
 作為象徵性表達的幾何圖解如下：
 
-![雙重菱錐四面體](/assets/images/巴夏《New Meta Physics》超物理學：第七章 模板（八）-雙重菱錐四面體.gif)
+![雙重菱錐四面體](/bashar/assets/images/巴夏《New Meta Physics》超物理學：第七章 模板（八）-雙重菱錐四面體.gif)
 
 **雙重棱錐四面體**
 
